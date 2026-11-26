@@ -168,6 +168,7 @@ class EditorPropertyTextEnum : public EditorProperty {
 	Vector<String> option_names;
 	bool string_name = false;
 	bool loose_mode = false;
+	bool names_translated = false;
 
 	void _emit_changed_value(const String &p_string);
 	void _option_selected(int p_which);
