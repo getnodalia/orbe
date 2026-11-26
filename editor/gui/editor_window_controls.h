@@ -25,7 +25,10 @@ private:
 	bool hovered = false;
 	bool pressed = false;
 
-	Color _get_color() const;
+	struct Palette {
+		Color rest_fill, rest_ink, pressed_fill, hover_fill, hover_ink;
+	};
+	Palette _get_palette() const;
 
 protected:
 	void _notification(int p_what);

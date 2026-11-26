@@ -1,0 +1,99 @@
+[gd_scene format=3]
+
+[ext_resource type="Shader" path="res://terreno.gdshader" id="1_terreno"]
+[ext_resource type="Shader" path="res://agua.gdshader" id="2_agua"]
+
+[sub_resource type="FastNoiseLite" id="Ruido_relieve"]
+noise_type = 1
+seed = 7
+frequency = 0.0042
+fractal_octaves = 3
+fractal_gain = 0.4
+
+[sub_resource type="NoiseTexture2D" id="Textura_relieve"]
+width = 1024
+height = 1024
+noise = SubResource("Ruido_relieve")
+
+[sub_resource type="FastNoiseLite" id="Ruido_ondas"]
+noise_type = 3
+frequency = 0.02
+
+[sub_resource type="NoiseTexture2D" id="Textura_ondas"]
+width = 512
+height = 512
+seamless = true
+as_normal_map = true
+bump_strength = 4.0
+noise = SubResource("Ruido_ondas")
+
+[sub_resource type="ShaderMaterial" id="Material_terreno"]
+shader = ExtResource("1_terreno")
+shader_parameter/relieve = SubResource("Textura_relieve")
+
+[sub_resource type="ShaderMaterial" id="Material_agua"]
+shader = ExtResource("2_agua")
+shader_parameter/ondas = SubResource("Textura_ondas")
+
+[sub_resource type="PlaneMesh" id="Malla_terreno"]
+size = Vector2(400, 400)
+subdivide_width = 255
+subdivide_depth = 255
+
+[sub_resource type="PlaneMesh" id="Malla_agua"]
+size = Vector2(400, 400)
+
+[sub_resource type="ProceduralSkyMaterial" id="Cielo"]
+sky_top_color = Color(0.11, 0.15, 0.33, 1)
+sky_horizon_color = Color(0.96, 0.62, 0.52, 1)
+sky_curve = 0.14
+ground_bottom_color = Color(0.12, 0.10, 0.18, 1)
+ground_horizon_color = Color(0.96, 0.62, 0.52, 1)
+ground_curve = 0.05
+sun_angle_max = 14.0
+sun_curve = 0.06
+
+[sub_resource type="Sky" id="Sky_valle"]
+sky_material = SubResource("Cielo")
+
+[sub_resource type="Environment" id="Ambiente"]
+background_mode = 2
+sky = SubResource("Sky_valle")
+ambient_light_source = 3
+ambient_light_color = Color(0.55, 0.5, 0.7, 1)
+ambient_light_energy = 0.7
+tonemap_mode = 3
+tonemap_white = 4.0
+glow_enabled = true
+glow_intensity = 0.6
+glow_bloom = 0.08
+fog_enabled = true
+fog_light_color = Color(0.86, 0.6, 0.62, 1)
+fog_density = 0.0022
+fog_sky_affect = 0.05
+
+[node name="Valle" type="Node3D"]
+
+[node name="Entorno" type="WorldEnvironment" parent="."]
+environment = SubResource("Ambiente")
+
+[node name="Sol" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.82404, 0.09213, -0.55899, 0.00000, 0.98669, 0.16261, 0.56653, 0.13400, -0.81307, 0.00000, 0.00000, 0.00000)
+light_color = Color(1, 0.74, 0.55, 1)
+light_energy = 1.5
+shadow_enabled = true
+directional_shadow_max_distance = 320.0
+
+[node name="Terreno" type="MeshInstance3D" parent="."]
+custom_aabb = AABB(-200, -10, -200, 400, 160, 400)
+mesh = SubResource("Malla_terreno")
+surface_material_override/0 = SubResource("Material_terreno")
+
+[node name="Agua" type="MeshInstance3D" parent="."]
+mesh = SubResource("Malla_agua")
+surface_material_override/0 = SubResource("Material_agua")
+
+[node name="Camara" type="Camera3D" parent="."]
+transform = Transform3D(1.00000, 0.00000, 0.00000, 0.00000, 0.99820, -0.05989, -0.00000, 0.05989, 0.99820, 0.00000, 9.00000, 48.00000)
+fov = 62.0
+far = 700.0
