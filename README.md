@@ -1,76 +1,39 @@
 # Orbe
 
-<p align="center">
-  <a href="https://godotengine.org">
-    <img src="misc/logo/logo_outlined.svg" width="400" alt="Orbe logo">
-  </a>
-</p>
+Orbe is Nodalia's open-source game engine and editor. Build 2D and 3D games from scenes and
+nodes, script them, run them on the desktop and export them, from one editor drawn in the
+[Nodalia Design Language](https://github.com/getnodalia/nodalia-design).
 
-## 2D and 3D cross-platform game engine
+Orbe is part of [Nodalia](https://getnodalia.com), the suite of open-source apps made to feel like
+one. It is free software under the MIT licence.
 
-**[Orbe](https://godotengine.org) is a feature-packed, cross-platform
-game engine to create 2D and 3D games from a unified interface.** It provides a
-comprehensive set of [common tools](https://godotengine.org/features), so that
-users can focus on making games without having to reinvent the wheel. Games can
-be exported with one click to a number of platforms, including the major desktop
-platforms (Linux, macOS, Windows), mobile platforms (Android, iOS), as well as
-Web-based platforms and [consoles](https://godotengine.org/consoles).
+> **Status: early.** This is the first version of Orbe's own repository: the engine and the
+> editor build and run on Linux, and the editor opens in the NDL light and dark themes with
+> Orbe's accent. What is not done yet (Orbe's own icon, NDL window controls and hamburger menu,
+> macOS and Windows packages) is listed in [`NODALIA_MIGRATION.md`](NODALIA_MIGRATION.md).
 
-## Free, open source and community-driven
+## What it is
 
-Godot is completely free and open source under the very permissive [MIT license](https://godotengine.org/license).
-No strings attached, no royalties, nothing. The users' games are theirs, down
-to the last line of engine code. Godot's development is fully independent and
-community-driven, empowering users to help shape their engine to match their
-expectations. It is supported by the [Godot Foundation](https://godot.foundation/)
-not-for-profit.
+- A scene editor: a tree of nodes, an inspector, a 2D and a 3D viewport, an animation editor, a
+  script editor and a debugger.
+- A rendering engine with a modern Vulkan renderer and a compatibility OpenGL one, a physics
+  engine, audio, navigation and a scripting language.
+- Projects made for the upstream engine this code base comes from keep opening: Orbe reads the same
+  project, scene and resource files. See [`AGENTS.md`](AGENTS.md) for what is kept for that.
 
-Before being open sourced in [February 2014](https://github.com/godotengine/godot/commit/0b806ee0fc9097fa7bda7ac0109191c9c5e0a1ac),
-Godot had been developed by [Juan Linietsky](https://github.com/reduz) and
-[Ariel Manzur](https://github.com/punto-) for several years as an in-house
-engine, used to publish several work-for-hire titles.
+## Build
 
-![Screenshot of a 3D scene in the Orbe editor](https://raw.githubusercontent.com/godotengine/godot-design/master/screenshots/editor_tps_demo_1920x1080.jpg)
+```sh
+git clone https://github.com/getnodalia/orbe && cd orbe
+scons platform=linuxbsd target=editor accesskit=no -j"$(nproc)"
+bin/orbe.linuxbsd.editor.x86_64
+```
 
-## Getting the engine
+You need Python 3, SCons 4 and the development packages of X11 or Wayland, ALSA or PulseAudio,
+udev and OpenGL. `AGENTS.md` lists the test commands.
 
-### Binary downloads
+## Credits and licence
 
-Official binaries for the Godot editor and the export templates can be found
-[on the Godot website](https://godotengine.org/download).
-
-### Compiling from source
-
-[See the official docs](https://docs.godotengine.org/en/latest/engine_details/development/compiling)
-for compilation instructions for every supported platform.
-
-## Community and contributing
-
-Godot is not only an engine but an ever-growing community of users and engine
-developers. The main community channels are listed [on the homepage](https://godotengine.org/community).
-
-The best way to get in touch with the core engine developers is to join the
-[Godot Contributors Chat](https://chat.godotengine.org).
-
-To get started contributing to the project, see the [contributing guide](CONTRIBUTING.md).
-This document also includes guidelines for reporting bugs.
-
-## Documentation and demos
-
-The official documentation is hosted on [Read the Docs](https://docs.godotengine.org).
-It is maintained by the Godot community in its own [GitHub repository](https://github.com/godotengine/godot-docs).
-
-The [class reference](https://docs.godotengine.org/en/latest/classes/)
-is also accessible from the Godot editor.
-
-We also maintain official demos in their own [GitHub repository](https://github.com/godotengine/godot-demo-projects)
-as well as a list of [awesome Godot community resources](https://github.com/godotengine/awesome-godot).
-
-There are also a number of other
-[learning resources](https://docs.godotengine.org/en/latest/community/tutorials.html)
-provided by the community, such as text and video tutorials, demos, etc.
-Consult the [community channels](https://godotengine.org/community)
-for more information.
-
-[![Code Triagers Badge](https://www.codetriage.com/godotengine/godot/badges/users.svg)](https://www.codetriage.com/godotengine/godot)
-[![Translate on Weblate](https://hosted.weblate.org/widgets/godot-engine/-/godot/svg-badge.svg)](https://hosted.weblate.org/engage/godot-engine/?utm_source=widget)
+Orbe is MIT licensed (`LICENSE.txt`). Its code base began as an upstream open-source engine; those
+authors are credited in `NOTICE`, `LICENSE.txt`, `COPYRIGHT.txt`, `AUTHORS.md` and the About
+window, together with the third-party libraries in `thirdparty/`.

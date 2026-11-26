@@ -5,5 +5,5 @@ minor = 7
 patch = 2
 status = "stable"
 module_config = ""
-website = "https://godotengine.org"
+website = "https://getnodalia.com/orbe"
 docs = "4.7"

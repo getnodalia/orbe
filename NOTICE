@@ -1,0 +1,14 @@
+Orbe
+Copyright (c) 2026-present Orbe contributors (see git history).
+
+Orbe is free software under the MIT licence (LICENSE.txt).
+
+Orbe's code base began as the Godot Engine, https://godotengine.org, and keeps its licence and
+every copyright notice:
+
+  Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md).
+  Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
+
+Permission notices of the MIT licence apply to all of it, as LICENSE.txt states. The copyright and
+licence of each third-party component under thirdparty/ are in COPYRIGHT.txt and in the About
+window. The upstream engine's name and logo are its authors' and are not used by Orbe.
