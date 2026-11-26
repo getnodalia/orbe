@@ -154,7 +154,12 @@ jobs:
             echo "$arch linked against SDK $sdk"
             test "${sdk%%.*}" -ge 26
           done
-          codesign --verify --strict --deep --verbose=2 /Volumes/Orbe/Orbe.app
+          # The image's HFS+ volume tags files with Finder info, which the
+          # strict check rejects; verify a copy without extended attributes,
+          # which is the signature that was sealed.
+          rm -rf "$RUNNER_TEMP/verify" && mkdir "$RUNNER_TEMP/verify"
+          ditto --noextattr --noqtn --norsrc /Volumes/Orbe/Orbe.app "$RUNNER_TEMP/verify/Orbe.app"
+          codesign --verify --strict --deep --verbose=2 "$RUNNER_TEMP/verify/Orbe.app"
           # The app starts from the image and answers.
           out=$("$bin" --headless --version)
           echo "version: $out"
