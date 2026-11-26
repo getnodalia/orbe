@@ -23,9 +23,14 @@ What is done and what is left to make Orbe a Nodalia app like the others.
    (unsigned DMG with Orbe's own install window; Metal on Apple silicon, the Compatibility
    renderer on Intel). Still to come: Windows (MSI and portable) packages, then the Launcher
    catalog entry and the page `getnodalia.com/orbe`.
-4. **NDL window.** Round NDL window controls on Linux only (native on macOS and Windows), the
-   hamburger menu (Editor settings, Keyboard shortcuts, About), the menu exported over D-Bus to the
-   shell's global menu on Linux, NDL islands for the docks, NDL icons for the editor chrome.
+4. **NDL window.** Done: the hamburger menu (Editor Settings, Keyboard Shortcuts, About) and, on
+   Linux only, the frameless window with NDL's round minimize, maximize and close controls and
+   resizing edges (`editor/gui/editor_window_controls.*`; the setting "Use System Window Controls"
+   brings the desktop's own back; macOS and Windows always keep native controls). Still to do: the
+   menu exported over D-Bus to the shell's global menu on Linux, NDL islands for the docks, NDL
+   icons for the editor chrome. The Help menu links point to Orbe's repository and page; the
+   engine documentation and the asset library still point to upstream's, since Orbe opens the same
+   projects.
 5. **About.** The credits keep upstream's authors and the third-party licences, as the licence
    requires; no Contributors or Models tabs.
 6. **Names.** Done: every mention of upstream's name in the interface, the class reference, the

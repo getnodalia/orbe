@@ -46,6 +46,7 @@
 #include "editor/gui/editor_about.h"
 #include "editor/gui/editor_file_dialog.h"
 #include "editor/gui/editor_title_bar.h"
+#include "editor/gui/editor_window_controls.h"
 #include "editor/gui/editor_version_button.h"
 #include "editor/inspector/editor_inspector.h"
 #include "editor/project_manager/engine_update_label.h"
@@ -1320,7 +1321,7 @@ void ProjectManager::_titlebar_resized() {
 }
 
 void ProjectManager::_open_donate_page() {
-	OS::get_singleton()->shell_open("https://fund.godotengine.org/?ref=project_manager");
+	OS::get_singleton()->shell_open("https://buymeacoffee.com/danielmigueltejedor");
 }
 
 // Object methods.
@@ -1513,6 +1514,9 @@ ProjectManager::ProjectManager() {
 			right_menu_spacer->set_mouse_filter(Control::MOUSE_FILTER_PASS);
 			title_bar->add_child(right_menu_spacer);
 		}
+
+		// On Linux the window is drawn without a frame, with NDL's round controls.
+		EditorWindowControls::install(title_bar, this);
 	}
 
 	main_view_container = memnew(PanelContainer);
