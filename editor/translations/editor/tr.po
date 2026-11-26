@@ -15127,7 +15127,7 @@ msgstr ""
 "Tema içe aktarılamadı. Dosya bir metin düzenleyici tema dosyası (.tet) değil."
 
 msgid ""
-"Importing theme failed. File name cannot be 'Default', 'Custom', or 'Godot 2'."
+"Importing theme failed. File name cannot be 'Default', 'Custom', or 'Classic 2'."
 msgstr ""
 "Tema içe aktarılamadı. Dosya adı “Default”, “Custom” veya “Godot 2” olamaz."
 
@@ -15135,7 +15135,7 @@ msgid "Importing theme failed. Failed to copy theme file."
 msgstr "Tema içe aktarılamadı. Tema dosyası kopyalanamadı."
 
 msgid ""
-"Saving theme failed. File name cannot be 'Default', 'Custom', or 'Godot 2'."
+"Saving theme failed. File name cannot be 'Default', 'Custom', or 'Classic 2'."
 msgstr ""
 "Tema kaydedilemedi. Dosya adı “Default”, “Custom” veya “Godot 2” olamaz."
 

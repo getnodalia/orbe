@@ -15159,15 +15159,15 @@ msgid "Importing theme failed. File is not a text editor theme file (.tet)."
 msgstr "ການນຳເຂົ້າທີມຫຼົ້ມເຫຼວ. ໄຟລ໌ບໍ່ແມ່ນໄຟລ໌ທີມຂອງຕົວແກ້ໄຂຂໍ້ຄວາມ (.tet)."
 
 msgid ""
-"Importing theme failed. File name cannot be 'Default', 'Custom', or 'Godot 2'."
-msgstr "ການນຳເຂົ້າທີມຫຼົ້ມເຫຼວ. ຊື່ໄຟລ໌ບໍ່ສາມາດເປັນ 'Default', 'Custom', ຫຼື 'Godot 2' ໄດ້."
+"Importing theme failed. File name cannot be 'Default', 'Custom', or 'Classic 2'."
+msgstr "ການນຳເຂົ້າທີມຫຼົ້ມເຫຼວ. ຊື່ໄຟລ໌ບໍ່ສາມາດເປັນ 'Default', 'Custom', ຫຼື 'Classic 2' ໄດ້."
 
 msgid "Importing theme failed. Failed to copy theme file."
 msgstr "ການນຳເຂົ້າທີມຫຼົ້ມເຫຼວ. ບໍ່ສາມາດຄັດລອກໄຟລ໌ທີມໄດ້."
 
 msgid ""
-"Saving theme failed. File name cannot be 'Default', 'Custom', or 'Godot 2'."
-msgstr "ການບັນທຶກທີມຫຼົ້ມເຫຼວ. ຊື່ໄຟລ໌ບໍ່ສາມາດເປັນ 'Default', 'Custom', ຫຼື 'Godot 2' ໄດ້."
+"Saving theme failed. File name cannot be 'Default', 'Custom', or 'Classic 2'."
+msgstr "ການບັນທຶກທີມຫຼົ້ມເຫຼວ. ຊື່ໄຟລ໌ບໍ່ສາມາດເປັນ 'Default', 'Custom', ຫຼື 'Classic 2' ໄດ້."
 
 msgid "Saving theme failed."
 msgstr "ການບັນທຶກທີມຫຼົ້ມເຫຼວ."

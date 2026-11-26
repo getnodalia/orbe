@@ -15555,18 +15555,18 @@ msgstr ""
 "테마 가져오기를 실패했습니다. 파일이 텍스트 편집기 테마 파일(.tet)이 아닙니다."
 
 msgid ""
-"Importing theme failed. File name cannot be 'Default', 'Custom', or 'Godot 2'."
+"Importing theme failed. File name cannot be 'Default', 'Custom', or 'Classic 2'."
 msgstr ""
-"테마 가져오기를 실패했습니다. 파일 이름은 'Default', 'Custom', 또는 'Godot 2' "
+"테마 가져오기를 실패했습니다. 파일 이름은 'Default', 'Custom', 또는 'Classic 2' "
 "일 수 없습니다."
 
 msgid "Importing theme failed. Failed to copy theme file."
 msgstr "테마 가져오기를 실패했습니다. 테마 파일 복사에 실패했습니다."
 
 msgid ""
-"Saving theme failed. File name cannot be 'Default', 'Custom', or 'Godot 2'."
+"Saving theme failed. File name cannot be 'Default', 'Custom', or 'Classic 2'."
 msgstr ""
-"테마 저장에 실패했습니다. 파일 이름은 'Default', 'Custom', 또는 'Godot 2' 일 "
+"테마 저장에 실패했습니다. 파일 이름은 'Default', 'Custom', 또는 'Classic 2' 일 "
 "수 없습니다."
 
 msgid "Saving theme failed."

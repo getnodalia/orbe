@@ -13044,3 +13044,738 @@ msgstr "Fuerza VRS"
 
 msgid "VRS Render Region"
 msgstr "Región de Renderizado VRS"
+
+msgid "(msec)"
+msgstr "(ms)"
+
+msgid "Abort On Reset"
+msgstr "Abortar al Reiniciar"
+
+msgid "Accel"
+msgstr "Aceleración"
+
+msgid "Advance On Start"
+msgstr "Avanzar al Iniciar"
+
+msgid "Allow Transition To Self"
+msgstr "Permitir Transición a Sí Mismo"
+
+msgid "Alpha Blend Op"
+msgstr "Operación de Mezcla Alfa"
+
+msgid "Always On Top"
+msgstr "Siempre Encima"
+
+msgid "Amount At Collision"
+msgstr "Cantidad en Colisión"
+
+msgid "Amount At End"
+msgstr "Cantidad al Final"
+
+msgid "Amount At Start"
+msgstr "Cantidad al Inicio"
+
+msgid "Anchor Bottom"
+msgstr "Anclaje Inferior"
+
+msgid "Anchor Left"
+msgstr "Anclaje Izquierdo"
+
+msgid "Anchor Right"
+msgstr "Anclaje Derecho"
+
+msgid "Anchor Top"
+msgstr "Anclaje Superior"
+
+msgid "Anisotropy Max"
+msgstr "Anisotropía Máxima"
+
+msgid "Any Hit Shader"
+msgstr "Shader de Cualquier Impacto"
+
+msgid "Array Layers"
+msgstr "Capas del Array"
+
+msgid "Attack Us"
+msgstr "Ataque (µs)"
+
+msgid "Auto Advance"
+msgstr "Avance Automático"
+
+msgid "Avoidance Enabled"
+msgstr "Evitación Activada"
+
+msgid "Back Op Compare"
+msgstr "Comparación Op Trasera"
+
+msgid "Back Op Compare Mask"
+msgstr "Máscara de Comparación Op Trasera"
+
+msgid "Back Op Depth Fail"
+msgstr "Fallo de Profundidad Op Trasera"
+
+msgid "Back Op Fail"
+msgstr "Fallo Op Trasera"
+
+msgid "Back Op Pass"
+msgstr "Paso Op Trasera"
+
+msgid "Back Op Reference"
+msgstr "Referencia Op Trasera"
+
+msgid "Back Op Write Mask"
+msgstr "Máscara de Escritura Op Trasera"
+
+msgid "Binding"
+msgstr "Enlace"
+
+msgid "Blas"
+msgstr "BLAS"
+
+msgid "Blend Constant"
+msgstr "Constante de Mezcla"
+
+msgid "Block On Wall"
+msgstr "Bloquear en Pared"
+
+msgid "Bone2d Index"
+msgstr "Índice de Bone2D"
+
+msgid "Bone2d Node"
+msgstr "Nodo Bone2D"
+
+msgid "Bone2d Nodepath"
+msgstr "Ruta de Nodo Bone2D"
+
+msgid "Break Loop At End"
+msgstr "Romper Bucle al Final"
+
+msgid "Buffering (msec)"
+msgstr "Búfer (ms)"
+
+msgid "Camera Locked To Origin"
+msgstr "Cámara Fija al Origen"
+
+msgid "Capture On Drag"
+msgstr "Capturar al Arrastrar"
+
+msgid "Cascade0 Distance"
+msgstr "Distancia de Cascada 0"
+
+msgid "Center Of Mass"
+msgstr "Centro de Masa"
+
+msgid "Center Of Mass Local"
+msgstr "Centro de Masa Local"
+
+msgid "Center Of Mass Mode"
+msgstr "Modo de Centro de Masa"
+
+msgid "Chain Count"
+msgstr "Cantidad de Cadenas"
+
+msgid "Close On Escape"
+msgstr "Cerrar con Escape"
+
+msgid "Close With Middle Mouse"
+msgstr "Cerrar con Botón Central"
+
+msgid "Closest Hit Shader"
+msgstr "Shader del Impacto Más Cercano"
+
+msgid "Collide With Areas"
+msgstr "Colisionar con Áreas"
+
+msgid "Collide With Bodies"
+msgstr "Colisionar con Cuerpos"
+
+msgid "Color Attachments"
+msgstr "Adjuntos de Color"
+
+msgid "Color Blend Op"
+msgstr "Operación de Mezcla de Color"
+
+msgid "Command Or Control Autoremap"
+msgstr "Reasignar Command/Control Automáticamente"
+
+msgid "Compare Op"
+msgstr "Operación de Comparación"
+
+msgid "Damping As Friction"
+msgstr "Amortiguación como Fricción"
+
+msgid "Depth Attachment"
+msgstr "Adjunto de Profundidad"
+
+msgid "Depth Bias Clamp"
+msgstr "Límite del Sesgo de Profundidad"
+
+msgid "Depth Bias Constant Factor"
+msgstr "Factor Constante del Sesgo de Profundidad"
+
+msgid "Depth Bias Enabled"
+msgstr "Sesgo de Profundidad Activado"
+
+msgid "Depth Bias Slope Factor"
+msgstr "Factor de Pendiente del Sesgo de Profundidad"
+
+msgid "Depth Compare Operator"
+msgstr "Operador de Comparación de Profundidad"
+
+msgid "Depth Range Max"
+msgstr "Rango de Profundidad Máximo"
+
+msgid "Depth Range Min"
+msgstr "Rango de Profundidad Mínimo"
+
+msgid "Described By Nodes"
+msgstr "Descrito por Nodos"
+
+msgid "Deselect On Focus Loss Enabled"
+msgstr "Deseleccionar al Perder el Foco"
+
+msgid "Discard Primitives"
+msgstr "Descartar Primitivas"
+
+msgid "Display To Lens"
+msgstr "Pantalla a Lente"
+
+msgid "Drag And Drop Selection Enabled"
+msgstr "Selección con Arrastrar y Soltar"
+
+msgid "Drag To Rearrange Enabled"
+msgstr "Arrastrar para Reordenar"
+
+msgid "Draw"
+msgstr "Dibujar"
+
+msgid "Dst Alpha Blend Factor"
+msgstr "Factor de Mezcla Alfa de Destino"
+
+msgid "Dst Color Blend Factor"
+msgstr "Factor de Mezcla de Color de Destino"
+
+msgid "Enable Alpha To Coverage"
+msgstr "Activar Alfa a Cobertura"
+
+msgid "Enable Alpha To One"
+msgstr "Activar Alfa a Uno"
+
+msgid "Enable Blend"
+msgstr "Activar Mezcla"
+
+msgid "Enable Compare"
+msgstr "Activar Comparación"
+
+msgid "Enable Depth Clamp"
+msgstr "Activar Límite de Profundidad"
+
+msgid "Enable Depth Range"
+msgstr "Activar Rango de Profundidad"
+
+msgid "Enable Depth Test"
+msgstr "Activar Prueba de Profundidad"
+
+msgid "Enable Depth Write"
+msgstr "Activar Escritura de Profundidad"
+
+msgid "Enable Logic Op"
+msgstr "Activar Operación Lógica"
+
+msgid "Enable Sample Shading"
+msgstr "Activar Sombreado por Muestra"
+
+msgid "Enable Stencil"
+msgstr "Activar Stencil"
+
+msgid "Expand To Text Length"
+msgstr "Expandir a la Longitud del Texto"
+
+msgid "Extend To Title"
+msgstr "Extender al Título"
+
+msgid "Fit To Longest Item"
+msgstr "Ajustar al Elemento Más Largo"
+
+msgid "Flow To Nodes"
+msgstr "Flujo hacia Nodos"
+
+msgid "Format Override"
+msgstr "Formato Forzado"
+
+msgid "Foveation With Subsampled Images"
+msgstr "Foveación con Imágenes Submuestreadas"
+
+msgid "Front Face"
+msgstr "Cara Frontal"
+
+msgid "Front Op Compare"
+msgstr "Comparación Op Frontal"
+
+msgid "Front Op Compare Mask"
+msgstr "Máscara de Comparación Op Frontal"
+
+msgid "Front Op Depth Fail"
+msgstr "Fallo de Profundidad Op Frontal"
+
+msgid "Front Op Fail"
+msgstr "Fallo Op Frontal"
+
+msgid "Front Op Pass"
+msgstr "Paso Op Frontal"
+
+msgid "Front Op Reference"
+msgstr "Referencia Op Frontal"
+
+msgid "Front Op Write Mask"
+msgstr "Máscara de Escritura Op Frontal"
+
+msgid "Godot To glTF Expression"
+msgstr "Expresión de Orbe a glTF"
+
+msgid "glTF To Godot Expression"
+msgstr "Expresión de glTF a Orbe"
+
+msgid "Grow Horizontal"
+msgstr "Crecer en Horizontal"
+
+msgid "Grow Vertical"
+msgstr "Crecer en Vertical"
+
+msgid "Hide On Checkable Item Selection"
+msgstr "Ocultar al Elegir Elemento Marcable"
+
+msgid "Hide On Item Selection"
+msgstr "Ocultar al Elegir Elemento"
+
+msgid "Hide On OK"
+msgstr "Ocultar al Aceptar"
+
+msgid "Hide On State Item Selection"
+msgstr "Ocultar al Elegir Elemento de Estado"
+
+msgid "Highlight In Editor"
+msgstr "Resaltar en el Editor"
+
+msgid "Hit Sbt Range"
+msgstr "Rango SBT de Impacto"
+
+msgid "Ignore Joypad On Unfocused Application"
+msgstr "Ignorar Mando con la Aplicación Sin Foco"
+
+msgid "Import As Skeleton Bones"
+msgstr "Importar como Huesos de Esqueleto"
+
+msgid "Index Buffer"
+msgstr "Búfer de Índices"
+
+msgid "Index Count"
+msgstr "Cantidad de Índices"
+
+msgid "Index Offset"
+msgstr "Desplazamiento de Índices"
+
+msgid "Influence Max"
+msgstr "Influencia Máxima"
+
+msgid "Influence Min"
+msgstr "Influencia Mínima"
+
+msgid "Influence Over Life"
+msgstr "Influencia durante la Vida"
+
+msgid "Initial Displacement"
+msgstr "Desplazamiento Inicial"
+
+msgid "Initial Displacement Max"
+msgstr "Desplazamiento Inicial Máximo"
+
+msgid "Initial Displacement Min"
+msgstr "Desplazamiento Inicial Mínimo"
+
+msgid "Initial Velocity Max"
+msgstr "Velocidad Inicial Máxima"
+
+msgid "Initial Velocity Min"
+msgstr "Velocidad Inicial Mínima"
+
+msgid "Input Attachments"
+msgstr "Adjuntos de Entrada"
+
+msgid "Interp To End"
+msgstr "Interpolar hasta el Final"
+
+msgid "Intersection Shader"
+msgstr "Shader de Intersección"
+
+msgid "Is Discardable"
+msgstr "Es Descartable"
+
+msgid "Is Resolve Buffer"
+msgstr "Es Búfer de Resolución"
+
+msgid "Item Count"
+msgstr "Cantidad de Elementos"
+
+msgid "Joint Count"
+msgstr "Cantidad de Articulaciones"
+
+msgid "Keep Editing On Text Submit"
+msgstr "Seguir Editando al Enviar el Texto"
+
+msgid "Labeled By Nodes"
+msgstr "Etiquetado por Nodos"
+
+msgid "Left To Right"
+msgstr "De Izquierda a Derecha"
+
+msgid "Line Width"
+msgstr "Ancho de Línea"
+
+msgid "Local To Scene"
+msgstr "Local a la Escena"
+
+msgid "Logic Op"
+msgstr "Operación Lógica"
+
+msgid "Low Processor Usage Mode Sleep Usec"
+msgstr "Reposo en Modo de Bajo Uso del Procesador (µs)"
+
+msgid "Make Local To Pose"
+msgstr "Hacer Local a la Pose"
+
+msgid "Max LOD"
+msgstr "LOD Máximo"
+
+msgid "Max Num Vertices Per Convex Hull"
+msgstr "Máx. de Vértices por Envolvente Convexa"
+
+msgid "Max Physics Steps Per Frame"
+msgstr "Máx. de Pasos de Física por Fotograma"
+
+msgid "Min LOD"
+msgstr "LOD Mínimo"
+
+msgid "Min Sample Shading"
+msgstr "Sombreado Mínimo por Muestra"
+
+msgid "Min Volume Per Convex Hull"
+msgstr "Volumen Mínimo por Envolvente Convexa"
+
+msgid "Mip Filter"
+msgstr "Filtro de Mip"
+
+msgid "Move On Right Click"
+msgstr "Mover con Clic Derecho"
+
+msgid "Movie Quit On Finish"
+msgstr "Salir al Terminar la Película"
+
+msgid "Next Clip"
+msgstr "Siguiente Clip"
+
+msgid "Offset Bottom"
+msgstr "Desplazamiento Inferior"
+
+msgid "Offset Left"
+msgstr "Desplazamiento Izquierdo"
+
+msgid "Offset Right"
+msgstr "Desplazamiento Derecho"
+
+msgid "Offset Top"
+msgstr "Desplazamiento Superior"
+
+msgid "Option Count"
+msgstr "Cantidad de Opciones"
+
+msgid "Output Port For Preview"
+msgstr "Puerto de Salida para la Vista Previa"
+
+msgid "Oversampling With Scale"
+msgstr "Sobremuestreo con Escala"
+
+msgid "Past End Of File"
+msgstr "Más Allá del Final del Archivo"
+
+msgid "Patch Control Points"
+msgstr "Puntos de Control del Parche"
+
+msgid "Physics Ticks Per Second"
+msgstr "Ticks de Física por Segundo"
+
+msgid "Point Count"
+msgstr "Cantidad de Puntos"
+
+msgid "Preserve Attachments"
+msgstr "Conservar Adjuntos"
+
+msgid "Print To stdout"
+msgstr "Imprimir en stdout"
+
+msgid "Pseudolocalization Accents Enabled"
+msgstr "Acentos de Pseudolocalización"
+
+msgid "Pseudolocalization Double Vowels Enabled"
+msgstr "Vocales Dobles de Pseudolocalización"
+
+msgid "Pseudolocalization Enabled"
+msgstr "Pseudolocalización Activada"
+
+msgid "Pseudolocalization Expansion Ratio"
+msgstr "Proporción de Expansión de Pseudolocalización"
+
+msgid "Pseudolocalization Fake BiDi Enabled"
+msgstr "BiDi Falso de Pseudolocalización"
+
+msgid "Pseudolocalization Override Enabled"
+msgstr "Anulación de Pseudolocalización"
+
+msgid "Pseudolocalization Prefix"
+msgstr "Prefijo de Pseudolocalización"
+
+msgid "Pseudolocalization Skip Placeholders Enabled"
+msgstr "Omitir Marcadores en Pseudolocalización"
+
+msgid "Pseudolocalization Suffix"
+msgstr "Sufijo de Pseudolocalización"
+
+msgid "Quit On Go Back"
+msgstr "Salir al Retroceder"
+
+msgid "Recovery As Collision"
+msgstr "Recuperación como Colisión"
+
+msgid "Repeat U"
+msgstr "Repetir U"
+
+msgid "Repeat V"
+msgstr "Repetir V"
+
+msgid "Repeat W"
+msgstr "Repetir W"
+
+msgid "Reset On Save"
+msgstr "Reiniciar al Guardar"
+
+msgid "Resolve Attachments"
+msgstr "Adjuntos de Resolución"
+
+msgid "Sample Count"
+msgstr "Cantidad de Muestras"
+
+msgid "Samples"
+msgstr "Muestras"
+
+msgid "Scale Max"
+msgstr "Escala Máxima"
+
+msgid "Scale Min"
+msgstr "Escala Mínima"
+
+msgid "Scale Over Velocity Curve"
+msgstr "Curva de Escala según Velocidad"
+
+msgid "Scale Over Velocity Max"
+msgstr "Escala según Velocidad Máxima"
+
+msgid "Scale Over Velocity Min"
+msgstr "Escala según Velocidad Mínima"
+
+msgid "Scroll Horizontal By Default"
+msgstr "Desplazamiento Horizontal por Defecto"
+
+msgid "Scroll To Selected"
+msgstr "Desplazar a la Selección"
+
+msgid "Select All On Focus"
+msgstr "Seleccionar Todo al Enfocar"
+
+msgid "Select With RMB"
+msgstr "Seleccionar con Botón Derecho"
+
+msgid "Selection Enabled"
+msgstr "Selección Activada"
+
+msgid "Setting Count"
+msgstr "Cantidad de Ajustes"
+
+msgid "Shadow To Opacity"
+msgstr "Sombra a Opacidad"
+
+msgid "Shortcut In Tooltip"
+msgstr "Atajo en la Descripción"
+
+msgid "Show On Focus"
+msgstr "Mostrar al Enfocar"
+
+msgid "Slide On Ceiling"
+msgstr "Deslizar en el Techo"
+
+msgid "Slide On Slope"
+msgstr "Deslizar en Pendiente"
+
+msgid "Snap 2D Transforms To Pixel"
+msgstr "Ajustar Transformaciones 2D al Píxel"
+
+msgid "Snap 2D Vertices To Pixel"
+msgstr "Ajustar Vértices 2D al Píxel"
+
+msgid "Snap Controls To Pixels"
+msgstr "Ajustar Controles a Píxeles"
+
+msgid "Src Alpha Blend Factor"
+msgstr "Factor de Mezcla Alfa de Origen"
+
+msgid "Src Color Blend Factor"
+msgstr "Factor de Mezcla de Color de Origen"
+
+msgid "Stacked Outline Count"
+msgstr "Cantidad de Contornos Apilados"
+
+msgid "Stacked Shadow Count"
+msgstr "Cantidad de Sombras Apiladas"
+
+msgid "Stop On Slope"
+msgstr "Detenerse en Pendiente"
+
+msgid "Stride"
+msgstr "Paso"
+
+msgid "Switch On Drag Hover"
+msgstr "Cambiar al Arrastrar Encima"
+
+msgid "Switch On Hover"
+msgstr "Cambiar al Pasar por Encima"
+
+msgid "Swizzle A"
+msgstr "Swizzle A"
+
+msgid "Swizzle B"
+msgstr "Swizzle B"
+
+msgid "Swizzle G"
+msgstr "Swizzle G"
+
+msgid "Swizzle R"
+msgstr "Swizzle R"
+
+msgid "Symbol Lookup On Click"
+msgstr "Buscar Símbolo al Hacer Clic"
+
+msgid "Symbol Tooltip On Hover"
+msgstr "Descripción del Símbolo al Pasar por Encima"
+
+msgid "Sync To Physics"
+msgstr "Sincronizar con la Física"
+
+msgid "Tab Count"
+msgstr "Cantidad de Pestañas"
+
+msgid "Temporal Reprojection Amount"
+msgstr "Cantidad de Reproyección Temporal"
+
+msgid "Temporal Reprojection Enabled"
+msgstr "Reproyección Temporal Activada"
+
+msgid "Thread Group Order"
+msgstr "Orden del Grupo de Hilos"
+
+msgid "Thread Messages"
+msgstr "Mensajes de Hilos"
+
+msgid "Ticks On Borders"
+msgstr "Marcas en los Bordes"
+
+msgid "Transient To Focused"
+msgstr "Transitorio al Enfocar"
+
+msgid "Transmittance Boost"
+msgstr "Refuerzo de Transmitancia"
+
+msgid "Transmittance Color"
+msgstr "Color de Transmitancia"
+
+msgid "Transmittance Depth"
+msgstr "Profundidad de Transmitancia"
+
+msgid "Transmittance Enabled"
+msgstr "Transmitancia Activada"
+
+msgid "Transmittance Texture"
+msgstr "Textura de Transmitancia"
+
+msgid "Uniform Type"
+msgstr "Tipo de Uniform"
+
+msgid "Unnormalized Uvw"
+msgstr "UVW sin Normalizar"
+
+msgid "Update On Text Changed"
+msgstr "Actualizar al Cambiar el Texto"
+
+msgid "Usage Bits"
+msgstr "Bits de Uso"
+
+msgid "Usage Flags"
+msgstr "Banderas de Uso"
+
+msgid "Use Anisotropy"
+msgstr "Usar Anisotropía"
+
+msgid "Use As Albedo"
+msgstr "Usar como Albedo"
+
+msgid "Use As Steering"
+msgstr "Usar para Dirección"
+
+msgid "Use As Traction"
+msgstr "Usar para Tracción"
+
+msgid "Use Hidden Tabs For Min Size"
+msgstr "Usar Pestañas Ocultas para el Tamaño Mínimo"
+
+msgid "Use Rotation 3D"
+msgstr "Usar Rotación 3D"
+
+msgid "Use Rotation Velocity 3D"
+msgstr "Usar Velocidad de Rotación 3D"
+
+msgid "Use Texture For Bounces"
+msgstr "Usar Textura para Rebotes"
+
+msgid "Vertex Buffer"
+msgstr "Búfer de Vértices"
+
+msgid "Vertex Count"
+msgstr "Cantidad de Vértices"
+
+msgid "Vertex Format"
+msgstr "Formato de Vértices"
+
+msgid "Vertex Offset"
+msgstr "Desplazamiento de Vértices"
+
+msgid "Vertex Stride"
+msgstr "Paso de Vértices"
+
+msgid "Vertices Per Polygon"
+msgstr "Vértices por Polígono"
+
+msgid "Volume"
+msgstr "Volumen"
+
+msgid "Write A"
+msgstr "Escribir A"
+
+msgid "Write B"
+msgstr "Escribir B"
+
+msgid "Write G"
+msgstr "Escribir G"
+
+msgid "Write R"
+msgstr "Escribir R"
+
+msgid "Z As Relative"
+msgstr "Z como Relativa"

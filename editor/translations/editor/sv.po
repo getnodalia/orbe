@@ -15697,19 +15697,19 @@ msgstr ""
 "(.tet)."
 
 msgid ""
-"Importing theme failed. File name cannot be 'Default', 'Custom', or 'Godot 2'."
+"Importing theme failed. File name cannot be 'Default', 'Custom', or 'Classic 2'."
 msgstr ""
 "Import av temat misslyckades. Filnamnet får inte vara 'Default', 'Custom' "
-"eller 'Godot 2'."
+"eller 'Classic 2'."
 
 msgid "Importing theme failed. Failed to copy theme file."
 msgstr "Import av temat misslyckades. Kunde inte kopiera tema-filen."
 
 msgid ""
-"Saving theme failed. File name cannot be 'Default', 'Custom', or 'Godot 2'."
+"Saving theme failed. File name cannot be 'Default', 'Custom', or 'Classic 2'."
 msgstr ""
 "Gick ej att spara temat. Filnamnet får inte vara 'Default', 'Custom' eller "
-"'Godot 2'."
+"'Classic 2'."
 
 msgid "Saving theme failed."
 msgstr "Kunde ej spara tema."

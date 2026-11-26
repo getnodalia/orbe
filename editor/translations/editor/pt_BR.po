@@ -15944,19 +15944,19 @@ msgstr ""
 "(.tet)."
 
 msgid ""
-"Importing theme failed. File name cannot be 'Default', 'Custom', or 'Godot 2'."
+"Importing theme failed. File name cannot be 'Default', 'Custom', or 'Classic 2'."
 msgstr ""
 "Falha ao importar tema. Nome do arquivo não pode ser 'Default', 'Custom', ou "
-"'Godot 2'."
+"'Classic 2'."
 
 msgid "Importing theme failed. Failed to copy theme file."
 msgstr "Falha ao importar tema. Erro ao copiar arquivo de tema."
 
 msgid ""
-"Saving theme failed. File name cannot be 'Default', 'Custom', or 'Godot 2'."
+"Saving theme failed. File name cannot be 'Default', 'Custom', or 'Classic 2'."
 msgstr ""
 "Erro ao salvar tema. Nome do arquivo não pode ser 'Default', 'Custom', ou "
-"'Godot 2'."
+"'Classic 2'."
 
 msgid "Saving theme failed."
 msgstr "Erro ao salvar tema."

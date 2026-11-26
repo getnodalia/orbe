@@ -85,3 +85,25 @@ to = "StartupWMClass=Orbe"
 [[replace]]
 from = "Godot Engine"
 to = "Orbe"
+
+# The editor's colour presets named after the engine's old versions: Orbe calls them Classic.
+# Only the quoted and listed spellings, so the project converter's "Godot 3 project" stays.
+[[replace]]
+from = '"Godot 2"'
+to = '"Classic 2"'
+
+[[replace]]
+from = '"Godot 3"'
+to = '"Classic 3"'
+
+[[replace]]
+from = "'Godot 2'"
+to = "'Classic 2'"
+
+[[replace]]
+from = ",Godot 2,Godot 3,"
+to = ",Classic 2,Classic 3,"
+
+[[replace]]
+from = ",Godot 2,Custom"
+to = ",Classic 2,Custom"

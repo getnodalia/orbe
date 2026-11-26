@@ -15782,19 +15782,19 @@ msgstr ""
 "sửa văn bản (.tet)."
 
 msgid ""
-"Importing theme failed. File name cannot be 'Default', 'Custom', or 'Godot 2'."
+"Importing theme failed. File name cannot be 'Default', 'Custom', or 'Classic 2'."
 msgstr ""
 "Nhập giao diện thất bại. Tên tệp không được là 'Default', 'Custom', hoặc "
-"'Godot 2'."
+"'Classic 2'."
 
 msgid "Importing theme failed. Failed to copy theme file."
 msgstr "Nhập giao diện thất bại. Không thể sao chép tệp giao diện."
 
 msgid ""
-"Saving theme failed. File name cannot be 'Default', 'Custom', or 'Godot 2'."
+"Saving theme failed. File name cannot be 'Default', 'Custom', or 'Classic 2'."
 msgstr ""
 "Lưu giao diện thất bại. Tên tệp không được là 'Default', 'Custom', hoặc "
-"'Godot 2'."
+"'Classic 2'."
 
 msgid "Saving theme failed."
 msgstr "Lưu giao diện (Theme) thất bại."

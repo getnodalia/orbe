@@ -14783,19 +14783,19 @@ msgstr ""
 "comhad."
 
 msgid ""
-"Importing theme failed. File name cannot be 'Default', 'Custom', or 'Godot 2'."
+"Importing theme failed. File name cannot be 'Default', 'Custom', or 'Classic 2'."
 msgstr ""
 "Theip ar an téama a iompórtáil. Ní féidir ainm an chomhaid a bheith "
-"'Réamhshocraithe', 'Saincheaptha', ná 'Godot 2'."
+"'Réamhshocraithe', 'Saincheaptha', ná 'Classic 2'."
 
 msgid "Importing theme failed. Failed to copy theme file."
 msgstr "Theip ar an téama a iompórtáil. Theip ar chomhad an téama a chóipeáil."
 
 msgid ""
-"Saving theme failed. File name cannot be 'Default', 'Custom', or 'Godot 2'."
+"Saving theme failed. File name cannot be 'Default', 'Custom', or 'Classic 2'."
 msgstr ""
 "Theip ar an téama a shábháil. Ní féidir ainm an chomhaid a úsáid mar "
-"'Réamhshocrú', 'Saincheaptha', ná 'Godot 2'."
+"'Réamhshocrú', 'Saincheaptha', ná 'Classic 2'."
 
 msgid "Saving theme failed."
 msgstr "Theip ar an téama a shábháil."

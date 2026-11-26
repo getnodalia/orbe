@@ -16025,19 +16025,19 @@ msgstr ""
 "редактора (.tet)."
 
 msgid ""
-"Importing theme failed. File name cannot be 'Default', 'Custom', or 'Godot 2'."
+"Importing theme failed. File name cannot be 'Default', 'Custom', or 'Classic 2'."
 msgstr ""
 "Не удалось импортировать тему. Имя файла не может быть 'Default', 'Custom' "
-"или 'Godot 2'."
+"или 'Classic 2'."
 
 msgid "Importing theme failed. Failed to copy theme file."
 msgstr "Импорт темы не удался. Не удалось скопировать файл темы."
 
 msgid ""
-"Saving theme failed. File name cannot be 'Default', 'Custom', or 'Godot 2'."
+"Saving theme failed. File name cannot be 'Default', 'Custom', or 'Classic 2'."
 msgstr ""
 "Не удалось сохранить тему. Имя файла не может быть 'Default', 'Custom', или "
-"'Godot 2'."
+"'Classic 2'."
 
 msgid "Saving theme failed."
 msgstr "Сохранение темы не удалось."

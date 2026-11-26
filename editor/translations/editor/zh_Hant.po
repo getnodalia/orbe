@@ -14002,14 +14002,14 @@ msgid "Importing theme failed. File is not a text editor theme file (.tet)."
 msgstr "匯入主題失敗。檔案並非文字編輯器主題檔（.tet）。"
 
 msgid ""
-"Importing theme failed. File name cannot be 'Default', 'Custom', or 'Godot 2'."
+"Importing theme failed. File name cannot be 'Default', 'Custom', or 'Classic 2'."
 msgstr "匯入主題失敗。檔名不得為「Default」、「Custom」或「Godot 2」。"
 
 msgid "Importing theme failed. Failed to copy theme file."
 msgstr "匯入主題失敗。無法複製主題檔。"
 
 msgid ""
-"Saving theme failed. File name cannot be 'Default', 'Custom', or 'Godot 2'."
+"Saving theme failed. File name cannot be 'Default', 'Custom', or 'Classic 2'."
 msgstr "儲存主題失敗。檔名不得為「Default」、「Custom」或「Godot 2」。"
 
 msgid "Saving theme failed."

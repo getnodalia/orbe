@@ -856,7 +856,7 @@ void _import_text_editor_theme(const String &p_file) {
 	}
 	const String theme_name = p_file.get_file().get_basename();
 	if (EditorSettings::is_default_text_editor_theme(theme_name.to_lower())) {
-		EditorToaster::get_singleton()->popup_str(TTR("Importing theme failed. File name cannot be 'Default', 'Custom', or 'Godot 2'."), EditorToaster::SEVERITY_ERROR);
+		EditorToaster::get_singleton()->popup_str(TTR("Importing theme failed. File name cannot be 'Default', 'Custom', or 'Classic 2'."), EditorToaster::SEVERITY_ERROR);
 		return;
 	}
 
@@ -886,7 +886,7 @@ void _save_text_editor_theme_as(const String &p_file) {
 
 	const String theme_name = file.get_file().get_basename();
 	if (EditorSettings::is_default_text_editor_theme(theme_name.to_lower())) {
-		EditorToaster::get_singleton()->popup_str(TTR("Saving theme failed. File name cannot be 'Default', 'Custom', or 'Godot 2'."), EditorToaster::SEVERITY_ERROR);
+		EditorToaster::get_singleton()->popup_str(TTR("Saving theme failed. File name cannot be 'Default', 'Custom', or 'Classic 2'."), EditorToaster::SEVERITY_ERROR);
 		return;
 	}
 
