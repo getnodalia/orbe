@@ -92,6 +92,7 @@ class EditorSceneTabs;
 class EditorSelectionHistory;
 class EditorSettingsDialog;
 class EditorTitleBar;
+class FreeDesktopGlobalMenu;
 class ExportTemplateManager;
 class EditorQuickOpenDialog;
 class FBXImporterManager;
@@ -717,6 +718,23 @@ private:
 	};
 	MenuType menu_type = MENU_TYPE_NONE;
 	Vector<PopupMenu *> main_menu_items;
+
+#if defined(LINUXBSD_ENABLED) && defined(DBUS_ENABLED)
+	// The menus exported over D-Bus to the desktop's top bar (Nodalix), when it can show them.
+	struct GlobalMenuTarget {
+		PopupMenu *popup = nullptr;
+		int index = 0;
+	};
+	FreeDesktopGlobalMenu *global_menu = nullptr;
+	Vector<GlobalMenuTarget> global_menu_targets; // By row id - 1.
+	bool global_menu_registered = false;
+	bool global_menu_refresh_queued = false;
+	void _start_global_menu();
+	void _queue_global_menu_refresh();
+	void _refresh_global_menu();
+	void _global_menu_activate(int p_id);
+	void _global_menu_registered(bool p_registered);
+#endif
 
 	void _build_file_menu();
 	void _build_project_menu();

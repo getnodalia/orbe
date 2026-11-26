@@ -26,9 +26,10 @@ What is done and what is left to make Orbe a Nodalia app like the others.
 4. **NDL window.** Done: the hamburger menu (Editor Settings, Keyboard Shortcuts, About) and, on
    Linux only, the frameless window with NDL's round minimize, maximize and close controls and
    resizing edges (`editor/gui/editor_window_controls.*`; the setting "Use System Window Controls"
-   brings the desktop's own back; macOS and Windows always keep native controls). Still to do: the
-   menu exported over D-Bus to the shell's global menu on Linux, NDL islands for the docks, NDL
-   icons for the editor chrome. The Help menu links point to Orbe's repository and page; the
+   brings the desktop's own back; macOS and Windows always keep native controls). The editor's menus are exported over D-Bus
+   (`com.canonical.dbusmenu`, registered with the AppMenu registrar of Nodalix's shell, on Wayland;
+   `platform/linuxbsd/freedesktop_global_menu.*`) and the in-window menu bar hides when the top bar
+   shows them. Still to do: NDL islands for the docks and NDL icons for the editor chrome. The Help menu links point to Orbe's repository and page; the
    engine documentation and the asset library still point to upstream's, since Orbe opens the same
    projects.
 5. **About.** The credits keep upstream's authors and the third-party licences, as the licence

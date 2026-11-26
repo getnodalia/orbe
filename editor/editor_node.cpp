@@ -87,6 +87,10 @@
 #include "editor/gui/editor_quick_open_dialog.h"
 #include "editor/gui/editor_title_bar.h"
 #include "editor/gui/editor_window_controls.h"
+
+#if defined(LINUXBSD_ENABLED) && defined(DBUS_ENABLED)
+#include "platform/linuxbsd/freedesktop_global_menu.h"
+#endif
 #include "editor/gui/editor_toaster.h"
 #include "editor/gui/progress_dialog.h"
 #include "editor/gui/window_wrapper.h"
@@ -1051,6 +1055,9 @@ void EditorNode::_notification(int p_what) {
 		} break;
 
 		case NOTIFICATION_APPLICATION_FOCUS_IN: {
+#if defined(LINUXBSD_ENABLED) && defined(DBUS_ENABLED)
+			_queue_global_menu_refresh();
+#endif
 			// Restore the original FPS cap after focusing back on the editor.
 			OS::get_singleton()->set_low_processor_usage_mode_sleep_usec(int(EDITOR_GET("interface/editor/timers/low_processor_mode_sleep_usec")));
 
@@ -8299,7 +8306,139 @@ void EditorNode::_update_main_menu_type() {
 	if (project_title) {
 		project_title->set_visible(can_expand && menu_type == MENU_TYPE_GLOBAL);
 	}
+
+#if defined(LINUXBSD_ENABLED) && defined(DBUS_ENABLED)
+	_start_global_menu();
+	_queue_global_menu_refresh();
+	if (main_menu_bar) {
+		main_menu_bar->set_visible(!global_menu_registered);
+	}
+#endif
 }
+
+#if defined(LINUXBSD_ENABLED) && defined(DBUS_ENABLED)
+void EditorNode::_start_global_menu() {
+	if (global_menu || menu_type == MENU_TYPE_GLOBAL || !FreeDesktopGlobalMenu::is_supported()) {
+		return;
+	}
+	global_menu = memnew(FreeDesktopGlobalMenu);
+	global_menu->start(callable_mp(this, &EditorNode::_global_menu_activate), callable_mp(this, &EditorNode::_queue_global_menu_refresh), callable_mp(this, &EditorNode::_global_menu_registered));
+}
+
+void EditorNode::_global_menu_registered(bool p_registered) {
+	// The top bar shows the menus, so the window does not repeat them.
+	global_menu_registered = p_registered;
+	if (main_menu_bar && menu_type == MENU_TYPE_FULL) {
+		main_menu_bar->set_visible(!p_registered);
+	}
+}
+
+void EditorNode::_queue_global_menu_refresh() {
+	if (!global_menu || global_menu_refresh_queued) {
+		return;
+	}
+	global_menu_refresh_queued = true;
+	callable_mp(this, &EditorNode::_refresh_global_menu).call_deferred();
+}
+
+void EditorNode::_global_menu_activate(int p_id) {
+	if (p_id < 1 || p_id > global_menu_targets.size()) {
+		return;
+	}
+	const GlobalMenuTarget &target = global_menu_targets[p_id - 1];
+	if (target.popup && target.index >= 0 && target.index < target.popup->get_item_count() && !target.popup->is_item_disabled(target.index) && !target.popup->is_item_separator(target.index)) {
+		target.popup->activate_item(target.index);
+	}
+}
+
+void EditorNode::_refresh_global_menu() {
+	global_menu_refresh_queued = false;
+	if (!global_menu) {
+		return;
+	}
+
+	Vector<FreeDesktopGlobalMenu::Row> rows;
+	Vector<GlobalMenuTarget> targets;
+	Vector<int> root;
+
+	// Rows are numbered from 1 in the order they are added, so `rows[id - 1]` is the row `id`.
+	struct Walker {
+		Vector<FreeDesktopGlobalMenu::Row> &rows;
+		Vector<GlobalMenuTarget> &targets;
+
+		int add(PopupMenu *p_popup, int p_index, const String &p_label, bool p_submenu) {
+			FreeDesktopGlobalMenu::Row row;
+			row.id = rows.size() + 1;
+			row.label = p_label;
+			row.submenu = p_submenu;
+			rows.push_back(row);
+			GlobalMenuTarget t;
+			t.popup = p_popup;
+			t.index = p_index;
+			targets.push_back(t);
+			return row.id;
+		}
+
+		void fill(PopupMenu *p_popup, int p_parent, int p_depth) {
+			if (p_depth > 8) {
+				return;
+			}
+			for (int i = 0; i < p_popup->get_item_count(); i++) {
+				PopupMenu *sub = p_popup->get_item_submenu_node(i);
+				const int id = add(p_popup, i, p_popup->atr(p_popup->get_item_text(i)), sub != nullptr);
+				FreeDesktopGlobalMenu::Row &row = rows.write[id - 1];
+				row.separator = p_popup->is_item_separator(i);
+				row.enabled = !p_popup->is_item_disabled(i);
+				if (p_popup->is_item_checkable(i)) {
+					row.toggle = p_popup->is_item_radio_checkable(i) ? 2 : 1;
+					row.checked = p_popup->is_item_checked(i);
+				}
+				Ref<Shortcut> sc = p_popup->get_item_shortcut(i);
+				if (sc.is_valid() && sc->get_events().size() > 0) {
+					Ref<InputEventKey> key = sc->get_events()[0];
+					if (key.is_valid()) {
+						const Key code = key->get_keycode() != Key::NONE ? key->get_keycode() : key->get_physical_keycode();
+						if (code != Key::NONE) {
+							row.shortcut_key = keycode_get_string(code);
+							const BitField<KeyModifierMask> mods = key->get_modifiers_mask();
+							if (mods.has_flag(KeyModifierMask::CTRL)) {
+								row.shortcut_modifiers.push_back("Control");
+							}
+							if (mods.has_flag(KeyModifierMask::SHIFT)) {
+								row.shortcut_modifiers.push_back("Shift");
+							}
+							if (mods.has_flag(KeyModifierMask::ALT)) {
+								row.shortcut_modifiers.push_back("Alt");
+							}
+							if (mods.has_flag(KeyModifierMask::META)) {
+								row.shortcut_modifiers.push_back("Super");
+							}
+						}
+					}
+				}
+				if (p_parent > 0) {
+					rows.write[p_parent - 1].children.push_back(id);
+				}
+				if (sub) {
+					fill(sub, id, p_depth + 1);
+				}
+			}
+		}
+	} walker{ rows, targets };
+
+	for (PopupMenu *menu : main_menu_items) {
+		if (menu == apple_menu) {
+			continue;
+		}
+		const int id = walker.add(nullptr, -1, menu->atr(menu->get_name()), true);
+		root.push_back(id);
+		walker.fill(menu, id, 0);
+	}
+
+	global_menu_targets = targets;
+	global_menu->set_rows(rows, root);
+}
+#endif
 
 void EditorNode::_bottom_panel_resized() {
 	bottom_panel->set_bottom_panel_offset(center_split->get_split_offset());
@@ -9664,6 +9803,12 @@ EditorNode::EditorNode() {
 }
 
 EditorNode::~EditorNode() {
+#if defined(LINUXBSD_ENABLED) && defined(DBUS_ENABLED)
+	if (global_menu) {
+		memdelete(global_menu);
+		global_menu = nullptr;
+	}
+#endif
 	EditorInspector::cleanup_plugins();
 	EditorTranslationParser::get_singleton()->clean_parsers();
 	ResourceImporterScene::clean_up_importer_plugins();
