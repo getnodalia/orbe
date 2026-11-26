@@ -1,7 +1,7 @@
 # Indonesian translation of the Orbe properties.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # Abdul Aziz Muslim Alqudsy <abdul.aziz.muslim.alqudsy@gmail.com>, 2016.
 # Andevid Dynmyn <doyan4forum@gmail.com>, 2016.
 # Andinawan Asa <asaandinawan@gmail.com>, 2016.
@@ -4398,11 +4398,11 @@ msgstr "Cahaya"
 msgid "Visible"
 msgstr "Terlihat"
 
-msgid "glTF to Godot Expression"
-msgstr "Ekspresi glTF ke Godot"
+msgid "glTF to Orbe Expression"
+msgstr "Ekspresi glTF ke Orbe"
 
-msgid "Godot to glTF Expression"
-msgstr "Ekspresi Godot ke glTF"
+msgid "Orbe to glTF Expression"
+msgstr "Ekspresi Orbe ke glTF"
 
 msgid "Node Paths"
 msgstr "Path Node"
@@ -4422,8 +4422,8 @@ msgstr "Sendi"
 msgid "Roots"
 msgstr "Root"
 
-msgid "Godot Bone Node"
-msgstr "Node Tulang Godot"
+msgid "Orbe Bone Node"
+msgstr "Node Tulang Orbe"
 
 msgid "Skin Root"
 msgstr "Root Skin"
@@ -4434,8 +4434,8 @@ msgstr "Sendi Asli"
 msgid "Non Joints"
 msgstr "Non Sendi"
 
-msgid "Godot Skin"
-msgstr "Skin Godot"
+msgid "Orbe Skin"
+msgstr "Skin Orbe"
 
 msgid "Src Image"
 msgstr "Gambar Sumber"
@@ -5274,8 +5274,8 @@ msgstr "Host Debug Jarak Jauh Wi-Fi"
 msgid "Splash Screen"
 msgstr "Layar Splash"
 
-msgid "Disable Godot Boot Splash"
-msgstr "Nonaktifkan Splash Boot Godot"
+msgid "Disable Orbe Boot Splash"
+msgstr "Nonaktifkan Splash Boot Orbe"
 
 msgid "Background Color"
 msgstr "Warna Latar belakang"
@@ -5811,8 +5811,8 @@ msgstr "Ikon 512 X 512"
 msgid "Emscripten Pool Size"
 msgstr "Ukuran Pool Emscripten"
 
-msgid "Godot Pool Size"
-msgstr "Ukuran Pool Godot"
+msgid "Orbe Pool Size"
+msgstr "Ukuran Pool Orbe"
 
 msgid "Windows"
 msgstr "Windows"

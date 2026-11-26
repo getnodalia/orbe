@@ -249,11 +249,11 @@ public:
 	 *	Do NOT set it to false for user-facing public API because users had trouble understanding
 	 *  this problem when manually creating draw lists.
 	 *
-	 *  Godot internally can set p_skip_check = true when it believes it will only update
+	 *  Orbe internally can set p_skip_check = true when it believes it will only update
 	 *  the buffer once and it needs to be done while a draw/compute list is being created.
 	 *
 	 *  Important: The Vulkan & Metal APIs do not allow issuing copies while inside a RenderPass.
-	 *  We can do it because Godot's render graph will reorder them.
+	 *  We can do it because Orbe's render graph will reorder them.
 	 *
 	 * @param p_buffer		GPU buffer to update.
 	 * @param p_offset		Offset in bytes (relative to p_buffer).

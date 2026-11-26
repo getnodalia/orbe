@@ -525,7 +525,7 @@ Transform3D OpenXRSpatialComponentMesh3DList::get_transform(int64_t p_index) con
 Ref<Mesh> OpenXRSpatialComponentMesh3DList::get_mesh(int64_t p_index) const {
 	ERR_FAIL_INDEX_V(p_index, mesh3d_data.size(), nullptr);
 
-	// TODO implement, need to convert mesh data to Godot mesh resource
+	// TODO implement, need to convert mesh data to Orbe mesh resource
 
 	return nullptr;
 }

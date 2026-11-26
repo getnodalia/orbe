@@ -1,7 +1,7 @@
 # Georgian translation of the Orbe properties.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # Giorgi Beriashvili <giorgi.beriashvili@outlook.com>, 2018.
 # George Dzavashvili <dzavashviligeorge@gmail.com>, 2018.
 # დემეტრე შონია <blender.animation.maker@gmail.com>, 2019.
@@ -2649,8 +2649,8 @@ msgstr "ხილული"
 msgid "Joints"
 msgstr "შეერთებები"
 
-msgid "Godot Bone Node"
-msgstr "Godot ძვლის კვანძი"
+msgid "Orbe Bone Node"
+msgstr "Orbe ძვლის კვანძი"
 
 msgid "Mag Filter"
 msgstr "მაქს ფილტრი"

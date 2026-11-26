@@ -1,7 +1,7 @@
 # Czech translation of the Orbe properties.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # Fadex <vitekpaulik@gmail.com>, 2017.
 # Jan 'spl!te' Kondelík <j.kondelik@centrum.cz>, 2016, 2018.
 # Jiri Hysek <contact@jirihysek.com>, 2017.
@@ -3766,11 +3766,11 @@ msgstr "Světlo"
 msgid "Visible"
 msgstr "Viditelný"
 
-msgid "glTF to Godot Expression"
+msgid "glTF to Orbe Expression"
 msgstr "glTF na výraz Godotu"
 
-msgid "Godot to glTF Expression"
-msgstr "Godot na výraz glTF"
+msgid "Orbe to glTF Expression"
+msgstr "Orbe na výraz glTF"
 
 msgid "Node Paths"
 msgstr "Cesty k uzlům"
@@ -3790,7 +3790,7 @@ msgstr "Klouby"
 msgid "Roots"
 msgstr "Kořeny"
 
-msgid "Godot Bone Node"
+msgid "Orbe Bone Node"
 msgstr "Uzel kosti Godotu"
 
 msgid "Skin Root"
@@ -3802,7 +3802,7 @@ msgstr "Původní klouby"
 msgid "Non Joints"
 msgstr "Ne klouby"
 
-msgid "Godot Skin"
+msgid "Orbe Skin"
 msgstr "Slupka Godotu"
 
 msgid "Src Image"

@@ -997,7 +997,7 @@ PackedVector2Array OpenXRSpatialEntityExtension::get_vector2_buffer(RID p_spatia
 	}
 
 #ifdef REAL_T_IS_DOUBLE
-	// OpenXR XrVector2f is using floats, Godot Vector2 is using double, so we need to do a copy.
+	// OpenXR XrVector2f is using floats, Orbe Vector2 is using double, so we need to do a copy.
 	LocalVector<XrVector2f> buffer;
 	buffer.resize(count);
 
@@ -1047,7 +1047,7 @@ PackedVector3Array OpenXRSpatialEntityExtension::get_vector3_buffer(RID p_spatia
 	}
 
 #ifdef REAL_T_IS_DOUBLE
-	// OpenXR XrVector3f is using floats, Godot Vector3 is using double, so we need to do a copy.
+	// OpenXR XrVector3f is using floats, Orbe Vector3 is using double, so we need to do a copy.
 	LocalVector<XrVector3f> buffer;
 	buffer.resize(count);
 

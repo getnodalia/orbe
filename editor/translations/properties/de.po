@@ -1,7 +1,7 @@
 # German translation of the Orbe properties.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # Alexander Mahr <alex.mahr@gmail.com>, 2016, 2019.
 # Andreas Esau <andreasesau@gmail.com>, 2016.
 # Andreas Haas <liu.gam3@gmail.com>, 2016.
@@ -3976,8 +3976,8 @@ msgstr "Gelenke"
 msgid "Roots"
 msgstr "Wurzeln"
 
-msgid "Godot Bone Node"
-msgstr "Godot Knochen-Node"
+msgid "Orbe Bone Node"
+msgstr "Orbe Knochen-Node"
 
 msgid "Skin Root"
 msgstr "Skin-Wurzel"
@@ -3988,8 +3988,8 @@ msgstr "Gelenkoriginal"
 msgid "Non Joints"
 msgstr "Nicht-Gelenke"
 
-msgid "Godot Skin"
-msgstr "Godot-Skin"
+msgid "Orbe Skin"
+msgstr "Orbe-Skin"
 
 msgid "Src Image"
 msgstr "Quellbild"

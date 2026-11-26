@@ -1,7 +1,7 @@
 # Ukrainian translation of the Orbe properties.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # Aleksandr <XpycT.TOP@gmail.com>, 2017.
 # Yuri Chornoivan <yurchor@ukr.net>, 2018, 2019, 2020, 2021, 2022.
 # Андрій Бандура <andriykopanytsia@gmail.com>, 2018.
@@ -4380,11 +4380,11 @@ msgstr "Світло"
 msgid "Visible"
 msgstr "Видимий"
 
-msgid "glTF to Godot Expression"
-msgstr "glTF до виразу Godot"
+msgid "glTF to Orbe Expression"
+msgstr "glTF до виразу Orbe"
 
-msgid "Godot to glTF Expression"
-msgstr "Вираз Godot до glTF"
+msgid "Orbe to glTF Expression"
+msgstr "Вираз Orbe до glTF"
 
 msgid "Node Paths"
 msgstr "Шляхи вузлів"
@@ -4404,7 +4404,7 @@ msgstr "Суглоби"
 msgid "Roots"
 msgstr "Корені"
 
-msgid "Godot Bone Node"
+msgid "Orbe Bone Node"
 msgstr "Отримати вузол сцени"
 
 msgid "Skin Root"
@@ -4416,8 +4416,8 @@ msgstr "Початок з'єднання"
 msgid "Non Joints"
 msgstr "Без з'єднань"
 
-msgid "Godot Skin"
-msgstr "Скін Godot"
+msgid "Orbe Skin"
+msgstr "Скін Orbe"
 
 msgid "Src Image"
 msgstr "Початкове зображення"
@@ -5256,8 +5256,8 @@ msgstr "Хост віддаленого налагодження Wi-Fi"
 msgid "Splash Screen"
 msgstr "Заставка"
 
-msgid "Disable Godot Boot Splash"
-msgstr "Вимкнути заставку завантаження Godot"
+msgid "Disable Orbe Boot Splash"
+msgstr "Вимкнути заставку завантаження Orbe"
 
 msgid "Background Color"
 msgstr "Колір тла"
@@ -5793,8 +5793,8 @@ msgstr "Піктограма 512⨯12"
 msgid "Emscripten Pool Size"
 msgstr "Розмір пулу Емскрипти"
 
-msgid "Godot Pool Size"
-msgstr "Розмір басейну Godot"
+msgid "Orbe Pool Size"
+msgstr "Розмір басейну Orbe"
 
 msgid "Windows"
 msgstr "Windows"

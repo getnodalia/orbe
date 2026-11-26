@@ -1,7 +1,7 @@
 # Bengali translation of the Orbe editor interface.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # Abu Md. Maruf Sarker <maruf.webdev@gmail.com>, 2016-2017.
 # Abdullah Zubair <abdullahzubair109@gmail.com>, 2017.
 # Tahmid Karim <tahmidk15@gmail.com>, 2016.
@@ -953,7 +953,7 @@ msgid ""
 "The file you selected is an imported scene from a 3D model such as glTF or "
 "FBX.\n"
 "\n"
-"In Godot, 3D models can be imported as either scenes or animation libraries, "
+"In Orbe, 3D models can be imported as either scenes or animation libraries, "
 "which is why they show up here.\n"
 "\n"
 "If you want to use animations from this 3D model, open the Advanced Import "
@@ -964,7 +964,7 @@ msgstr ""
 "আপনার নির্বাচিত ফাইলটি glTF বা FBX-এর মতো কোনো 3D মডেল থেকে ইম্পোর্ট করা একটি "
 "সিন।\n"
 "\n"
-"Godot-এ 3D মডেলকে সিন বা অ্যানিমেশন লাইব্রেরি হিসেবে ইম্পোর্ট করা যায়, তাই এগুলোকে "
+"Orbe-এ 3D মডেলকে সিন বা অ্যানিমেশন লাইব্রেরি হিসেবে ইম্পোর্ট করা যায়, তাই এগুলোকে "
 "এখানে দেখানো হচ্ছে।\n"
 "\n"
 "আপনি যদি এই 3D মডেলের অ্যানিমেশনগুলো ব্যবহার করতে চান, তবে 'অ্যাডভান্স ইমপোর্ট "
@@ -3224,8 +3224,8 @@ msgstr "সাহায্য অনুসন্ধান করুন…"
 msgid "Online Documentation"
 msgstr "অনলাইন ডকুমেন্টেশন"
 
-msgid "About Godot..."
-msgstr "Godot সম্পর্কে…"
+msgid "About Orbe..."
+msgstr "Orbe সম্পর্কে…"
 
 msgid "Project"
 msgstr "প্রজেক্ট"
@@ -3599,8 +3599,8 @@ msgstr "ফোল্ডার নামটি গ্রহণযোগ্য।"
 msgid "Godot Engine contributors"
 msgstr "Orbe কন্ট্রিবিউটরস"
 
-msgid "Thanks from the Godot community!"
-msgstr "Godot কমিউনিটি হতে আপনাকে ধন্যবাদ!"
+msgid "Thanks from the Orbe community!"
+msgstr "Orbe কমিউনিটি হতে আপনাকে ধন্যবাদ!"
 
 msgid "Authors"
 msgstr "লেখক"
@@ -5435,8 +5435,8 @@ msgstr "থিম ইম্পোর্ট করুন"
 msgid "Save Theme As..."
 msgstr "থিম এইরূপে সংরক্ষণ করুন..."
 
-msgid "Open '%s' in Godot online documentation."
-msgstr "Godot অনলাইন ডকুমেন্টেশনে '%s' খুলুন।"
+msgid "Open '%s' in Orbe online documentation."
+msgstr "Orbe অনলাইন ডকুমেন্টেশনে '%s' খুলুন।"
 
 msgid "%s Class Reference"
 msgstr "%s ক্লাস রেফারেন্স"

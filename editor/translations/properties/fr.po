@@ -1,7 +1,7 @@
 # French translation of the Orbe properties.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # Antoine Carrier <ac.g392@gmail.com>, 2017-2018.
 # ARocherVj <a.rocher.vj@gmail.com>, 2017.
 # Arthur Templé <tuturtemple@gmail.com>, 2018.
@@ -4502,11 +4502,11 @@ msgstr "Lumière"
 msgid "Visible"
 msgstr "Visible"
 
-msgid "glTF to Godot Expression"
-msgstr "Expression glTF vers Godot"
+msgid "glTF to Orbe Expression"
+msgstr "Expression glTF vers Orbe"
 
-msgid "Godot to glTF Expression"
-msgstr "Expression Godot vers glTF"
+msgid "Orbe to glTF Expression"
+msgstr "Expression Orbe vers glTF"
 
 msgid "Node Paths"
 msgstr "Chemins de nœud"
@@ -4526,8 +4526,8 @@ msgstr "Jointures"
 msgid "Roots"
 msgstr "Racines"
 
-msgid "Godot Bone Node"
-msgstr "Nœud d'os de Godot"
+msgid "Orbe Bone Node"
+msgstr "Nœud d'os de Orbe"
 
 msgid "Skin Root"
 msgstr "Racine de l'enveloppe"
@@ -4538,8 +4538,8 @@ msgstr "Jointure à l'original"
 msgid "Non Joints"
 msgstr "Non jointures"
 
-msgid "Godot Skin"
-msgstr "Enveloppe Godot"
+msgid "Orbe Skin"
+msgstr "Enveloppe Orbe"
 
 msgid "Src Image"
 msgstr "Image source"
@@ -5378,8 +5378,8 @@ msgstr "Hôte de débogage à distance par Wifi"
 msgid "Splash Screen"
 msgstr "Fenêtre surgissante"
 
-msgid "Disable Godot Boot Splash"
-msgstr "Désactiver l'écran surgissant au démarrage de Godot"
+msgid "Disable Orbe Boot Splash"
+msgstr "Désactiver l'écran surgissant au démarrage de Orbe"
 
 msgid "Background Color"
 msgstr "Couleur d’arrière-plan"
@@ -5915,8 +5915,8 @@ msgstr "Icône 512 X 512"
 msgid "Emscripten Pool Size"
 msgstr "Place allouée pour Emscripten"
 
-msgid "Godot Pool Size"
-msgstr "Taille de Pool de Godot"
+msgid "Orbe Pool Size"
+msgstr "Taille de Pool de Orbe"
 
 msgid "Windows"
 msgstr "Windows"

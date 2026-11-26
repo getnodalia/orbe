@@ -564,7 +564,7 @@ Error FBXDocument::_parse_meshes(Ref<FBXState> p_state) {
 								uint32_t num_triangles = ufbx_triangulate_face(dst, space, fbx_mesh, face);
 								offset += num_triangles * 3;
 
-								// Godot uses clockwise winding order!
+								// Orbe uses clockwise winding order!
 								for (uint32_t i = 0; i < num_triangles; i++) {
 									SWAP(dst[i * 3 + 0], dst[i * 3 + 2]);
 								}

@@ -39,7 +39,7 @@
 class Array;
 
 // Note: In most situations, compatibility methods should be registered via ClassDB::bind_compatibility_method().
-//       This class is only meant to be used in exceptional circumstances, for example, when Godot's hashing
+//       This class is only meant to be used in exceptional circumstances, for example, when Orbe's hashing
 //       algorithm changes and registering compatibility methods for all affect methods would be onerous.
 
 class GDExtensionSpecialCompatHashes {

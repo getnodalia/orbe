@@ -250,7 +250,7 @@ XrSpatialPersistenceStateEXT OpenXRSpatialComponentPersistenceList::get_persiste
 }
 
 uint64_t OpenXRSpatialComponentPersistenceList::_get_persistent_state(int64_t p_index) const {
-	// TODO make a Godot constant that mirrors XrSpatialPersistenceStateEXT and return that
+	// TODO make a Orbe constant that mirrors XrSpatialPersistenceStateEXT and return that
 	return (uint64_t)get_persistent_state(p_index);
 }
 

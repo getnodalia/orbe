@@ -233,7 +233,7 @@ NodePath GLTFNode::get_scene_node_path(Ref<GLTFState> p_state, bool p_handle_ske
 	while (true) {
 		const int parent_index = current_gltf_node->get_parent();
 		if (is_godot_single_root && parent_index == -1) {
-			// For GODOT_single_root scenes, the root glTF node becomes the Godot scene root, so it
+			// For GODOT_single_root scenes, the root glTF node becomes the Orbe scene root, so it
 			// should not be included in the path. Ex: A/B/C, A is single root, we want B/C only.
 			break;
 		}

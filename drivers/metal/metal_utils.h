@@ -38,7 +38,7 @@
 #include <functional>
 #include <type_traits>
 
-/// Godot limits the number of dynamic buffers to 8.
+/// Orbe limits the number of dynamic buffers to 8.
 ///
 /// This is a minimum guarantee for Vulkan.
 constexpr uint32_t MAX_DYNAMIC_BUFFERS = 8;

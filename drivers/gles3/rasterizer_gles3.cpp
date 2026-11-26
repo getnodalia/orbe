@@ -385,7 +385,7 @@ RasterizerGLES3::RasterizerGLES3() {
 	// Has to be a separate call due to TextureStorage & MaterialStorage needing to interact for TexBlit Shaders
 	texture_storage->_tex_blit_shader_initialize();
 
-	// Disable OpenGL linear to sRGB conversion, because Godot will always do this conversion itself.
+	// Disable OpenGL linear to sRGB conversion, because Orbe will always do this conversion itself.
 	if (config->srgb_framebuffer_supported) {
 		glDisable(GL_FRAMEBUFFER_SRGB);
 	}
@@ -411,7 +411,7 @@ void RasterizerGLES3::_blit_render_target_to_screen(DisplayServerEnums::WindowID
 		// It is 99% likely our texture uses the GL_SRGB8_ALPHA8 texture format in
 		// which case we have a GPU sRGB to Linear conversion on texture read.
 		// We need to counter this.
-		// Unfortunately we do not have an API to check this as Godot does not
+		// Unfortunately we do not have an API to check this as Orbe does not
 		// track this.
 		linear_to_srgb = true;
 	}

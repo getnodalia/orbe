@@ -1,7 +1,7 @@
 # Swedish translation of the Orbe properties.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # bergmarklund <davemcgroin@gmail.com>, 2017, 2018.
 # Christoffer Sundbom <christoffer_karlsson@live.se>, 2017, 2021.
 # Jakob Sinclair <sinclair.jakob@mailbox.org>, 2018.
@@ -4374,11 +4374,11 @@ msgstr "Ljus"
 msgid "Visible"
 msgstr "Synlig"
 
-msgid "glTF to Godot Expression"
-msgstr "glTF‑ till Godot‑uttryck"
+msgid "glTF to Orbe Expression"
+msgstr "glTF‑ till Orbe‑uttryck"
 
-msgid "Godot to glTF Expression"
-msgstr "Godot‑ till glTF‑uttryck"
+msgid "Orbe to glTF Expression"
+msgstr "Orbe‑ till glTF‑uttryck"
 
 msgid "Node Paths"
 msgstr "Nodvägar"
@@ -4398,8 +4398,8 @@ msgstr "Leder"
 msgid "Roots"
 msgstr "Rötter"
 
-msgid "Godot Bone Node"
-msgstr "Godot‑bennod"
+msgid "Orbe Bone Node"
+msgstr "Orbe‑bennod"
 
 msgid "Skin Root"
 msgstr "Skin‑rot"
@@ -4410,8 +4410,8 @@ msgstr "Ursprungliga leder"
 msgid "Non Joints"
 msgstr "Icke‑leder"
 
-msgid "Godot Skin"
-msgstr "Godot‑skin"
+msgid "Orbe Skin"
+msgstr "Orbe‑skin"
 
 msgid "Src Image"
 msgstr "Källbild"
@@ -5250,7 +5250,7 @@ msgstr "Värd för fjärrdebuggning via Wi‑Fi"
 msgid "Splash Screen"
 msgstr "Startskärm"
 
-msgid "Disable Godot Boot Splash"
+msgid "Disable Orbe Boot Splash"
 msgstr "Inaktivera Godots startskärm"
 
 msgid "Background Color"
@@ -5787,8 +5787,8 @@ msgstr "Ikon 512 X 512"
 msgid "Emscripten Pool Size"
 msgstr "Emscripten‑poolstorlek"
 
-msgid "Godot Pool Size"
-msgstr "Godot‑poolstorlek"
+msgid "Orbe Pool Size"
+msgstr "Orbe‑poolstorlek"
 
 msgid "Windows"
 msgstr "Fönster"

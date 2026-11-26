@@ -28,8 +28,13 @@ What is done and what is left to make Orbe a Nodalia app like the others.
    shell's global menu on Linux, NDL islands for the docks, NDL icons for the editor chrome.
 5. **About.** The credits keep upstream's authors and the third-party licences, as the licence
    requires; no Contributors or Models tabs.
-6. **Names left.** Prose that still says "Godot" in the class reference, the translations and the
-   editor's strings (only the engine's full product name is renamed so far) moves over with rules in
-   `.github/rebrand.toml`, checked with `scripts/rebrand.py check`. The names kept for
-   compatibility are in `AGENTS.md`.
+6. **Names.** Done: every mention of upstream's name in the interface, the class reference, the
+   translations and the code comments is Orbe's (the rule `Godot` to `Orbe` in
+   `.github/rebrand.toml`, checked by `scripts/rebrand.py check`). What keeps upstream's name on
+   purpose, for compatibility or because the licence requires it: the copyright lines and
+   notices (`LICENSE.txt`, `COPYRIGHT.txt`, `AUTHORS.md`, `DONORS.md`, `NOTICE`, the About window),
+   `project.godot`, `.godot/`, `.tscn`/`.tres`/`.res`, the GDExtension interface, the C# API
+   namespace (`modules/mono`), the Android and web export templates, class and file names inside
+   the code, upstream's version history ("Godot 3 to 4" project converter) and the editor icon
+   file names until the art is replaced.
 7. **Language.** Spanish is complete upstream; audit Orbe's own strings.

@@ -1418,7 +1418,7 @@ Node *ResourceImporterScene::_replace_node_with_type_and_script(Node *p_node, St
 		}
 	}
 	if (!p_node_type.is_empty() && p_node->get_class_name() != p_node_type) {
-		// If the user specified a Godot node type that does not match
+		// If the user specified a Orbe node type that does not match
 		// what the scene import gave us, replace the root node.
 		Node *new_base_node = Object::cast_to<Node>(ClassDB::instantiate(p_node_type));
 		if (new_base_node) {

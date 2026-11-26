@@ -1,4 +1,4 @@
-# Fish completion for the Godot editor
+# Fish completion for the Orbe editor
 # To use it, install this file in `~/.config/fish/completions` then restart your shell.
 # You can also `source` this file directly in your shell startup file.
 #
@@ -37,7 +37,7 @@ function godot_rendering_driver_args
     echo -e "dummy\tDummy renderer"
 end
 
-# Erase existing completions for Godot.
+# Erase existing completions for Orbe.
 complete -c godot -e
 
 # General options:
@@ -110,7 +110,7 @@ complete -c godot -l doctool -d "Dump the engine API reference to the given path
 complete -c godot -l no-docbase -d "Disallow dumping the base types (used with --doctool)"
 complete -c godot -l build-solutions -d "Build the scripting solutions (e.g. for C# projects)"
 complete -c godot -l dump-gdextension-interface -d "Generate GDExtension header file 'gdextension_interface.h' in the current folder. This file is the base file required to implement a GDExtension"
-complete -c godot -l dump-extension-api -d "Generate JSON dump of the Godot API for GDExtension bindings named 'extension_api.json' in the current folder"
+complete -c godot -l dump-extension-api -d "Generate JSON dump of the Orbe API for GDExtension bindings named 'extension_api.json' in the current folder"
 complete -c godot -l benchmark -d "Benchmark the run time and print it to console"
 complete -c godot -l benchmark-file -d "Benchmark the run time and save it to a given file in JSON format" -x
 complete -c godot -l test -d "Run all unit tests; run with '--test --help' for more information" -x

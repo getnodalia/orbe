@@ -1116,7 +1116,7 @@ Error EditorExportPlatformAppleEmbedded::_convert_to_framework(const String &p_s
 }
 
 void EditorExportPlatformAppleEmbedded::_add_assets_to_project(const String &p_out_dir, const Ref<EditorExportPreset> &p_preset, Vector<uint8_t> &p_project_data, const Vector<AppleEmbeddedExportAsset> &p_additional_assets) {
-	// that is just a random number, we just need Godot IDs not to clash with
+	// that is just a random number, we just need Orbe IDs not to clash with
 	// existing IDs in the project.
 	PbxId current_id = { 0x58938401, 0, 0 };
 	String pbx_files;
@@ -1609,7 +1609,7 @@ Error EditorExportPlatformAppleEmbedded::_export_apple_embedded_plugins(const Re
 		plugin_format["initialization"] = plugin_initialization_cpp_code;
 		plugin_format["deinitialization"] = plugin_deinitialization_cpp_code;
 
-		String plugin_cpp_code = "\n// Godot Plugins\n"
+		String plugin_cpp_code = "\n// Orbe Plugins\n"
 								 "void godot_apple_embedded_plugins_initialize();\n"
 								 "void godot_apple_embedded_plugins_deinitialize();\n"
 								 "// Exported Plugins\n\n"
@@ -2471,7 +2471,7 @@ void EditorExportPlatformAppleEmbedded::_check_for_changes_poll_thread(void *ud)
 			args.push_back("-j");
 			args.push_back("-");
 			args.push_back("-q");
-			// Add a timeout, so the process doesn't hang indefinitely, which can prevent Godot shutting down.
+			// Add a timeout, so the process doesn't hang indefinitely, which can prevent Orbe shutting down.
 			args.push_back("--timeout");
 			args.push_back("5");
 			args.push_back("--filter");

@@ -331,7 +331,7 @@ bool OpenXRVulkanExtension::get_swapchain_image_data(XrSwapchain p_swapchain, in
 	switch (p_swapchain_format) {
 		case VK_FORMAT_R8G8B8A8_SRGB:
 			// Even though this is an sRGB framebuffer format we're using UNORM here.
-			// The reason here is because Godot does a linear to sRGB conversion while
+			// The reason here is because Orbe does a linear to sRGB conversion while
 			// with the sRGB format, this conversion would be doubled by the hardware.
 			// This also means we're reading the values as is for our preview on screen.
 			// The OpenXR runtime however is still treating this as an sRGB format and
@@ -406,7 +406,7 @@ bool OpenXRVulkanExtension::get_swapchain_image_data(XrSwapchain p_swapchain, in
 	Vector<RID> texture_rids;
 	Vector<RID> density_map_rids;
 
-	// create Godot texture objects for each entry in our swapchain
+	// create Orbe texture objects for each entry in our swapchain
 	for (uint32_t i = 0; i < swapchain_length; i++) {
 		const XrSwapchainImageVulkanKHR &swapchain_image = images[i];
 

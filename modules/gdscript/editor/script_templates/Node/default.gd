@@ -1,4 +1,4 @@
-# meta-description: Base template for Node with default Godot cycle methods
+# meta-description: Base template for Node with default Orbe cycle methods
 
 extends _BASE_
 

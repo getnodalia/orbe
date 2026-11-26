@@ -1,7 +1,7 @@
 # Catalan translation of the Orbe properties.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # BennyBeat <bennybeat@gmail.com>, 2017.
 # Javier Ocampos <xavier.ocampos@gmail.com>, 2018.
 # Roger Blanco Ribera <roger.blancoribera@gmail.com>, 2016-2018, 2020, 2025.
@@ -4360,11 +4360,11 @@ msgstr "Llum"
 msgid "Visible"
 msgstr "Visibilitat"
 
-msgid "glTF to Godot Expression"
-msgstr "glTF a l'expressió Godot"
+msgid "glTF to Orbe Expression"
+msgstr "glTF a l'expressió Orbe"
 
-msgid "Godot to glTF Expression"
-msgstr "Godot a expressió glTF"
+msgid "Orbe to glTF Expression"
+msgstr "Orbe a expressió glTF"
 
 msgid "Node Paths"
 msgstr "Camí de node"
@@ -4384,8 +4384,8 @@ msgstr "Articulacions"
 msgid "Roots"
 msgstr "Arrels"
 
-msgid "Godot Bone Node"
-msgstr "Node d'ós Godot"
+msgid "Orbe Bone Node"
+msgstr "Node d'ós Orbe"
 
 msgid "Skin Root"
 msgstr "Arrel de pell"
@@ -4396,8 +4396,8 @@ msgstr "Articulacions originals"
 msgid "Non Joints"
 msgstr "No articulacions"
 
-msgid "Godot Skin"
-msgstr "Pell Godot"
+msgid "Orbe Skin"
+msgstr "Pell Orbe"
 
 msgid "Src Image"
 msgstr "Origen d'imatge"
@@ -5236,8 +5236,8 @@ msgstr "Amfitrió de depuració remota Wi-Fi"
 msgid "Splash Screen"
 msgstr "Pantalla de presentació"
 
-msgid "Disable Godot Boot Splash"
-msgstr "Desactiva el la pantalla d'arrencada de Godot"
+msgid "Disable Orbe Boot Splash"
+msgstr "Desactiva el la pantalla d'arrencada de Orbe"
 
 msgid "Background Color"
 msgstr "Color de fons"
@@ -5773,8 +5773,8 @@ msgstr "Icona 512 X 512"
 msgid "Emscripten Pool Size"
 msgstr "Mida de la piscina d'Emscripten"
 
-msgid "Godot Pool Size"
-msgstr "Mida de la piscina Godot"
+msgid "Orbe Pool Size"
+msgstr "Mida de la piscina Orbe"
 
 msgid "Windows"
 msgstr "Finestres"

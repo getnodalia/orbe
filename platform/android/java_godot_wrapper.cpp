@@ -34,7 +34,7 @@
 
 // JNIEnv is only valid within the thread it belongs to, in a multi threading environment
 // we can't cache it.
-// For Godot we call most access methods from our thread and we thus get a valid JNIEnv
+// For Orbe we call most access methods from our thread and we thus get a valid JNIEnv
 // from get_jni_env(). For one or two we expect to pass the environment
 
 // TODO we could probably create a base class for this...
@@ -42,7 +42,7 @@
 GodotJavaWrapper::GodotJavaWrapper(JNIEnv *p_env, jobject p_godot_native_bridge) {
 	godot_native_bridge = p_env->NewGlobalRef(p_godot_native_bridge);
 
-	// get info about our Godot class so we can get pointers and stuff...
+	// get info about our Orbe class so we can get pointers and stuff...
 	godot_native_bridge_class = jni_find_class(p_env, "org/godotengine/godot/nativeapi/GodotNativeBridge");
 	if (godot_native_bridge_class) {
 		godot_native_bridge_class = (jclass)p_env->NewGlobalRef(godot_native_bridge_class);
@@ -51,7 +51,7 @@ GodotJavaWrapper::GodotJavaWrapper(JNIEnv *p_env, jobject p_godot_native_bridge)
 		return;
 	}
 
-	// get some Godot method pointers...
+	// get some Orbe method pointers...
 	_restart = p_env->GetMethodID(godot_native_bridge_class, "restart", "()V");
 	_finish = p_env->GetMethodID(godot_native_bridge_class, "forceQuit", "(I)Z");
 	_set_keep_screen_on = p_env->GetMethodID(godot_native_bridge_class, "setKeepScreenOn", "(Z)V");

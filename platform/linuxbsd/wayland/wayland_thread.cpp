@@ -295,7 +295,7 @@ Ref<InputEventKey> WaylandThread::_seat_state_get_key_event(SeatState *p_ss, xkb
 // NOTE: Due to the nature of the way keys are encoded, there's an ambiguity
 // regarding "special" keys. In other words: there's no reliable way of
 // switching between a special key and a character key if not marking a
-// different Godot keycode, even if we're actually using the same XKB raw
+// different Orbe keycode, even if we're actually using the same XKB raw
 // keycode. This means that, during this switch, the old key will get "stuck",
 // as it will never receive a release event. This method returns the necessary
 // event to fix this if needed.
@@ -2115,7 +2115,7 @@ void WaylandThread::_wl_pointer_on_frame(void *data, struct wl_pointer *wl_point
 			wayland_thread->seat_state_unlock_pointer(ss);
 			if (wayland_thread->pointer_constraint == PointerConstraint::LOCKED) {
 				wayland_thread->seat_state_lock_pointer(ss, ws->wl_surface);
-				// Godot always expects a centered pointer when locked.
+				// Orbe always expects a centered pointer when locked.
 				wayland_thread->seat_state_set_hint(ss, ws->rect.size.x / 2, ws->rect.size.y / 2);
 			} else if (wayland_thread->pointer_constraint == PointerConstraint::CONFINED) {
 				wayland_thread->seat_state_confine_pointer(ss, ws->wl_surface);
@@ -2760,7 +2760,7 @@ void WaylandThread::_wl_data_device_on_enter(void *data, struct wl_data_device *
 	ss->dnd_enter_serial = serial;
 	ss->wl_data_offer_dnd = id;
 
-	// Godot only supports DnD file copying for now.
+	// Orbe only supports DnD file copying for now.
 	wl_data_offer_accept(id, serial, "text/uri-list");
 	wl_data_offer_set_actions(id, WL_DATA_DEVICE_MANAGER_DND_ACTION_COPY, WL_DATA_DEVICE_MANAGER_DND_ACTION_COPY);
 }
@@ -3478,7 +3478,7 @@ void WaylandThread::_wp_tablet_tool_on_frame(void *data, struct zwp_tablet_tool_
 			mm->set_global_position(td.position * scale);
 			mm->set_position(td.position * scale);
 
-			// NOTE: The Godot API expects normalized values and we store them raw,
+			// NOTE: The Orbe API expects normalized values and we store them raw,
 			// straight from the compositor, so we have to normalize them here.
 
 			// According to the tablet proto spec, tilt is expressed in degrees relative
@@ -3988,7 +3988,7 @@ int WaylandThread::window_state_get_preferred_buffer_scale(WindowState *p_ws) {
 	int max_size = 1;
 
 	// ================================ IMPORTANT =================================
-	// NOTE: Due to a Godot limitation, we can't really rescale the whole UI yet.
+	// NOTE: Due to a Orbe limitation, we can't really rescale the whole UI yet.
 	// Because of this reason, all platforms have resorted to forcing the highest
 	// scale possible of a system on any window, despite of what screen it's onto.
 	// On this backend everything's already in place for dynamic window scale
@@ -5420,7 +5420,7 @@ void WaylandThread::pointer_set_constraint(PointerConstraint p_constraint) {
 		seat_state_unlock_pointer(ss);
 		if (pointer_constraint == PointerConstraint::LOCKED) {
 			seat_state_lock_pointer(ss, ws->wl_surface);
-			// Godot always expects a centered pointer when locked.
+			// Orbe always expects a centered pointer when locked.
 			seat_state_set_hint(ss, ws->rect.size.x / 2, ws->rect.size.y / 2);
 		} else if (pointer_constraint == PointerConstraint::CONFINED) {
 			seat_state_confine_pointer(ss, ws->wl_surface);
@@ -5952,7 +5952,7 @@ Vector<uint8_t> WaylandThread::selection_get_mime(const String &p_mime) const {
 
 	if (ss->wl_data_source_selection) {
 		// We have a source so the stuff we're pasting is ours. We'll have to pass the
-		// data directly or we'd stall waiting for Godot (ourselves) to send us the
+		// data directly or we'd stall waiting for Orbe (ourselves) to send us the
 		// data :P
 
 		OfferState *os = wl_data_offer_get_offer_state(ss->wl_data_offer_selection);
@@ -5995,7 +5995,7 @@ Vector<uint8_t> WaylandThread::primary_get_mime(const String &p_mime) const {
 
 	if (ss->wp_primary_selection_source) {
 		// We have a source so the stuff we're pasting is ours. We'll have to pass the
-		// data directly or we'd stall waiting for Godot (ourselves) to send us the
+		// data directly or we'd stall waiting for Orbe (ourselves) to send us the
 		// data :P
 
 		OfferState *os = wp_primary_selection_offer_get_offer_state(ss->wp_primary_selection_offer);

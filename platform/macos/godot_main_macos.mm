@@ -121,7 +121,7 @@ __attribute__((visibility("default"))) int main(int argc, char **argv) {
 #endif
 
 	if (is_embedded) {
-		// No dock icon for the embedded process, as it is hosted in the Godot editor.
+		// No dock icon for the embedded process, as it is hosted in the Orbe editor.
 		ProcessSerialNumber psn = { 0, kCurrentProcess };
 		(void)TransformProcessType(&psn, kProcessTransformToBackgroundApplication);
 	}

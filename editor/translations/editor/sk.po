@@ -1,7 +1,7 @@
 # Slovak translation of the Orbe editor interface.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # J08nY <johnenter@gmail.com>, 2016.
 # MineGame 159 <minegame459@gmail.com>, 2018.
 # Zuzana Palenikova <sousana.is@gmail.com>, 2019.
@@ -1031,7 +1031,7 @@ msgid ""
 "The file you selected is an imported scene from a 3D model such as glTF or "
 "FBX.\n"
 "\n"
-"In Godot, 3D models can be imported as either scenes or animation libraries, "
+"In Orbe, 3D models can be imported as either scenes or animation libraries, "
 "which is why they show up here.\n"
 "\n"
 "If you want to use animations from this 3D model, open the Advanced Import "
@@ -1042,7 +1042,7 @@ msgstr ""
 "Súbor, ktorý ste si vybrali, je importovaná scéna z 3D modelu ako je glTF "
 "alebo FBX.\n"
 "\n"
-"V Godot, môžu byť 3D modely importované buď ako scény alebo knižnice "
+"V Orbe, môžu byť 3D modely importované buď ako scény alebo knižnice "
 "animácií, čo je dôvod, prečo sa tu zobrazia.\n"
 "\n"
 "Ak chcete používať animácie z tohto 3D modelu, otvorte dialógové okno "
@@ -3350,8 +3350,8 @@ msgstr "Navrhnúť funkcionalitu"
 msgid "Send Docs Feedback"
 msgstr "Poslať spätnú väzbu Dokumentácie"
 
-msgid "Support Godot Development"
-msgstr "Podporte vývoj Godot"
+msgid "Support Orbe Development"
+msgstr "Podporte vývoj Orbe"
 
 msgid "Open Script Editor"
 msgstr "Otvoriť Editor Skriptov"
@@ -3476,8 +3476,8 @@ msgstr "Exportovať Manažera Šablón"
 msgid "Select Template File"
 msgstr "Vybrať Súbor Šablóny"
 
-msgid "Godot Export Templates"
-msgstr "Godot Exportovanie Šablón"
+msgid "Orbe Export Templates"
+msgstr "Orbe Exportovanie Šablón"
 
 msgid "Invalid Encryption Key (must be 64 hexadecimal characters long)"
 msgstr "Neplatný šifrovací kľúč (musí obsahovať 64 hexadecimálnych znakov)"
@@ -3779,8 +3779,8 @@ msgstr "Názov priečinku je platný."
 msgid "Godot Engine contributors"
 msgstr "Orbe prispievatelia"
 
-msgid "Thanks from the Godot community!"
-msgstr "Vďaka z Godot komunity!"
+msgid "Thanks from the Orbe community!"
+msgstr "Vďaka z Orbe komunity!"
 
 msgid "Authors"
 msgstr "Autori"
@@ -5765,7 +5765,7 @@ msgstr "Uložiť súbor ako..."
 msgid "Online Docs"
 msgstr "Online Dokumentácie"
 
-msgid "Open Godot online documentation."
+msgid "Open Orbe online documentation."
 msgstr "Otvoriť online dokumentáciu Godotu."
 
 msgid "Open..."
@@ -6091,8 +6091,8 @@ msgstr ""
 msgid "New profile name:"
 msgstr "Meno nového profilu:"
 
-msgid "Godot Feature Profile"
-msgstr "Godot Feature Profil"
+msgid "Orbe Feature Profile"
+msgstr "Orbe Feature Profil"
 
 msgid "Import Profile(s)"
 msgstr "Importovať Profil(y)"
@@ -6888,10 +6888,10 @@ msgstr ""
 
 msgid ""
 "This node is marked as deprecated and will be removed in future versions.\n"
-"Please check the Godot documentation for information about migration."
+"Please check the Orbe documentation for information about migration."
 msgstr ""
 "Tento node je označený ako zastaralý a bude vymazaný v budúcich verziách.\n"
-"Prosím skontrolujte Godot dokumentáciu pre informácie o migrácii."
+"Prosím skontrolujte Orbe dokumentáciu pre informácie o migrácii."
 
 msgid ""
 "This node is marked as experimental and may be subject to removal or major "

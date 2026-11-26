@@ -1,7 +1,7 @@
 # Persian translation of the Orbe editor interface.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # alabd14313 <alabd14313@yahoo.com>, 2016.
 # Dante Marshal <Marshal.Devilhunter@gmail.com>, 2018.
 # hamed nasib <cghamed752@chmail.ir>, 2016.
@@ -4728,7 +4728,7 @@ msgstr "پروندهٔ '%s' یا یکی از وابستگی‌هایش گمشد�
 
 msgid ""
 "File '%s' is saved in a format that is newer than the formats supported by "
-"this version of Godot, so it can't be opened."
+"this version of Orbe, so it can't be opened."
 msgstr ""
 "پروندهٔ '%s' در چارچوبی نوتر از چارچوب‌های پشتیبانی شده در این نسخه از گودوت "
 "ذخیره شده، پس نمی‌توان آن را گشود."
@@ -5431,10 +5431,10 @@ msgstr "پیشنهاد ویژگی"
 msgid "Send Docs Feedback"
 msgstr "فرستادن بازخورد مستندات"
 
-msgid "About Godot..."
+msgid "About Orbe..."
 msgstr "دربارهٔ گودوت..."
 
-msgid "Support Godot Development"
+msgid "Support Orbe Development"
 msgstr "از توسعهٔ گودوت پشتیبانی کنید"
 
 msgid "Open Script Editor"
@@ -5488,7 +5488,7 @@ msgstr "بستهٔ قالب"
 msgid "Export Library"
 msgstr "برون‌برد کتابخانه"
 
-msgid "Files have been modified outside Godot"
+msgid "Files have been modified outside Orbe"
 msgstr "پرونده‌ها بیرون از گودوت دگرگون شده‌اند"
 
 msgid "The following files are newer on disk:"
@@ -5935,7 +5935,7 @@ msgstr "گشودن در مرورگر وب"
 msgid "Select Template File"
 msgstr "گزینش پروندهٔ قالب"
 
-msgid "Godot Export Templates"
+msgid "Orbe Export Templates"
 msgstr "قالب‌های برون‌برد گودوت"
 
 msgid "Response code: %d"
@@ -6085,7 +6085,7 @@ msgstr "استثنا کردن پالایه‌ها"
 msgid "Base Packs:"
 msgstr "بسته‌های پایه:"
 
-msgid "Godot Project Pack"
+msgid "Orbe Project Pack"
 msgstr "بستهٔ پروژهٔ گودوت"
 
 msgid "Add Pack"
@@ -6163,7 +6163,7 @@ msgstr "برون‌برد PCK/ZIP..."
 
 msgid ""
 "Export the project resources as a PCK or ZIP package. This is not a playable "
-"build, only the project data without a Godot executable."
+"build, only the project data without a Orbe executable."
 msgstr ""
 "برون‌برد بنمایه‌های پروژه به‌عنوان بستهٔ PCK یا ZIP. این ساخت تنها دادهٔ پروژه "
 "بدون پروندهٔ اجراپذیر گودوت می‌باشد و بازی‌شدنی نیست."
@@ -6172,7 +6172,7 @@ msgid "Export Project..."
 msgstr "برون‌برد پروژه..."
 
 msgid ""
-"Export the project as a playable build (Godot executable and project data) "
+"Export the project as a playable build (Orbe executable and project data) "
 "for the selected preset."
 msgstr ""
 "پروژه را به‌عنوان یک ساخت بازی‌شدنی (اجراپذیر گودوت و دادهٔ پروژه) برای "
@@ -6557,7 +6557,7 @@ msgstr "مشارکت‌کنندگان موتور گودوت"
 msgid "Double-click to open in browser."
 msgstr "برای باز کردن در مرورگر دو بار کلیک کنید."
 
-msgid "Thanks from the Godot community!"
+msgid "Thanks from the Orbe community!"
 msgstr "با تشکر از سوی جامعهٔ گودوت!"
 
 msgid "Authors"
@@ -7857,7 +7857,7 @@ msgid "Warning: This folder is not empty"
 msgstr "هشدار: این پوشه تهی نیست"
 
 msgid ""
-"You are about to create a Godot project in a non-empty folder.\n"
+"You are about to create a Orbe project in a non-empty folder.\n"
 "The entire contents of this folder will be imported as project resources!\n"
 "\n"
 "Are you sure you wish to continue?"
@@ -7948,7 +7948,7 @@ msgstr "نام پروژه"
 msgid "Project Path"
 msgstr "مسیر پروژه"
 
-msgid "This project was last edited in a different Godot version: "
+msgid "This project was last edited in a different Orbe version: "
 msgstr "این پروژه آخرین بار در نسخهٔ متفاوتی از گودوت ویراسته شده است. "
 
 msgid "Unknown version"
@@ -8039,12 +8039,12 @@ msgstr ""
 "خواهند شد."
 
 msgid ""
-"The selected project \"%s\" does not specify its supported Godot version in "
+"The selected project \"%s\" does not specify its supported Orbe version in "
 "its configuration file (\"project.godot\").\n"
 "\n"
 "Project path: %s\n"
 "\n"
-"If you proceed with opening it, it will be converted to Godot's current "
+"If you proceed with opening it, it will be converted to Orbe's current "
 "configuration file format.\n"
 "\n"
 "Warning: You won't be able to open the project with previous versions of the "
@@ -8134,7 +8134,7 @@ msgstr ""
 
 msgid ""
 "Warning: This project uses double precision floats, but this version of\n"
-"Godot uses single precision floats. Opening this project may cause data "
+"Orbe uses single precision floats. Opening this project may cause data "
 "loss.\n"
 "\n"
 msgstr ""
@@ -8144,7 +8144,7 @@ msgstr ""
 "\n"
 
 msgid ""
-"Warning: This project uses C#, but this build of Godot does not have\n"
+"Warning: This project uses C#, but this build of Orbe does not have\n"
 "the Mono module. If you proceed you will not be able to use any C# scripts.\n"
 "\n"
 msgstr ""
@@ -8154,8 +8154,8 @@ msgstr ""
 "\n"
 
 msgid ""
-"Warning: This project was last edited in Godot %s. Opening will change it to "
-"Godot %s.\n"
+"Warning: This project was last edited in Orbe %s. Opening will change it to "
+"Orbe %s.\n"
 "\n"
 msgstr ""
 "هشدار: این پروژه آخرین بار در گودوت %s ویراسته شده است. گشودن پروژه را به "
@@ -8164,7 +8164,7 @@ msgstr ""
 
 msgid ""
 "Warning: This project uses the following features not supported by this build "
-"of Godot:\n"
+"of Orbe:\n"
 "\n"
 "%s\n"
 "\n"
@@ -8192,7 +8192,7 @@ msgstr ""
 " محتواهای پوشه‌های پروژه تغییر نخواهد کرد."
 
 msgid ""
-"It looks like Godot crashed when opening this project the last time. If "
+"It looks like Orbe crashed when opening this project the last time. If "
 "you're having problems editing this project, you can try to open it in "
 "Recovery Mode."
 msgstr ""
@@ -8245,7 +8245,7 @@ msgstr "نام تگ نمی‌تواند با زیرخط شروع یا تمام �
 msgid "These characters are not allowed in tags: %s."
 msgstr "این کاراکتر‌ها در برچسب‌ها مجاز نیستند: %s."
 
-msgid "About Godot"
+msgid "About Orbe"
 msgstr "دربارهٔ گودوت"
 
 msgid "Settings"
@@ -8332,7 +8332,7 @@ msgid ""
 "manual adjustments.\n"
 "\n"
 "IMPORTANT: Make sure to backup your project before converting, as this "
-"operation makes it impossible to open it in older versions of Godot."
+"operation makes it impossible to open it in older versions of Orbe."
 msgstr ""
 "این گزینه تبدیل کامل پروژه، به‌روزرسانی صحنه‌ها، بنمایه‌ها و اسکریپت ها را از "
 "گودوت ۳ برای کار در گودوت ۴ می انجامد.\n"
@@ -8496,7 +8496,7 @@ msgid "Recovery Mode"
 msgstr "حالت بازیابی"
 
 msgid ""
-"Godot opened the project in Recovery Mode, which is a special mode that can "
+"Orbe opened the project in Recovery Mode, which is a special mode that can "
 "help recover projects that crash the engine upon initialization. The "
 "following features have been temporarily disabled:"
 msgstr ""
@@ -13414,7 +13414,7 @@ msgstr "ذخیره زمینه به‌عنوان..."
 msgid "Make the script editor floating."
 msgstr "ویراستار اسکریپت را شناور کنید."
 
-msgid "Open '%s' in Godot online documentation."
+msgid "Open '%s' in Orbe online documentation."
 msgstr "گشودن '%s' در مستندات آنلاین گودوت."
 
 msgid "Open in Online Docs"
@@ -13423,7 +13423,7 @@ msgstr "گشودن در مستندات آنلاین"
 msgid "Online Docs"
 msgstr "مستندات آنلاین"
 
-msgid "Open Godot online documentation."
+msgid "Open Orbe online documentation."
 msgstr "گشودن در مستندات آنلاین گودوت."
 
 msgid "Unsaved file."
@@ -13825,13 +13825,13 @@ msgstr "OpenGL"
 msgid "Physics Server (2D)"
 msgstr "کارساز فیزیک (دوبعدی)"
 
-msgid "Godot Physics (2D)"
+msgid "Orbe Physics (2D)"
 msgstr "فیزیک (دو بعدی) گودوت"
 
 msgid "Physics Server (3D)"
 msgstr "کارساز فیزیک (سه‌بعدی)"
 
-msgid "Godot Physics (3D)"
+msgid "Orbe Physics (3D)"
 msgstr "فیزیک (سه‌بعدی) گودوت"
 
 msgid "Jolt Physics"
@@ -13879,10 +13879,10 @@ msgstr "بَک‌اِند متالِ RenderingDevice (تنها برای آرم۶
 msgid "OpenGL backend (if disabled, the RenderingDevice backend is required)."
 msgstr "بَک‌اِند OpenGL (اگر ازکارافتاده باشد، به بَک‌اِند RenderingDevice نیاز است)."
 
-msgid "Godot Physics backend (2D)."
+msgid "Orbe Physics backend (2D)."
 msgstr "بک‌اند فیزیک گودوت (دوبعدی)."
 
-msgid "Godot Physics backend (3D)."
+msgid "Orbe Physics backend (3D)."
 msgstr "بک‌اند فیزیک گودوت (سه‌بعدی)."
 
 msgid "Jolt Physics backend (3D only)."
@@ -14145,7 +14145,7 @@ msgstr ""
 msgid "New profile name:"
 msgstr "نام نمایه جدید:"
 
-msgid "Godot Feature Profile"
+msgid "Orbe Feature Profile"
 msgstr "نمایه ویژگی گودوت"
 
 msgid "Import Profile(s)"
@@ -15429,7 +15429,7 @@ msgstr ""
 msgid "Boolean constant."
 msgstr "ثابت بولی."
 
-msgid "Translated to '%s' in Godot Shading Language."
+msgid "Translated to '%s' in Orbe Shading Language."
 msgstr "در زبان سایه‌زنی گودوت '%s' ترجمه شد."
 
 msgid "'%s' input parameter for all shader modes."
@@ -16048,7 +16048,7 @@ msgid ""
 msgstr "ناحیه‌ای مستطیلی با یک رشته توضیح برای سازمان‌دهی بهتر نمودار."
 
 msgid ""
-"Custom Godot Shader Language expression, with custom amount of input and "
+"Custom Orbe Shader Language expression, with custom amount of input and "
 "output ports. This is a direct injection of code into the vertex/fragment/"
 "light function, do not use it to write the function declarations inside."
 msgstr ""
@@ -16057,7 +16057,7 @@ msgstr ""
 "استفاده نکنید."
 
 msgid ""
-"Custom Godot Shader Language expression, which is placed on top of the "
+"Custom Orbe Shader Language expression, which is placed on top of the "
 "resulted shader. You can place various function definitions inside and call "
 "it later in the Expressions. You can also declare varyings, parameters and "
 "constants."
@@ -16188,7 +16188,7 @@ msgstr ""
 "گزینه «حداقل اس‌دی‌کی» باید یک عدد صحیح معتبر باشد، اما مقدار «%s» نامعتبر است."
 
 msgid ""
-"\"Min SDK\" cannot be lower than %d, which is the version needed by the Godot "
+"\"Min SDK\" cannot be lower than %d, which is the version needed by the Orbe "
 "library."
 msgstr ""
 "\"Min SDK\" نمی‌تواند کمتر از %d باشد، زیرا نسخه‌ای است که کتابخانهٔ گودوت به آن "
@@ -17811,7 +17811,7 @@ msgstr "‫گره‌ی گم‌شده‌ی ناشناخته. برای جزئیا�
 
 msgid ""
 "This node is marked as deprecated and will be removed in future versions.\n"
-"Please check the Godot documentation for information about migration."
+"Please check the Orbe documentation for information about migration."
 msgstr ""
 "این گره به‌عنوان منسوخ نشانه‌گذاری شده است و در نسخه‌های آینده برچیده خواهد شد.\n"
 "خواهشمندیم مستندات گودوت را برای اطلاعات دربارهٔ مهاجرت بررسی کنید."

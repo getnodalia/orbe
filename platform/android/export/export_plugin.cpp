@@ -652,7 +652,7 @@ bool EditorExportPlatformAndroid::_should_compress_asset(const String &p_path, c
 		".rtttl", ".imy", ".xmf", ".mp4", ".m4a",
 		".m4v", ".3gp", ".3gpp", ".3g2", ".3gpp2",
 		".amr", ".awb", ".wma", ".wmv",
-		// Godot-specific:
+		// Orbe-specific:
 		".webp", // Same reasoning as .png
 		".cfb", // Don't let small config files slow-down startup
 		".scn", // Binary scenes are usually already compressed
@@ -968,7 +968,7 @@ void EditorExportPlatformAndroid::_create_editor_debug_keystore_if_needed() {
 		args.push_back("-validity");
 		args.push_back("10000");
 		args.push_back("-dname");
-		args.push_back("cn=Godot, ou=Orbe, o=Stichting Godot, c=NL");
+		args.push_back("cn=Orbe, ou=Orbe, o=Stichting Orbe, c=NL");
 		Error error = OS::get_singleton()->execute(keytool_path, args, &output, nullptr, true);
 		print_verbose(output);
 		if (error != OK) {
@@ -2128,7 +2128,7 @@ String EditorExportPlatformAndroid::get_export_option_warning(const EditorExport
 				} else {
 					int min_sdk_int = min_sdk_str.to_int();
 					if (min_sdk_int < DEFAULT_MIN_SDK_VERSION) {
-						return vformat(TTR("\"Min SDK\" cannot be lower than %d, which is the version needed by the Godot library."), DEFAULT_MIN_SDK_VERSION);
+						return vformat(TTR("\"Min SDK\" cannot be lower than %d, which is the version needed by the Orbe library."), DEFAULT_MIN_SDK_VERSION);
 					}
 				}
 			}

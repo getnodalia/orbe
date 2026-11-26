@@ -34,7 +34,7 @@
 #include "core/object/class_db.h"
 #include "servers/audio/audio_server.h"
 
-/* Thirdparty code, so disable clang-format with Godot style */
+/* Thirdparty code, so disable clang-format with Orbe style */
 /* clang-format off */
 
 /****************************************************************************
@@ -288,7 +288,7 @@ void SMBPitchShift::smbFft(float *fftBuffer, long fftFrameSize, long sign)
 }
 
 
-/* Godot code again */
+/* Orbe code again */
 /* clang-format on */
 
 void AudioEffectPitchShiftInstance::process(const AudioFrame *p_src_frames, AudioFrame *p_dst_frames, int p_frame_count) {

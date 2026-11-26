@@ -17,7 +17,7 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 AppComments=Orbe editor
 ChangesEnvironment=yes
-DefaultDirName={localappdata}\Godot
+DefaultDirName={localappdata}\Orbe
 DefaultGroupName=Orbe
 AllowNoIcons=yes
 UninstallDisplayIcon={app}\{#MyAppExeName}
@@ -37,7 +37,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
-Name: "modifypath"; Description: "Add Godot to PATH environment variable"
+Name: "modifypath"; Description: "Add Orbe to PATH environment variable"
 
 [Files]
 Source: "{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion

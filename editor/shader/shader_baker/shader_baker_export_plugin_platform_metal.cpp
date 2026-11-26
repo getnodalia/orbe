@@ -39,7 +39,7 @@ RenderingShaderContainerFormat *ShaderBakerExportPluginPlatformMetal::create_sha
 
 	if (os_name == U"macOS") {
 		min_os_version = (String)p_preset->get("application/min_macos_version_arm64");
-		// Godot metal doesn't support x86_64 mac so no need to worry about that version
+		// Orbe metal doesn't support x86_64 mac so no need to worry about that version
 		profile = MetalDeviceProfile::get_profile(MetalDeviceProfile::Platform::macOS, MetalDeviceProfile::GPU::Apple7, min_os_version);
 	} else if (os_name == U"iOS") {
 		min_os_version = (String)p_preset->get("application/min_ios_version");

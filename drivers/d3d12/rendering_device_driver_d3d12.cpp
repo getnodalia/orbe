@@ -2715,7 +2715,7 @@ void RenderingDeviceDriverD3D12::_determine_swap_chain_format(SwapChain *p_swap_
 	DEV_ASSERT(p_swap_chain->surface != 0);
 
 	// Direct3D Hardware level 10 mandates support for all these formats.
-	// Godot requires at least Hardware level 11, so these formats are guaranteed to be supported.
+	// Orbe requires at least Hardware level 11, so these formats are guaranteed to be supported.
 	if (context_driver->surface_get_hdr_output_enabled(p_swap_chain->surface)) {
 		r_format = DATA_FORMAT_R16G16B16A16_SFLOAT;
 		r_color_space = COLOR_SPACE_REC709_LINEAR;

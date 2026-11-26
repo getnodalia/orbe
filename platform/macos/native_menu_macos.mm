@@ -330,12 +330,12 @@ void NativeMenuMacOS::popup(const RID &p_rid, const Vector2i &p_position) {
 	if (ds) {
 		Point2i position = p_position;
 		// macOS native y-coordinate relative to _get_screens_origin() is negative,
-		// Godot passes a positive value.
+		// Orbe passes a positive value.
 		position.y *= -1;
 		position += ds->_get_screens_origin();
 		position /= ds->screen_get_max_scale();
 
-		[md->menu popUpMenuPositioningItem:nil atLocation:NSMakePoint(position.x, position.y - 5) inView:nil]; // Menu vertical position doesn't include rounded corners, add `5` display pixels to better align it with Godot buttons.
+		[md->menu popUpMenuPositioningItem:nil atLocation:NSMakePoint(position.x, position.y - 5) inView:nil]; // Menu vertical position doesn't include rounded corners, add `5` display pixels to better align it with Orbe buttons.
 
 		ds->release_pressed_events(); // Note: context menu block main loop and consume events, pressed keys and mouse buttons should be released manually.
 		ds->sync_mouse_state();

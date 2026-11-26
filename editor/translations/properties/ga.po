@@ -1,7 +1,7 @@
 # Irish translation of the Orbe properties.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # Rónán Quill <ronan085@gmail.com>, 2019, 2020.
 # Aindriú Mac Giolla Eoin <aindriu80@gmail.com>, 2024, 2025, 2026.
 msgid ""
@@ -4340,11 +4340,11 @@ msgstr "Solas"
 msgid "Visible"
 msgstr "Infheicthe"
 
-msgid "glTF to Godot Expression"
-msgstr "glTF a Slonn Godot"
+msgid "glTF to Orbe Expression"
+msgstr "glTF a Slonn Orbe"
 
-msgid "Godot to glTF Expression"
-msgstr "Godot go glTF Slonn"
+msgid "Orbe to glTF Expression"
+msgstr "Orbe go glTF Slonn"
 
 msgid "Node Paths"
 msgstr "Cosáin Nód"
@@ -4364,8 +4364,8 @@ msgstr "Ailt"
 msgid "Roots"
 msgstr "Fréamhacha"
 
-msgid "Godot Bone Node"
-msgstr "Nód Cnámh Godot"
+msgid "Orbe Bone Node"
+msgstr "Nód Cnámh Orbe"
 
 msgid "Skin Root"
 msgstr "Fréamh an Chraicinn"
@@ -4376,8 +4376,8 @@ msgstr "Ailt Bhunaidh"
 msgid "Non Joints"
 msgstr "Neamh-Ailt"
 
-msgid "Godot Skin"
-msgstr "Craiceann Godot"
+msgid "Orbe Skin"
+msgstr "Craiceann Orbe"
 
 msgid "Src Image"
 msgstr "Íomhá Src"
@@ -5216,8 +5216,8 @@ msgstr "Óstach Dífhabhtaithe Cianda Wi-Fi"
 msgid "Splash Screen"
 msgstr "Scáileán Splais"
 
-msgid "Disable Godot Boot Splash"
-msgstr "Díchumasaigh Godot Bútáil Splais"
+msgid "Disable Orbe Boot Splash"
+msgstr "Díchumasaigh Orbe Bútáil Splais"
 
 msgid "Background Color"
 msgstr "Cúlra Dath"
@@ -5753,8 +5753,8 @@ msgstr "Deilbhín 512 X 512"
 msgid "Emscripten Pool Size"
 msgstr "Méid Linn Snámha Emscripten"
 
-msgid "Godot Pool Size"
-msgstr "Méid Linn Snámha Godot"
+msgid "Orbe Pool Size"
+msgstr "Méid Linn Snámha Orbe"
 
 msgid "Windows"
 msgstr "Windows"

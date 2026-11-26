@@ -1,7 +1,7 @@
 # Galician translation of the Orbe editor interface.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 #
 # Andy Barcia <andybarcia4@gmail.com>, 2021.
 # PokeGalaico <abloodyfreaks@gmail.com>, 2021.
@@ -3318,8 +3318,8 @@ msgstr "Colaboradores de Orbe"
 msgid "Double-click to open in browser."
 msgstr "Dobre-clic para abrir no navegador."
 
-msgid "Thanks from the Godot community!"
-msgstr "Moitas grazas de parte da comunidade de Godot!"
+msgid "Thanks from the Orbe community!"
+msgstr "Moitas grazas de parte da comunidade de Orbe!"
 
 msgid "Authors"
 msgstr "Autores"
@@ -3563,24 +3563,24 @@ msgstr ""
 "Non se puido iniciar o editor."
 
 msgid ""
-"The selected project \"%s\" does not specify its supported Godot version in "
+"The selected project \"%s\" does not specify its supported Orbe version in "
 "its configuration file (\"project.godot\").\n"
 "\n"
 "Project path: %s\n"
 "\n"
-"If you proceed with opening it, it will be converted to Godot's current "
+"If you proceed with opening it, it will be converted to Orbe's current "
 "configuration file format.\n"
 "\n"
 "Warning: You won't be able to open the project with previous versions of the "
 "engine anymore."
 msgstr ""
-"O proxecto seleccionado \"%s\" non especifica a súa versión de Godot "
+"O proxecto seleccionado \"%s\" non especifica a súa versión de Orbe "
 "compatible no seu ficheiro de configuración (\"project.godot\").\n"
 "\n"
 "Ruta do proxecto: %s\n"
 "\n"
 "Se continúa coa súa apertura, converterase ao formato de ficheiro de "
-"configuración actual de Godot.\n"
+"configuración actual de Orbe.\n"
 "\n"
 "Aviso: xa non poderás abrir o proxecto con versións anteriores do motor."
 
@@ -4667,8 +4667,8 @@ msgstr "Importar Tema"
 msgid "Online Docs"
 msgstr "Documentación En Liña"
 
-msgid "Open Godot online documentation."
-msgstr "Abrir a documentación en liña de Godot."
+msgid "Open Orbe online documentation."
+msgstr "Abrir a documentación en liña de Orbe."
 
 msgid "Find Next"
 msgstr "Atopar Seguinte"
@@ -5040,14 +5040,14 @@ msgstr "Opcions adicionais:"
 msgid "New profile name:"
 msgstr "Novo nome de perfil:"
 
-msgid "Godot Feature Profile"
-msgstr "Perfil de Características de Godot"
+msgid "Orbe Feature Profile"
+msgstr "Perfil de Características de Orbe"
 
 msgid "Import Profile(s)"
 msgstr "Importar Perf(il/ís)"
 
 msgid "Manage Editor Feature Profiles"
-msgstr "Administrar Perfils de Características de Godot"
+msgstr "Administrar Perfils de Características de Orbe"
 
 msgid "Save Layout"
 msgstr "Gardar Disposición"

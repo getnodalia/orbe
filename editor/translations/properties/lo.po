@@ -1,7 +1,7 @@
 # LANGUAGE translation of the Orbe editor properties.
 # Copyright (c) 2014-present Godot Engine contributors (see AUTHORS.md).
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 #
 # BoneNI <bounkirdni@gmail.com>, 2026.
 msgid ""
@@ -4340,11 +4340,11 @@ msgstr "ແສງ"
 msgid "Visible"
 msgstr "ສະແດງໃຫ້ເຫັນ"
 
-msgid "glTF to Godot Expression"
-msgstr "ນິພົດຈາກ glTF ໄປຫາ Godot"
+msgid "glTF to Orbe Expression"
+msgstr "ນິພົດຈາກ glTF ໄປຫາ Orbe"
 
-msgid "Godot to glTF Expression"
-msgstr "ນິພົດຈາກ Godot ໄປຫາ glTF"
+msgid "Orbe to glTF Expression"
+msgstr "ນິພົດຈາກ Orbe ໄປຫາ glTF"
 
 msgid "Node Paths"
 msgstr "ເສັ້ນທາງໂນດ"
@@ -4364,8 +4364,8 @@ msgstr "ຂໍ້ຕໍ່ (Joints)"
 msgid "Roots"
 msgstr "ຮາກ"
 
-msgid "Godot Bone Node"
-msgstr "ໂນດກະດູກຂອງ Godot"
+msgid "Orbe Bone Node"
+msgstr "ໂນດກະດູກຂອງ Orbe"
 
 msgid "Skin Root"
 msgstr "ຮາກຂອງສະກິນ"
@@ -4376,8 +4376,8 @@ msgstr "ຂໍ້ຕໍ່ດັ້ງເດີມ"
 msgid "Non Joints"
 msgstr "ທີ່ບໍ່ແມ່ນຂໍ້ຕໍ່"
 
-msgid "Godot Skin"
-msgstr "ສະກິນຂອງ Godot"
+msgid "Orbe Skin"
+msgstr "ສະກິນຂອງ Orbe"
 
 msgid "Src Image"
 msgstr "ຮູບພາບຕົ້ນສະບັບ"
@@ -5216,8 +5216,8 @@ msgstr "ໂຮສດີບັກທາງໄກຜ່ານ Wi-Fi"
 msgid "Splash Screen"
 msgstr "ໜ້າຈໍສະແດງໂລໂກ້ (Splash Screen)"
 
-msgid "Disable Godot Boot Splash"
-msgstr "ປິດການສະແດງໂລໂກ້ຕອນເລີ່ມຕົ້ນຂອງ Godot"
+msgid "Disable Orbe Boot Splash"
+msgstr "ປິດການສະແດງໂລໂກ້ຕອນເລີ່ມຕົ້ນຂອງ Orbe"
 
 msgid "Background Color"
 msgstr "ສີພື້ນຫຼັງ"
@@ -5753,8 +5753,8 @@ msgstr "ໄອຄອນ 512 X 512"
 msgid "Emscripten Pool Size"
 msgstr "ຂະໜາດ Emscripten Pool"
 
-msgid "Godot Pool Size"
-msgstr "ຂະໜາດ Godot Pool"
+msgid "Orbe Pool Size"
+msgstr "ຂະໜາດ Orbe Pool"
 
 msgid "Windows"
 msgstr "Windows"

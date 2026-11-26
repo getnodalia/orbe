@@ -556,7 +556,7 @@ public:
 		ERR_FAIL_V(nullptr);
 	}
 
-	// Used internally in GDExtension and Godot's binding system when converting to Variant
+	// Used internally in GDExtension and Orbe's binding system when converting to Variant
 	// from values that may include RequiredParam<T> or RequiredResult<T>.
 	template <typename T>
 	_FORCE_INLINE_ static Variant make(const T &v) {

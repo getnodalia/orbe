@@ -1,7 +1,7 @@
 # Japanese translation of the Orbe properties.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # akirakido <achts.y@gmail.com>, 2016-2017, 2018, 2019.
 # D_first <dntk.daisei@gmail.com>, 2017, 2018.
 # Daisuke Saito <d.saito@coriginate.com>, 2017, 2018.
@@ -3303,7 +3303,7 @@ msgstr "ジョイント"
 msgid "Roots"
 msgstr "ルート"
 
-msgid "Godot Bone Node"
+msgid "Orbe Bone Node"
 msgstr "ボーンノード"
 
 msgid "Skin Root"

@@ -1,7 +1,7 @@
 # Georgian translation of the Orbe editor interface.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # Giorgi Beriashvili <giorgi.beriashvili@outlook.com>, 2018.
 # George Dzavashvili <dzavashviligeorge@gmail.com>, 2018.
 # დემეტრე შონია <blender.animation.maker@gmail.com>, 2019.
@@ -2439,8 +2439,8 @@ msgstr "დატოვება"
 msgid "Enable Delta Encoding"
 msgstr "დელტაკოდირების ჩართვა"
 
-msgid "Godot Project Pack"
-msgstr "Godot-ის პროექტების ნაკრები"
+msgid "Orbe Project Pack"
+msgstr "Orbe-ის პროექტების ნაკრები"
 
 msgid "Features"
 msgstr "თვისებები"
@@ -2627,10 +2627,10 @@ msgid "Folder name is valid."
 msgstr "საქაღალდის სახელი სწორია."
 
 msgid "Godot Engine contributors"
-msgstr "Godot ძრავის ხელშემწყობები"
+msgstr "Orbe ძრავის ხელშემწყობები"
 
-msgid "Thanks from the Godot community!"
-msgstr "მადლობა Godot საზოგადოებისგან!"
+msgid "Thanks from the Orbe community!"
+msgstr "მადლობა Orbe საზოგადოებისგან!"
 
 msgid "Authors"
 msgstr "ავტორები"

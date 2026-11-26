@@ -30,7 +30,7 @@
 
 #pragma once
 
-// Godot helper functions for OpenXR XrUuidExt data type
+// Orbe helper functions for OpenXR XrUuidExt data type
 #include "core/templates/hashfuncs.h"
 
 #include <openxr/openxr.h>

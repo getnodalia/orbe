@@ -313,7 +313,7 @@ Dictionary DebugAdapterParser::req_threads(const Dictionary &p_params) const {
 
 	DAP::Thread thread;
 
-	thread.id = 1; // Hardcoded because Godot only supports debugging one thread at the moment
+	thread.id = 1; // Hardcoded because Orbe only supports debugging one thread at the moment
 	thread.name = "Main";
 	Array arr = { thread.to_json() };
 	body["threads"] = arr;

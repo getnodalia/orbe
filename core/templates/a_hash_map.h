@@ -277,7 +277,7 @@ private:
 	}
 
 public:
-	/* Standard Godot Container API */
+	/* Standard Orbe Container API */
 
 	_FORCE_INLINE_ uint32_t get_capacity() const { return _capacity_mask + 1; }
 	_FORCE_INLINE_ uint32_t size() const { return _size; }

@@ -353,7 +353,7 @@ void ResourceImporterTexture::_save_ctex(const Ref<Image> &p_image, const String
 	Ref<FileAccess> f = FileAccess::open(p_to_path, FileAccess::WRITE);
 	ERR_FAIL_COND(f.is_null());
 
-	// Godot Streamable Texture 2D.
+	// Orbe Streamable Texture 2D.
 	f->store_8('G');
 	f->store_8('S');
 	f->store_8('T');

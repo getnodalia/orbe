@@ -49,36 +49,36 @@ namespace conv {
 
 #ifdef __OBJC__
 /**
- * Converts a Godot String to an NSString without allocating an intermediate UTF-8 buffer.
+ * Converts a Orbe String to an NSString without allocating an intermediate UTF-8 buffer.
  * */
 NSString *to_nsstring(const String &p_str);
 /**
- * Converts a Godot String to an NSString without allocating an intermediate UTF-8 buffer.
+ * Converts a Orbe String to an NSString without allocating an intermediate UTF-8 buffer.
  * */
 NSString *to_nsstring(Span<char> p_str);
 /**
- * Converts a Godot CharString to an NSString without allocating an intermediate UTF-8 buffer.
+ * Converts a Orbe CharString to an NSString without allocating an intermediate UTF-8 buffer.
  * */
 NSString *to_nsstring(const CharString &p_str);
 /**
- * Converts an NSString to a Godot String without allocating intermediate buffers.
+ * Converts an NSString to a Orbe String without allocating intermediate buffers.
  * */
 String to_string(NSString *p_str);
 #else
 /**
- * Converts a Godot String to an NSString without allocating an intermediate UTF-8 buffer.
+ * Converts a Orbe String to an NSString without allocating an intermediate UTF-8 buffer.
  * */
 NS::String *to_nsstring(const String &p_str);
 /**
- * Converts a Godot String to an NSString without allocating an intermediate UTF-8 buffer.
+ * Converts a Orbe String to an NSString without allocating an intermediate UTF-8 buffer.
  * */
 NS::String *to_nsstring(Span<char> p_str);
 /**
- * Converts a Godot CharString to an NSString without allocating an intermediate UTF-8 buffer.
+ * Converts a Orbe CharString to an NSString without allocating an intermediate UTF-8 buffer.
  * */
 NS::String *to_nsstring(const CharString &p_str);
 /**
- * Converts an NSString to a Godot String without allocating intermediate buffers.
+ * Converts an NSString to a Orbe String without allocating intermediate buffers.
  * */
 String to_string(NS::String *p_str);
 

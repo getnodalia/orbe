@@ -1,7 +1,7 @@
 # Turkish translation of the Orbe properties.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # Aprın Çor Tigin <kabusturk38@gmail.com>, 2016-2017.
 # Aykut YILDIRIM <aykutyildirim@windowslive.com>, 2018.
 # Ceyhun Can Ulker <ceyhuncanu@gmail.com>, 2016.
@@ -3964,11 +3964,11 @@ msgstr "Işık"
 msgid "Visible"
 msgstr "Görünür"
 
-msgid "glTF to Godot Expression"
-msgstr "glTF'den Godot İfadesi'ne"
+msgid "glTF to Orbe Expression"
+msgstr "glTF'den Orbe İfadesi'ne"
 
-msgid "Godot to glTF Expression"
-msgstr "Godot'dan glTF İfadesi'ne"
+msgid "Orbe to glTF Expression"
+msgstr "Orbe'dan glTF İfadesi'ne"
 
 msgid "Node Paths"
 msgstr "Düğüm Yolları"
@@ -3988,8 +3988,8 @@ msgstr "Eklemler"
 msgid "Roots"
 msgstr "Kökler"
 
-msgid "Godot Bone Node"
-msgstr "Godot Kemik Düğümü"
+msgid "Orbe Bone Node"
+msgstr "Orbe Kemik Düğümü"
 
 msgid "Skin Root"
 msgstr "Deri Kökü"
@@ -4000,8 +4000,8 @@ msgstr "Eklemler Asıl"
 msgid "Non Joints"
 msgstr "Eklem Olmayanlar"
 
-msgid "Godot Skin"
-msgstr "Godot Kaplaması"
+msgid "Orbe Skin"
+msgstr "Orbe Kaplaması"
 
 msgid "Src Image"
 msgstr "Kaynak Resim"

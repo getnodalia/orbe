@@ -39,7 +39,7 @@ class StringBuilder {
 	LocalVector<String> strings;
 	LocalVector<const char *> c_strings;
 
-	// -1 means it's a Godot String
+	// -1 means it's a Orbe String
 	// a natural number means C string.
 	LocalVector<int32_t> appended_strings;
 
