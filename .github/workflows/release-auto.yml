@@ -33,6 +33,7 @@ jobs:
     uses: getnodalia/foundation/.github/workflows/release-tag.yml@7964f20499fbbe78c855fee7e90d182aff4aae89 # foundation 2026-11-13 (retag-draft)
     with:
       name: Orbe
+      manifest: ORBE_VERSION
       notes-check: scripts/check-release-notes.sh
       retag-draft: ${{ inputs.retag-draft == true }}
 
