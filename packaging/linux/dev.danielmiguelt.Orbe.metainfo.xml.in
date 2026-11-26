@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>dev.danielmiguelt.Orbe</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Orbe</name>
+  <summary>Game engine and editor for 2D and 3D games</summary>
+  <summary xml:lang="es">Motor de videojuegos y editor para juegos 2D y 3D</summary>
+  <launchable type="desktop-id">dev.danielmiguelt.Orbe.desktop</launchable>
+  <description>
+    <p>
+      Orbe is Nodalia's open-source game engine. It has a scene and node editor, 2D and 3D
+      rendering, physics, a scripting language and one-click export, all in an editor drawn in
+      the Nodalia Design Language.
+    </p>
+    <p xml:lang="es">
+      Orbe es el motor de videojuegos de código abierto de Nodalia. Incluye un editor de escenas
+      y nodos, renderizado 2D y 3D, físicas, un lenguaje de scripts y exportación con un clic,
+      todo en un editor dibujado con el Nodalia Design Language.
+    </p>
+  </description>
+  <url type="homepage">https://getnodalia.com/orbe</url>
+  <url type="bugtracker">https://github.com/getnodalia/orbe/issues</url>
+  <developer_name>Nodalia</developer_name>
+  <provides>
+    <binary>orbe</binary>
+  </provides>
+  <categories>
+    <category>Development</category>
+  </categories>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="@VERSION@" date="@DATE@"/>
+  </releases>
+</component>

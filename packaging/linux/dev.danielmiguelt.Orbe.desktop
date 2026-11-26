@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=Application
+Name=Orbe
+GenericName=Game engine
+GenericName[es]=Motor de videojuegos
+Comment=Make 2D and 3D games with a complete editor
+Comment[es]=Crea juegos 2D y 3D con un editor completo
+Exec=orbe %f
+TryExec=orbe
+Icon=dev.danielmiguelt.Orbe
+Terminal=false
+StartupNotify=true
+StartupWMClass=Orbe
+Categories=Development;IDE;
+MimeType=application/x-godot-project;
+Keywords=game;engine;editor;2d;3d;videojuego;motor;
