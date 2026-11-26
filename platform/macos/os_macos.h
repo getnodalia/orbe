@@ -191,7 +191,7 @@ class OS_MacOS_NSApp : public OS_MacOS {
 	void terminate();
 
 public:
-	void start_main(); // Initializes and runs Godot main loop.
+	void start_main(); // Initializes and runs Orbe main loop.
 	void cleanup();
 	bool os_should_terminate() const { return should_terminate; }
 	int get_cmd_argc() const { return argc; }

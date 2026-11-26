@@ -1,7 +1,7 @@
 # Greek translation of the Orbe editor interface.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # George Tsiamasiotis <gtsiam@windowslive.com>, 2017-2018, 2019, 2020, 2021.
 # Georgios Katsanakis <geo.elgeo@gmail.com>, 2019.
 # Overloaded <manoschool@yahoo.gr>, 2019.
@@ -3192,11 +3192,11 @@ msgstr "Αναφορά Σφάλματος"
 msgid "Send Docs Feedback"
 msgstr "Αποστολή Σχολίων Τεκμηρίωσης"
 
-msgid "About Godot..."
-msgstr "Σχετικά με την Godot..."
+msgid "About Orbe..."
+msgstr "Σχετικά με την Orbe..."
 
-msgid "Support Godot Development"
-msgstr "Υποστηρίξτε την ανάπτυξη του Godot"
+msgid "Support Orbe Development"
+msgstr "Υποστηρίξτε την ανάπτυξη του Orbe"
 
 msgid "Open Script Editor"
 msgstr "Άνοιγμα Επεξεργαστή Δεσμών Ενεργειών"
@@ -3381,8 +3381,8 @@ msgstr "Λήψη από:"
 msgid "Select Template File"
 msgstr "Επιλογή Αρχείου Προτύπων"
 
-msgid "Godot Export Templates"
-msgstr "Προτύπων Εξαγωγής Godot"
+msgid "Orbe Export Templates"
+msgstr "Προτύπων Εξαγωγής Orbe"
 
 msgid "Export templates for this platform are missing:"
 msgstr "Τα πρότυπα εξαγωγής για αυτή την πλατφόρτμα λείπουν:"
@@ -3649,7 +3649,7 @@ msgid "Titanium Members"
 msgstr "Μέλη Τιτανίου"
 
 msgid "Thank you for choosing Orbe!"
-msgstr "Σας ευχαριστούμε που επιλέξατε την μηχανή Godot!"
+msgstr "Σας ευχαριστούμε που επιλέξατε την μηχανή Orbe!"
 
 msgid "Name cannot be empty."
 msgstr "Το όνομα δεν μπορεί να είναι κενό."
@@ -3666,8 +3666,8 @@ msgstr "Βασική διαδρομή: %s"
 msgid "Godot Engine contributors"
 msgstr "Συνεισφέροντες στην Orbe"
 
-msgid "Thanks from the Godot community!"
-msgstr "Ευχαριστίες από την κοινότητα της Godot!"
+msgid "Thanks from the Orbe community!"
+msgstr "Ευχαριστίες από την κοινότητα της Orbe!"
 
 msgid "Authors"
 msgstr "Συγγραφείς"
@@ -3684,7 +3684,7 @@ msgid ""
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."
 msgstr ""
-"Η μηχανή Godot βασίζεται σε μια σειρά από δωρεάν και ανοιχτού κώδικα "
+"Η μηχανή Orbe βασίζεται σε μια σειρά από δωρεάν και ανοιχτού κώδικα "
 "βιβλιοθήκες τρίτων κατασκευαστών, όλες συμβατές με τους όρους της άδειας MIT. "
 "Ακολουθεί μία εκτενής λίστα με όλα τα σχετικά συστατικά της μηχανής μαζί με "
 "όλες τις αντοίστοιχες δηλώσεις προστασίας πνευματικών δικαιωμάτων και τους "
@@ -6103,8 +6103,8 @@ msgstr "Αποθήκευση θέματος ως..."
 msgid "Online Docs"
 msgstr "Ηλεκτρονική τεκμηρίωση"
 
-msgid "Open Godot online documentation."
-msgstr "Άνοιγμα ηλεκτρονικής τεκμηρίωσης της Godot."
+msgid "Open Orbe online documentation."
+msgstr "Άνοιγμα ηλεκτρονικής τεκμηρίωσης της Orbe."
 
 msgid "%s Class Reference"
 msgstr "Αναφορά Κλάσης %s"
@@ -6461,8 +6461,8 @@ msgstr ""
 msgid "New profile name:"
 msgstr "Νέο όνομα προφίλ:"
 
-msgid "Godot Feature Profile"
-msgstr "Προφίλ Χαρακτηριστικών του Godot"
+msgid "Orbe Feature Profile"
+msgstr "Προφίλ Χαρακτηριστικών του Orbe"
 
 msgid "Import Profile(s)"
 msgstr "Εισαγωγή Προφίλ"
@@ -7302,11 +7302,11 @@ msgstr ""
 "«x» και «y»."
 
 msgid ""
-"Custom Godot Shader Language expression, with custom amount of input and "
+"Custom Orbe Shader Language expression, with custom amount of input and "
 "output ports. This is a direct injection of code into the vertex/fragment/"
 "light function, do not use it to write the function declarations inside."
 msgstr ""
-"Προσαρμοσμένη έκφραση γλώσσας σκίασης της Godot, με προσαρμοσμένο αριθμό "
+"Προσαρμοσμένη έκφραση γλώσσας σκίασης της Orbe, με προσαρμοσμένο αριθμό "
 "εισόδων και εξόδων. Αυτό είναι μία άμεση παρεμβολή κώδικα στην συνάρτηση "
 "κορυφής/τμήματος/φωτός, μην γράψετε μέσα ορισμούς συναρτήσεων."
 

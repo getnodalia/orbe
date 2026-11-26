@@ -1,7 +1,7 @@
 # Finnish translation of the Orbe editor interface.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # basse <basse@roiske.org>, 2017.
 # Bastian Salmela <bastian.salmela@gmail.com>, 2017, 2018.
 # ekeimaja <ekeimaja@gmail.com>, 2017-2018.
@@ -1091,7 +1091,7 @@ msgid ""
 "The file you selected is an imported scene from a 3D model such as glTF or "
 "FBX.\n"
 "\n"
-"In Godot, 3D models can be imported as either scenes or animation libraries, "
+"In Orbe, 3D models can be imported as either scenes or animation libraries, "
 "which is why they show up here.\n"
 "\n"
 "If you want to use animations from this 3D model, open the Advanced Import "
@@ -3617,7 +3617,7 @@ msgid "Focus on the %s dock."
 msgstr "Kohdista %s telakkaan."
 
 msgid "%s - Orbe"
-msgstr "%s - Godot Pelimoottori"
+msgstr "%s - Orbe Pelimoottori"
 
 msgid "Move this dock right one tab."
 msgstr "Siirrä tätä telakkaa yhden ruudun verran oikealle."
@@ -4758,9 +4758,9 @@ msgstr "Puuttuva tiedosto '%s' tai joku sen riippuvuuksista."
 
 msgid ""
 "File '%s' is saved in a format that is newer than the formats supported by "
-"this version of Godot, so it can't be opened."
+"this version of Orbe, so it can't be opened."
 msgstr ""
-"Tiedosto '%s' on tallennettu uudemmassa formaatissa kuin tämän Godot-version "
+"Tiedosto '%s' on tallennettu uudemmassa formaatissa kuin tämän Orbe-version "
 "tukemat formaatit, joten sitä ei voi avata."
 
 msgid "Error while loading file '%s'."
@@ -5429,10 +5429,10 @@ msgstr "Ehdota ominaisuutta"
 msgid "Send Docs Feedback"
 msgstr "Lähetä palautetta ohjeesta"
 
-msgid "About Godot..."
+msgid "About Orbe..."
 msgstr "Tietoja Godotista..."
 
-msgid "Support Godot Development"
+msgid "Support Orbe Development"
 msgstr "Tue Godotin kehitystä"
 
 msgid "Open Script Editor"
@@ -5486,7 +5486,7 @@ msgstr "Mallipaketti"
 msgid "Export Library"
 msgstr "Vie kirjasto"
 
-msgid "Files have been modified outside Godot"
+msgid "Files have been modified outside Orbe"
 msgstr "Tiedostoja on muokattu Godotin ulkopuolella"
 
 msgid "The following files are newer on disk:"
@@ -6003,13 +6003,13 @@ msgstr "Asenna TPZ-tiedostosta."
 msgid "Select Template File"
 msgstr "Valitse mallitiedosto"
 
-msgid "Godot Export Templates"
+msgid "Orbe Export Templates"
 msgstr "Godotin vientimallit"
 
-msgid "Godot Version"
+msgid "Orbe Version"
 msgstr "Godotin versio"
 
-msgid "Godot Version List"
+msgid "Orbe Version List"
 msgstr "Godotin versioluettelo"
 
 msgid "Available Templates"
@@ -6261,19 +6261,19 @@ msgstr "Vie PCK/ZIP..."
 
 msgid ""
 "Export the project resources as a PCK or ZIP package. This is not a playable "
-"build, only the project data without a Godot executable."
+"build, only the project data without a Orbe executable."
 msgstr ""
 "Vie projektin resurssit PCK- tai ZIP-tiedostona. Tämä ei ole pelattava "
-"koontiversio, vaan pelkästään projektin tiedot ilman Godot exe-tiedostoa."
+"koontiversio, vaan pelkästään projektin tiedot ilman Orbe exe-tiedostoa."
 
 msgid "Export Project..."
 msgstr "Vie projekti..."
 
 msgid ""
-"Export the project as a playable build (Godot executable and project data) "
+"Export the project as a playable build (Orbe executable and project data) "
 "for the selected preset."
 msgstr ""
-"Vie projekti pelattavana koontiversiona (Godot exe-tiedosto ja "
+"Vie projekti pelattavana koontiversiona (Orbe exe-tiedosto ja "
 "projektitiedot) valitulle esiasetukselle."
 
 msgid "Export All"
@@ -6500,7 +6500,7 @@ msgid "Gold Members"
 msgstr "Kultajäsenet"
 
 msgid "Thank you for choosing Orbe!"
-msgstr "Kiitos, että valitsit Godot Pelimoottorin!"
+msgstr "Kiitos, että valitsit Orbe Pelimoottorin!"
 
 msgid "Name cannot be empty."
 msgstr "Nimi ei voi olla tyhjä."
@@ -6534,10 +6534,10 @@ msgid "Folder name is valid."
 msgstr "Kansion nimi on validi."
 
 msgid "Godot Engine contributors"
-msgstr "Godot moottorin kehittäjät"
+msgstr "Orbe moottorin kehittäjät"
 
-msgid "Thanks from the Godot community!"
-msgstr "Kiitos Godot-yhteisöltä!"
+msgid "Thanks from the Orbe community!"
+msgstr "Kiitos Orbe-yhteisöltä!"
 
 msgid "Authors"
 msgstr "Tekijät"
@@ -6554,7 +6554,7 @@ msgid ""
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."
 msgstr ""
-"Godot-pelimoottori käyttää useita kolmannen osapuolen ilmaisia ja avoimia "
+"Orbe-pelimoottori käyttää useita kolmannen osapuolen ilmaisia ja avoimia "
 "kirjastoja, jotka kaikki ovat yhteensopivia sen MIT lisenssin kanssa. "
 "Seuraava tyhjentävä listaus sisältää kaikki tällaiset kolmannen osapuolen "
 "komponentit ja niiden vastaavat tekijänoikeustiedot ja käyttöoikeusehdot."
@@ -7314,12 +7314,12 @@ msgid "Are you sure to run %d projects at once?"
 msgstr "Haluatko varmasti suorittaa %d projektia yhdenaikaisesti?"
 
 msgid ""
-"The selected project \"%s\" does not specify its supported Godot version in "
+"The selected project \"%s\" does not specify its supported Orbe version in "
 "its configuration file (\"project.godot\").\n"
 "\n"
 "Project path: %s\n"
 "\n"
-"If you proceed with opening it, it will be converted to Godot's current "
+"If you proceed with opening it, it will be converted to Orbe's current "
 "configuration file format.\n"
 "\n"
 "Warning: You won't be able to open the project with previous versions of the "
@@ -10137,13 +10137,13 @@ msgstr "Tuo teema"
 msgid "Save Theme As..."
 msgstr "Tallenna teema nimellä..."
 
-msgid "Open '%s' in Godot online documentation."
+msgid "Open '%s' in Orbe online documentation."
 msgstr "Avaa \"%s\" Godotin verkkodokumentaatiossa."
 
 msgid "Online Docs"
 msgstr "Dokumentaatio"
 
-msgid "Open Godot online documentation."
+msgid "Open Orbe online documentation."
 msgstr "Avaa Godotin online-dokumentaatio."
 
 msgid "Unsaved file."
@@ -10644,7 +10644,7 @@ msgstr ""
 msgid "New profile name:"
 msgstr "Uusi profiilin nimi:"
 
-msgid "Godot Feature Profile"
+msgid "Orbe Feature Profile"
 msgstr "Godotin ominaisuusprofiili"
 
 msgid "Import Profile(s)"
@@ -11788,11 +11788,11 @@ msgid "4D vector parameter."
 msgstr "4D vektori parametri."
 
 msgid ""
-"Custom Godot Shader Language expression, with custom amount of input and "
+"Custom Orbe Shader Language expression, with custom amount of input and "
 "output ports. This is a direct injection of code into the vertex/fragment/"
 "light function, do not use it to write the function declarations inside."
 msgstr ""
-"Mukautettu Godot Shader Language lauseke, jolla on haluttu määrä tulo- ja "
+"Mukautettu Orbe Shader Language lauseke, jolla on haluttu määrä tulo- ja "
 "lähtöportteja. Tämä tarkoittaa koodin lisäämistä suoraan vertex/fragment/"
 "light funktioiden sisään, älä käytä sitä kirjoittaaksesi funktioesittelyitä."
 
@@ -11845,7 +11845,7 @@ msgstr ""
 "\"Min SDK\" tulisi olla validi kokonaisluku, annettu \"%s\" ei ole validi."
 
 msgid ""
-"\"Min SDK\" cannot be lower than %d, which is the version needed by the Godot "
+"\"Min SDK\" cannot be lower than %d, which is the version needed by the Orbe "
 "library."
 msgstr ""
 "\"Min SDK\" ei voi olla pienempi kuin %d, koska vähintään tämä versio on "

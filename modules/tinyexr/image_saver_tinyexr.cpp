@@ -163,7 +163,7 @@ Vector<uint8_t> save_exr_buffer(const Ref<Image> &p_img, bool p_grayscale, bool 
 
 	const int max_channels = 4;
 
-	// Godot does not support more than 4 channels,
+	// Orbe does not support more than 4 channels,
 	// so we can preallocate header infos on the stack and use only the subset we need
 	PackedByteArray channels[max_channels];
 	unsigned char *channels_ptrs[max_channels];

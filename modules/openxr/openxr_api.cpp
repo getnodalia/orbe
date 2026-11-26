@@ -957,9 +957,9 @@ bool OpenXRAPI::create_session() {
 		return false;
 	}
 
-	set_object_name(XR_OBJECT_TYPE_SESSION, uint64_t(session), "Main Godot OpenXR Session");
+	set_object_name(XR_OBJECT_TYPE_SESSION, uint64_t(session), "Main Orbe OpenXR Session");
 
-	begin_debug_label_region("Godot session active");
+	begin_debug_label_region("Orbe session active");
 
 	for (OpenXRExtensionWrapper *wrapper : registered_extension_wrappers) {
 		wrapper->on_session_created(session);
@@ -2073,7 +2073,7 @@ bool OpenXRAPI::poll_events() {
 				XrEventDataInstanceLossPending *event = (XrEventDataInstanceLossPending *)&runtimeEvent;
 
 				// TODO We get this event if we're about to loose our OpenXR instance.
-				// We should queue exiting Godot at this point.
+				// We should queue exiting Orbe at this point.
 
 				print_verbose(String("OpenXR EVENT: instance loss pending at ") + itos(event->lossTime));
 				return false;

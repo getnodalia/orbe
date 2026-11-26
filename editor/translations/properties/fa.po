@@ -1,7 +1,7 @@
 # Persian translation of the Orbe properties.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # alabd14313 <alabd14313@yahoo.com>, 2016.
 # Dante Marshal <Marshal.Devilhunter@gmail.com>, 2018.
 # hamed nasib <cghamed752@chmail.ir>, 2016.
@@ -2094,7 +2094,7 @@ msgstr "نور"
 msgid "Roots"
 msgstr "ریشه‌ها"
 
-msgid "Godot Bone Node"
+msgid "Orbe Bone Node"
 msgstr "گرهٔ استخوان گودوت"
 
 msgid "Min Filter"

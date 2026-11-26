@@ -1,7 +1,7 @@
 # Vietnamese translation of the Orbe properties.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # 01lifeleft <01lifeleft@gmail.com>, 2018.
 # Dlean Jeans <dleanjeans@gmail.com>, 2018.
 # Hai Le <dark.hades.1102@gmail.com>, 2017.
@@ -1995,8 +1995,8 @@ msgstr "Ánh sáng"
 msgid "Roots"
 msgstr "Gốc"
 
-msgid "Godot Skin"
-msgstr "Godot Skin"
+msgid "Orbe Skin"
+msgstr "Orbe Skin"
 
 msgid "Sampler"
 msgstr "Trình lấy mẫu"

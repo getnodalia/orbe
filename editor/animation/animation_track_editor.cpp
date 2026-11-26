@@ -3019,7 +3019,7 @@ String AnimationTrackEdit::get_tooltip(const Point2 &p_pos) const {
 							handle_mode = TTR("Mirrored", "Bezier Handle Mode");
 						} break;
 						default: {
-							// Unknown modes may occur when editing a file from a newer version of Godot.
+							// Unknown modes may occur when editing a file from a newer version of Orbe.
 							handle_mode = itos(hm);
 						} break;
 					}

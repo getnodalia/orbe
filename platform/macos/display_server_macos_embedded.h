@@ -63,7 +63,7 @@ struct DisplayServerMacOSEmbeddedState {
 	}
 };
 
-/// "Embedded" as in "Embedded in the Godot editor window".
+/// "Embedded" as in "Embedded in the Orbe editor window".
 class DisplayServerMacOSEmbedded : public DisplayServerMacOSBase {
 	GDSOFTCLASS(DisplayServerMacOSEmbedded, DisplayServerMacOSBase)
 

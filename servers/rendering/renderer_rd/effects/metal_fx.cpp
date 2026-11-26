@@ -154,7 +154,7 @@ MFXTemporalContext *MFXTemporalEffect::create_context(CreateParams p_params) con
 	context->scaler = desc->newTemporalScaler(dev);
 	context->scaler->setMotionVectorScaleX(p_params.motion_vector_scale.x);
 	context->scaler->setMotionVectorScaleY(p_params.motion_vector_scale.y);
-	context->scaler->setDepthReversed(true); // Godot uses reverse Z per https://github.com/godotengine/godot/pull/88328
+	context->scaler->setDepthReversed(true); // Orbe uses reverse Z per https://github.com/godotengine/godot/pull/88328
 
 	return context;
 }

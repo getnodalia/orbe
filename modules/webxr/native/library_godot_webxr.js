@@ -294,7 +294,7 @@ const GodotWebXR = {
 
 			gl.makeXRCompatible().then(function () {
 				const throwNoWebXRLayersError = () => {
-					throw new Error('This browser doesn\'t support WebXR Layers (which Godot requires) nor is the polyfill in use. If you are the developer of this application, please consider including the polyfill.');
+					throw new Error('This browser doesn\'t support WebXR Layers (which Orbe requires) nor is the polyfill in use. If you are the developer of this application, please consider including the polyfill.');
 				};
 
 				try {
@@ -335,7 +335,7 @@ const GodotWebXR = {
 					GodotWebXR.pauseResumeMainLoop();
 
 					// Call in setTimeout() so that errors in the onstarted()
-					// callback don't bubble up here and cause Godot to try the
+					// callback don't bubble up here and cause Orbe to try the
 					// next reference space.
 					window.setTimeout(function () {
 						const reference_space_c_str = GodotRuntime.allocString(reference_space_type);

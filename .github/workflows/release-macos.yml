@@ -1,0 +1,183 @@
+name: Release macOS
+
+# Builds the Orbe editor for Apple silicon and Intel, assembles Orbe.app and its DMG on standard
+# macOS runners, and starts the app from the mounted image. It uploads workflow artifacts on every
+# run and attaches the DMG to the release when release-auto.yml calls it with a tag.
+#
+# macOS slots are the scarce ones, so this runs only for a release (release-auto.yml), by hand
+# (workflow_dispatch) and for a pull request that changes the macOS packaging itself.
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/release-macos.yml"
+      - "packaging/macos/**"
+      - "packaging/env.sh"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag to attach the DMG to, e.g. v0.1.0 (empty: artifacts only)"
+        required: false
+        default: ""
+  # release-auto.yml, once a version with its notes lands on main.
+  workflow_call:
+    inputs:
+      tag:
+        description: "Release tag to attach the DMG to"
+        type: string
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: macos-${{ github.event_name == 'pull_request' && github.ref || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    name: Editor (${{ matrix.arch }})
+    runs-on: macos-15
+    timeout-minutes: 120
+    strategy:
+      fail-fast: true
+      matrix:
+        # Both are built on an Apple silicon runner: clang cross-compiles the Intel one.
+        arch: [arm64, x86_64]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Link against the macOS 26 SDK
+        # AppKit draws the traffic lights in the style of the SDK the app was linked against:
+        # linked against 15, macOS 26 keeps the old flat ones instead of Liquid Glass. The macOS 15
+        # runners carry Xcode 26 beside their default; the deployment target keeps the floor.
+        run: |
+          xcode=$(
+            for candidate in /Applications/Xcode_[0-9]*.app; do
+              if [[ -d "$candidate/Contents/Developer" ]]; then
+                printf '%s\n' "$candidate"
+              fi
+            done | awk -F/ '{version=$NF; sub(/^Xcode_/, "", version); if (version+0 >= 26) print}' | sort -V | tail -n 1
+          )
+          test -n "$xcode" || { echo "no Xcode 26 on this runner" >&2; exit 1; }
+          # SCons hands the compiler a bare environment without DEVELOPER_DIR, so the compiler
+          # and the SDK must agree through xcode-select (a 26 SDK with an older Xcode's clang
+          # fails to build the SDK's modules).
+          sudo xcode-select -s "$xcode/Contents/Developer"
+          echo "DEVELOPER_DIR=$xcode/Contents/Developer" >> "$GITHUB_ENV"
+          xcode-select -p
+          clang --version
+          xcrun --sdk macosx --show-sdk-version
+
+      - name: SCons
+        # The engine needs SCons 4.4 or newer.
+        run: |
+          python3 -m pip install --user --break-system-packages 'scons==4.9.1' \
+            || python3 -m pip install --user 'scons==4.9.1'
+          echo "$(python3 -m site --user-base)/bin" >> "$GITHUB_PATH"
+
+      - name: Build the editor
+        run: |
+          scons --version
+          packaging/macos/build.sh "${{ matrix.arch }}"
+
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: orbe-macos-editor-${{ matrix.arch }}
+          path: bin/orbe.macos.editor.${{ matrix.arch }}
+          if-no-files-found: error
+          retention-days: 3
+
+  dmg:
+    name: DMG
+    needs: build
+    runs-on: macos-15
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    env:
+      DIST: ${{ github.workspace }}/dist
+      # The release this run attaches to, if any.
+      RELEASE_TAG: ${{ inputs.tag || '' }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Version
+        id: ver
+        run: |
+          version="$(tr -d '[:space:]' < ORBE_VERSION)"
+          test -n "$version"
+          # A tag must describe the code it is built from.
+          if [[ -n "$RELEASE_TAG" && "${RELEASE_TAG#v}" != "$version" ]]; then
+            echo "Tag $RELEASE_TAG does not match ORBE_VERSION $version" >&2
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          pattern: orbe-macos-editor-*
+          path: bin
+          merge-multiple: true
+
+      - name: Build Orbe.app and the DMG
+        # Signed ad hoc: there is no Developer ID, so the DMG is opened with right click > Open.
+        env:
+          ORBE_BUILD_SHA: ${{ github.sha }}
+        run: |
+          chmod +x bin/orbe.macos.editor.*
+          packaging/macos/package.sh --arch universal --skip-build
+
+      - name: Check the DMG
+        run: |
+          set -euo pipefail
+          dmgs=("$DIST"/orbe-*-macos-universal.dmg)
+          if [[ ${#dmgs[@]} -ne 1 || ! -f "${dmgs[0]}" ]]; then
+            echo "expected exactly one macOS DMG" >&2
+            exit 1
+          fi
+          dmg=${dmgs[0]}
+          hdiutil attach "$dmg" -nobrowse -readonly -mountpoint /Volumes/Orbe
+          ls -la /Volumes/Orbe /Volumes/Orbe/.background
+          test -f /Volumes/Orbe/.background/background.tiff
+          test -f /Volumes/Orbe/.DS_Store
+          bin=/Volumes/Orbe/Orbe.app/Contents/MacOS/Orbe
+          archs=$(lipo -archs "$bin")
+          echo "architectures: $archs"
+          [[ "$archs" == *arm64* && "$archs" == *x86_64* ]]
+          for arch in arm64 x86_64; do
+            lipo -thin "$arch" "$bin" -output "$RUNNER_TEMP/orbe-$arch"
+            sdk=$(otool -l "$RUNNER_TEMP/orbe-$arch" | awk '$1 == "sdk" {print $2; exit}')
+            echo "$arch linked against SDK $sdk"
+            test "${sdk%%.*}" -ge 26
+          done
+          # The image's HFS+ volume tags files with Finder info, which the
+          # strict check rejects; verify a copy without extended attributes,
+          # which is the signature that was sealed.
+          rm -rf "$RUNNER_TEMP/verify" && mkdir "$RUNNER_TEMP/verify"
+          ditto --noextattr --noqtn --norsrc /Volumes/Orbe/Orbe.app "$RUNNER_TEMP/verify/Orbe.app"
+          codesign --verify --strict --deep --verbose=2 "$RUNNER_TEMP/verify/Orbe.app"
+          # The app starts from the image and answers.
+          out=$("$bin" --headless --version)
+          echo "version: $out"
+          test -n "$out"
+          hdiutil detach /Volumes/Orbe
+          (cd "$DIST" && shasum -a 256 orbe-*-macos-* > SHA256SUMS-macos && cat SHA256SUMS-macos)
+
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: orbe-macos-universal
+          path: |
+            dist/orbe-*-macos-*
+            dist/SHA256SUMS-macos
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Attach to the release
+        if: env.RELEASE_TAG != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "$RELEASE_TAG" "$DIST"/orbe-*-macos-* "$DIST"/SHA256SUMS-macos --clobber --repo "$GITHUB_REPOSITORY"

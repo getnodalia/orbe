@@ -211,7 +211,7 @@ repos:
         entry: python misc/scripts/dotnet_format.py
         types_or: [c#]
 #
-# End of upstream Godot pre-commit hooks.
+# End of upstream Orbe pre-commit hooks.
 #
 # Keep this separation to let downstream forks add their own hooks to this file,
 # without running into merge conflicts when rebasing on latest upstream.

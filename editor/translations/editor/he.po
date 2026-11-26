@@ -1,7 +1,7 @@
 # Hebrew translation of the Orbe editor interface.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # Daniel <lorddaniel09@gmail.com>, 2018.
 # Ben Golan <golanben4@gmail.com>, 2017.
 # Luc Stepniewski <lior@gradstein.info>, 2017.
@@ -3104,8 +3104,8 @@ msgstr "מתנדבי מנוע גודו"
 msgid "Double-click to open in browser."
 msgstr "לחיצה כפולה לפתיחה בדפדפן."
 
-msgid "Thanks from the Godot community!"
-msgstr "תודות מקהילת Godot!"
+msgid "Thanks from the Orbe community!"
+msgstr "תודות מקהילת Orbe!"
 
 msgid "Authors"
 msgstr "יוצרים"
@@ -3122,7 +3122,7 @@ msgid ""
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."
 msgstr ""
-"מנוע Godot מסתמך על מספר ספריות צד־שלישי חופשיות ובקוד פתוח, כולן תואמות את "
+"מנוע Orbe מסתמך על מספר ספריות צד־שלישי חופשיות ובקוד פתוח, כולן תואמות את "
 "דרישות רישיון MIT של המנוע. לפניכם רשימה ממצה של כל רכיבי הצד־השלישי במנוע עם "
 "הצהרות זכויות היוצרים ותנאי הרישיון שלהם."
 
@@ -3320,12 +3320,12 @@ msgid "Language:"
 msgstr "שפה:"
 
 msgid ""
-"You are about to create a Godot project in a non-empty folder.\n"
+"You are about to create a Orbe project in a non-empty folder.\n"
 "The entire contents of this folder will be imported as project resources!\n"
 "\n"
 "Are you sure you wish to continue?"
 msgstr ""
-"את/ה עומד/ת ליצור פרויקט Godot בתיקייה שאינה ריקה.\n"
+"את/ה עומד/ת ליצור פרויקט Orbe בתיקייה שאינה ריקה.\n"
 "כל תוכן התיקייה הזו ייובא כמשאבי פרויקט!\n"
 "\n"
 "האם את/ה בטוח/ה שברצונך להמשיך?"
@@ -3406,7 +3406,7 @@ msgid ""
 "manual adjustments.\n"
 "\n"
 "IMPORTANT: Make sure to backup your project before converting, as this "
-"operation makes it impossible to open it in older versions of Godot."
+"operation makes it impossible to open it in older versions of Orbe."
 msgstr ""
 "אפשרות זו תבצע המרה מלאה של הפרויקט, ותעדכן סצנות, משאבים וסקריפטים מ-Godot 3 "
 "כדי שיעבדו ב-Godot 4.\n"
@@ -3415,7 +3415,7 @@ msgstr ""
 "הוא לא יפתח מיד בסיום ההמרה ועדיין ידרוש התאמות ידניות.\n"
 "\n"
 "חשוב: ודאו שאתם מגבים את הפרויקט לפני ההמרה, מכיוון שפעולה זו אינה מאפשרת "
-"לפתוח אותו בגרסאות קודמות של Godot."
+"לפתוח אותו בגרסאות קודמות של Orbe."
 
 msgid "Error"
 msgstr "שגיאה"
@@ -4338,8 +4338,8 @@ msgstr "צור או ייבא פרופיל כדי לערוך מחלקות ומא�
 msgid "New profile name:"
 msgstr "שם פרופיל חדש:"
 
-msgid "Godot Feature Profile"
-msgstr "פרופיל התכונות של Godot"
+msgid "Orbe Feature Profile"
+msgstr "פרופיל התכונות של Orbe"
 
 msgid "Import Profile(s)"
 msgstr "ייבוא פרופיל(ים)"

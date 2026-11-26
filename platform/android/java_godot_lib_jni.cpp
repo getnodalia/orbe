@@ -295,8 +295,8 @@ JNIEXPORT jboolean JNICALL Java_org_godotengine_godot_GodotLib_step(JNIEnv *env,
 	}
 
 	if (step.get() == STEP_SETUP) {
-		// Since Godot is initialized on the UI thread, main_thread_id was set to that thread's id,
-		// but for Godot purposes, the main thread is the one running the game loop.
+		// Since Orbe is initialized on the UI thread, main_thread_id was set to that thread's id,
+		// but for Orbe purposes, the main thread is the one running the game loop.
 		// The logo is shown in the next frame otherwise we run into rendering issues.
 		if (Main::setup2(false) != OK) {
 			ERR_PRINT("Unable to complete engine setup!");

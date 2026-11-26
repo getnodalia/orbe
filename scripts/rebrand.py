@@ -16,7 +16,8 @@ coming back by hand.
 Rules (see the config file for this repository's):
 
     [[replace]]  from = "...", to = "..."   literal, case-sensitive, applied in order to file
-                                            contents and to every path
+                                            contents and to every path; `paths = false` limits
+                                            a rule to contents
     keep = ["regex", ...]                    spans that stay as they are (URLs, upstream's repo...)
     skip = ["glob", ...]                     files left alone entirely (licence notices...)
     [[pin]]  file = "...", pattern = "regex" the first match in `file` takes the value it has in the
@@ -45,6 +46,9 @@ class Rules:
     def __init__(self, config: Path):
         data = tomllib.loads(config.read_text(encoding="utf-8"))
         self.pairs = [(r["from"], r["to"]) for r in data.get("replace", [])]
+        # Rules with `paths = false` rewrite contents only: a file's name can be bound to code that
+        # names it (a Java class, an icon looked up by name) and has to stay.
+        self.path_pairs = [(r["from"], r["to"]) for r in data.get("replace", []) if r.get("paths", True)]
         if not self.pairs:
             sys.exit(f"{config}: no [[replace]] rules")
         self.keep = [re.compile(k) for k in data.get("keep", [])]
@@ -73,7 +77,7 @@ class Rules:
         return re.sub(r"\0(\d+)\0", lambda m: kept[int(m.group(1))], text)
 
     def path(self, p: str) -> str:
-        for f, t in self.pairs:
+        for f, t in self.path_pairs:
             p = p.replace(f, t)
         return p
 

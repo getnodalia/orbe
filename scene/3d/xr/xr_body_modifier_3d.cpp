@@ -88,7 +88,7 @@ XRBodyModifier3D::BoneUpdate XRBodyModifier3D::get_bone_update() const {
 }
 
 void XRBodyModifier3D::_get_joint_data() {
-	// Table of Godot Humanoid bone names with some additions.
+	// Table of Orbe Humanoid bone names with some additions.
 	static const String bone_names[XRBodyTracker::JOINT_MAX] = {
 		"Root", // XRBodyTracker::JOINT_ROOT
 

@@ -426,9 +426,9 @@ String EditorBuildProfile::get_build_option_name(BuildOption p_build_option) {
 		TTRC("Metal"),
 		TTRC("OpenGL"),
 		TTRC("Physics Server (2D)"),
-		TTRC("Godot Physics (2D)"),
+		TTRC("Orbe Physics (2D)"),
 		TTRC("Physics Server (3D)"),
-		TTRC("Godot Physics (3D)"),
+		TTRC("Orbe Physics (3D)"),
 		TTRC("Jolt Physics"),
 		TTRC("Text Server: Fallback"),
 		TTRC("Text Server: Advanced"),
@@ -463,9 +463,9 @@ String EditorBuildProfile::get_build_option_description(BuildOption p_build_opti
 		TTRC("Metal backend of RenderingDevice (Apple arm64 only)."),
 		TTRC("OpenGL backend (if disabled, the RenderingDevice backend is required)."),
 		TTRC("PhysicsServer and capabilities for 2D."),
-		TTRC("Godot Physics backend (2D)."),
+		TTRC("Orbe Physics backend (2D)."),
 		TTRC("PhysicsServer and capabilities for 3D."),
-		TTRC("Godot Physics backend (3D)."),
+		TTRC("Orbe Physics backend (3D)."),
 		TTRC("Jolt Physics backend (3D only)."),
 		TTRC("Fallback implementation of Text Server\nSupports basic text layouts."),
 		TTRC("Text Server implementation powered by ICU and HarfBuzz libraries.\nSupports complex text layouts, BiDi, and contextual OpenType font features."),
@@ -1014,7 +1014,7 @@ void EditorBuildProfileManager::_detect_from_project() {
 
 	for (const StringName &class_name : all_classes) {
 		if (ClassDB::get_api_type(class_name) != ClassDB::API_CORE) {
-			continue; // This class is editor-only or not from Godot itself.
+			continue; // This class is editor-only or not from Orbe itself.
 		}
 
 		if (class_name != "Resource" && class_name != "Node" && !ClassDB::is_parent_class(class_name, "Resource") && !ClassDB::is_parent_class(class_name, "Node")) {

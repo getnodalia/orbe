@@ -221,7 +221,7 @@ void EditorLog::_meta_clicked(const String &p_meta) {
 			InspectorDock::get_singleton()->edit_resource(res);
 		}
 	} else if (path.has_extension("cpp") || path.has_extension("h") || path.has_extension("mm") || path.has_extension("hpp")) {
-		// Godot source file. Try to open it in external editor.
+		// Orbe source file. Try to open it in external editor.
 		if (path.begins_with("./") || path.begins_with(".\\")) {
 			// Relative path. Convert to absolute, using executable path as reference.
 			path = path.trim_prefix("./").trim_prefix(".\\");
@@ -583,7 +583,7 @@ EditorLog::EditorLog() {
 	hbox->add_child(editor_filter->toggle_button);
 	type_filter_map.insert(MSG_TYPE_EDITOR, editor_filter);
 
-	add_message(GODOT_VERSION_FULL_NAME " (c) 2007-present Juan Linietsky, Ariel Manzur & Godot Contributors.");
+	add_message(GODOT_VERSION_FULL_NAME " (c) 2007-present Juan Linietsky, Ariel Manzur & Orbe Contributors.");
 
 	eh.errfunc = _error_handler;
 	eh.userdata = this;

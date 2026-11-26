@@ -537,7 +537,7 @@ FSR2Effect::FSR2Effect() {
 	modes_with_fp16.push_back("");
 	modes_with_fp16.push_back("\n#define FFX_HALF 1\n");
 
-	// Since Godot currently lacks a shader reflection mechanism to persist the name of the bindings in the shader cache and
+	// Since Orbe currently lacks a shader reflection mechanism to persist the name of the bindings in the shader cache and
 	// there's also no mechanism to compile the shaders offline, the bindings are created manually by looking at the GLSL
 	// files included in FSR2 and mapping the macro bindings (#define FSR2_BIND_*) to their respective implementation names.
 	//

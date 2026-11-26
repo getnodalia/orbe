@@ -1,7 +1,7 @@
 # Estonian translation of the Orbe editor interface.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # Jens <arrkiin@gmail.com>, 2019.
 # Mattias Aabmets <mattias.aabmets@gmail.com>, 2019.
 # StReef <streef.gtx@gmail.com>, 2020, 2021.
@@ -2593,8 +2593,8 @@ msgstr "Funktsionaalsuse Soovitamine"
 msgid "Send Docs Feedback"
 msgstr "Saada dokumentatsioonide tagasiside"
 
-msgid "Support Godot Development"
-msgstr "Toeta Godot'i Arendamist"
+msgid "Support Orbe Development"
+msgstr "Toeta Orbe'i Arendamist"
 
 msgid "Open Script Editor"
 msgstr "Ava Skripti Redaktor"
@@ -2763,7 +2763,7 @@ msgstr "Ava Veebibrauseris"
 msgid "Select Template File"
 msgstr "Valige Malli Fail"
 
-msgid "Godot Export Templates"
+msgid "Orbe Export Templates"
 msgstr "Godoti Ekspordi mallid"
 
 msgid "Invalid Encryption Key (must be 64 hexadecimal characters long)"
@@ -2852,7 +2852,7 @@ msgstr "Ekspordi Eraldiseisva Serverina"
 msgid "Export Mode:"
 msgstr "Ekspordirežiim:"
 
-msgid "Godot Project Pack"
+msgid "Orbe Project Pack"
 msgstr "Godoti Projekti Pakk"
 
 msgid "Features"
@@ -3106,10 +3106,10 @@ msgid "Folder name is valid."
 msgstr "Kausta nimi on kehtiv."
 
 msgid "Godot Engine contributors"
-msgstr "Godot mängumootori panustajad"
+msgstr "Orbe mängumootori panustajad"
 
-msgid "Thanks from the Godot community!"
-msgstr "Suur tänu Godot kogukonnalt!"
+msgid "Thanks from the Orbe community!"
+msgstr "Suur tänu Orbe kogukonnalt!"
 
 msgid "Authors"
 msgstr "Autorid"
@@ -3126,7 +3126,7 @@ msgid ""
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."
 msgstr ""
-"Godot mängumootor tugineb mitmetele kolmandate osapoolte tasuta ja avatud "
+"Orbe mängumootor tugineb mitmetele kolmandate osapoolte tasuta ja avatud "
 "lähtekoodiga teekidele, mis kõik on kooskõlas MIT-litsentsi tingimustega. "
 "Järgnev on kõigi selliste kolmandate osapoolte komponentide täielik loetelu "
 "koos vastavate autoriõiguste avalduste ja litsentsitingimustega."
@@ -6992,8 +6992,8 @@ msgstr "Salvesta teema kui..."
 msgid "Online Docs"
 msgstr "Veebidokumentatsioonid"
 
-msgid "Open Godot online documentation."
-msgstr "Ava Godot Interneti Dokumentatisoon."
+msgid "Open Orbe online documentation."
+msgstr "Ava Orbe Interneti Dokumentatisoon."
 
 msgid "Unsaved file."
 msgstr "Salvestamata fail."
@@ -7380,7 +7380,7 @@ msgstr ""
 msgid "New profile name:"
 msgstr "Uus profiilinimi:"
 
-msgid "Godot Feature Profile"
+msgid "Orbe Feature Profile"
 msgstr "Godoti funktsiooniprofiil"
 
 msgid "Import Profile(s)"

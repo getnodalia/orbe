@@ -1,7 +1,7 @@
 # Romanian translation of the Orbe editor interface.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # Calin Sopterean <csopterean@gmail.com>, 2018.
 # Filip <filipanton@tutanota.com>, 2018, 2020.
 # Nitroretro <nitroretro@protonmail.com>, 2018.
@@ -1114,7 +1114,7 @@ msgid ""
 "The file you selected is an imported scene from a 3D model such as glTF or "
 "FBX.\n"
 "\n"
-"In Godot, 3D models can be imported as either scenes or animation libraries, "
+"In Orbe, 3D models can be imported as either scenes or animation libraries, "
 "which is why they show up here.\n"
 "\n"
 "If you want to use animations from this 3D model, open the Advanced Import "
@@ -1125,7 +1125,7 @@ msgstr ""
 "Fișierul selectat este o scenă importată dintr-un model 3D, cum ar fi glTF "
 "sau FBX.\n"
 "\n"
-"În Godot, modelele 3D pot fi importate fie ca scene, fie ca biblioteci de "
+"În Orbe, modelele 3D pot fi importate fie ca scene, fie ca biblioteci de "
 "animații, motiv pentru care apar aici.\n"
 "\n"
 "Dacă doriți să utilizați animații din acest model 3D, deschideți caseta de "
@@ -3224,8 +3224,8 @@ msgstr "Exportă Managerul de Șabloane"
 msgid "Download from:"
 msgstr "Descărcați din:"
 
-msgid "Godot Export Templates"
-msgstr "Șabloane de export Godot"
+msgid "Orbe Export Templates"
+msgstr "Șabloane de export Orbe"
 
 msgid "ZIP File"
 msgstr "Fișiere ZIP"
@@ -3382,10 +3382,10 @@ msgid "Silver Sponsors"
 msgstr "Sponsori de argint"
 
 msgid "Godot Engine contributors"
-msgstr "Contribuabili Motor Godot"
+msgstr "Contribuabili Motor Orbe"
 
-msgid "Thanks from the Godot community!"
-msgstr "Mulțumesc din partea comunităţii Godot!"
+msgid "Thanks from the Orbe community!"
+msgstr "Mulțumesc din partea comunităţii Orbe!"
 
 msgid "Authors"
 msgstr "Autori"
@@ -3402,7 +3402,7 @@ msgid ""
 "an exhaustive list of all such third-party components with their respective "
 "copyright statements and license terms."
 msgstr ""
-"Motorul Godot se bazează pe un număr de biblioteci thirdparty gratis și "
+"Motorul Orbe se bazează pe un număr de biblioteci thirdparty gratis și "
 "opensource, toate compatibile cu termenii licenţei MIT ai lui. Mai jos este o "
 "listă exhaustivă a tuturor acestor componente de thirdparty cu declaraţiile "
 "de autor respective şi termenii licenței."
@@ -4505,8 +4505,8 @@ msgstr "'%s' nu poate fi deschis. Fișierul ar putea fi modificat sau șters."
 msgid "Online Docs"
 msgstr "Documentație Online"
 
-msgid "Open Godot online documentation."
-msgstr "Deschideți documentația online Godot."
+msgid "Open Orbe online documentation."
+msgstr "Deschideți documentația online Orbe."
 
 msgid "Open..."
 msgstr "Deschide..."
@@ -4699,7 +4699,7 @@ msgstr ""
 msgid "New profile name:"
 msgstr "Nume de profil nou:"
 
-msgid "Godot Feature Profile"
+msgid "Orbe Feature Profile"
 msgstr "Administrează Șabloanele de Export"
 
 msgid "Import Profile(s)"

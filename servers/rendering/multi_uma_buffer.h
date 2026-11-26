@@ -200,7 +200,7 @@ enum class MultiUmaBufferType : uint8_t {
 ///
 /// # Tricks
 ///
-///	Godot's shadow mapping code calls uma_buffer.uniform_buffers._get(-p_pass_offset) (i.e. a negative value)
+///	Orbe's shadow mapping code calls uma_buffer.uniform_buffers._get(-p_pass_offset) (i.e. a negative value)
 /// because for various reasons its shadow mapping code was written like this:
 ///
 ///		for( uint32_t i = 0u; i < num_passes; ++i ) {

@@ -210,6 +210,13 @@ void EditorSettingsDialog::cancel_pressed() {
 	EditorSettings::get_singleton()->notify_changes();
 }
 
+void EditorSettingsDialog::popup_edit_shortcuts() {
+	popup_edit_settings();
+	if (tabs && tab_shortcuts) {
+		tabs->set_current_tab(tab_shortcuts->get_index());
+	}
+}
+
 void EditorSettingsDialog::popup_edit_settings() {
 	if (!EditorSettings::get_singleton()) {
 		return;

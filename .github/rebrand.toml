@@ -24,6 +24,22 @@ keep = [
     "Godot Engine contributors",
     # The Android and web export templates keep upstream's package names.
     "org\\.godotengine\\.[a-z][\\w.]*",
+    # Identifiers: C++ classes and namespaces, Java and Kotlin classes, the GDExtension interface.
+    "\\w+Godot\\w*",
+    "Godot\\w+",
+    # The C# API's namespace (`using Godot;`, `Godot.Node`) and the class reference's code samples.
+    "using Godot\\b",
+    "namespace Godot\\b",
+    "\\bGodot\\.[A-Za-z]",
+    # The editor icon is looked up by the name of its file, which stays until the art is replaced.
+    "SNAME\\(\"Godot\"\\)",
+    "add_conversion_exception\\(\"Godot\"\\)",
+    "saturation_exceptions\\.insert\\(\"Godot\"\\)",
+    # The adaptation notices in the code from Bullet and Jolt.
+    "Adapted to Godot from",
+    # Upstream's version history: the project converter and compatibility notes name the versions
+    # whose projects Orbe opens.
+    "Godot (?:[0-9]|<[0-9]|>=?\\s?[0-9])\\S*(?: (?:&|and|or|to|->) [0-9]\\S*)?",
 ]
 
 # Files left alone entirely.
@@ -44,6 +60,21 @@ skip = [
     # The record of what came from upstream, and upstream's own README kept for reference.
     "docs/upstream.md",
     "docs/upstream-readme.md",
+    # Their own scripts and the Android and web export templates, whose class and global names
+    # are what exported projects and plug-ins call.
+    "platform/android/java/*",
+    "platform/web/*",
+    "misc/dist/html/*",
+    "modules/mono/*",
+    "misc/scripts/*",
+    "*/detect.py",
+    "methods.py",
+    "CHANGELOG.md",
+    # Orbe's own records, which name upstream's files on purpose.
+    "ATTRIBUTION.md",
+    "NODALIA_MIGRATION.md",
+    "AGENTS.md",
+    "CONTRIBUTING.md",
 ]
 
 # Lines that keep this app's value when upstream's tree is rebranded (the sync passes --pin-from).
@@ -85,3 +116,31 @@ to = "StartupWMClass=Orbe"
 [[replace]]
 from = "Godot Engine"
 to = "Orbe"
+
+# The editor's colour presets named after the engine's old versions: Orbe calls them Classic.
+# Only the quoted and listed spellings, so the project converter's "Godot 3 project" stays.
+[[replace]]
+from = '"Godot 2"'
+to = '"Classic 2"'
+
+[[replace]]
+from = '"Godot 3"'
+to = '"Classic 3"'
+
+[[replace]]
+from = "'Godot 2'"
+to = "'Classic 2'"
+
+[[replace]]
+from = ",Godot 2,Godot 3,"
+to = ",Classic 2,Classic 3,"
+
+[[replace]]
+from = ",Godot 2,Custom"
+to = ",Classic 2,Custom"
+
+# What a person reads: the name on its own. Contents only; file names stay.
+[[replace]]
+from = "Godot"
+to = "Orbe"
+paths = false

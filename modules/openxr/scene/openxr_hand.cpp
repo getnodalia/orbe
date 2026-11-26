@@ -310,8 +310,8 @@ void OpenXRHand::_update_skeleton() {
 		Quaternion(),
 
 		// SKELETON_RIG_HUMANOID bone adjustment. This rotation performs:
-		// OpenXR Z+ -> Godot Humanoid Y-  (Back along the bone)
-		// OpenXR Y+ -> Godot Humanoid Z- (Out the back of the hand)
+		// OpenXR Z+ -> Orbe Humanoid Y-  (Back along the bone)
+		// OpenXR Y+ -> Orbe Humanoid Z- (Out the back of the hand)
 		Quaternion(0.0, -Math::SQRT12, Math::SQRT12, 0.0),
 	};
 

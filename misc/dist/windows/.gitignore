@@ -1,2 +1,2 @@
-# Ignore both the Godot executable and generated installers.
+# Ignore both the Orbe executable and generated installers.
 *.exe

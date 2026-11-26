@@ -86,6 +86,11 @@
 #include "editor/gui/editor_file_dialog.h"
 #include "editor/gui/editor_quick_open_dialog.h"
 #include "editor/gui/editor_title_bar.h"
+#include "editor/gui/editor_window_controls.h"
+
+#if defined(LINUXBSD_ENABLED) && defined(DBUS_ENABLED)
+#include "platform/linuxbsd/freedesktop_global_menu.h"
+#endif
 #include "editor/gui/editor_toaster.h"
 #include "editor/gui/progress_dialog.h"
 #include "editor/gui/window_wrapper.h"
@@ -739,6 +744,9 @@ void EditorNode::_update_theme(bool p_skip_creation) {
 		if (main_menu_button != nullptr) {
 			main_menu_button->set_button_icon(theme->get_icon(SNAME("TripleBar"), EditorStringName(EditorIcons)));
 		}
+		if (app_menu_button != nullptr) {
+			app_menu_button->set_button_icon(theme->get_icon(SNAME("TripleBar"), EditorStringName(EditorIcons)));
+		}
 
 		editor_main_screen->add_theme_style_override(SceneStringName(panel), theme->get_stylebox(SNAME("Content"), EditorStringName(EditorStyles)));
 		bottom_panel->_theme_changed();
@@ -1047,6 +1055,9 @@ void EditorNode::_notification(int p_what) {
 		} break;
 
 		case NOTIFICATION_APPLICATION_FOCUS_IN: {
+#if defined(LINUXBSD_ENABLED) && defined(DBUS_ENABLED)
+			_queue_global_menu_refresh();
+#endif
 			// Restore the original FPS cap after focusing back on the editor.
 			OS::get_singleton()->set_low_processor_usage_mode_sleep_usec(int(EDITOR_GET("interface/editor/timers/low_processor_mode_sleep_usec")));
 
@@ -2106,7 +2117,7 @@ void EditorNode::_dialog_display_load_error(String p_file, Error p_error) {
 				show_accept(vformat(TTR("Missing file '%s' or one of its dependencies."), p_file.get_file()), TTR("OK"));
 			} break;
 			case ERR_FILE_UNRECOGNIZED: {
-				show_accept(vformat(TTR("File '%s' is saved in a format that is newer than the formats supported by this version of Godot, so it can't be opened."), p_file.get_file()), TTR("OK"));
+				show_accept(vformat(TTR("File '%s' is saved in a format that is newer than the formats supported by this version of Orbe, so it can't be opened."), p_file.get_file()), TTR("OK"));
 			} break;
 			default: {
 				show_accept(vformat(TTR("Error while loading file '%s'."), p_file.get_file()), TTR("OK"));
@@ -3861,6 +3872,9 @@ void EditorNode::_menu_option_confirm(int p_option, bool p_confirmed) {
 		case EDITOR_OPEN_SETTINGS: {
 			editor_settings_dialog->popup_edit_settings();
 		} break;
+		case EDITOR_OPEN_SHORTCUTS: {
+			editor_settings_dialog->popup_edit_shortcuts();
+		} break;
 		case EDITOR_OPEN_DATA_FOLDER: {
 			OS::get_singleton()->shell_show_in_file_manager(EditorPaths::get_singleton()->get_data_dir(), true);
 		} break;
@@ -3925,29 +3939,29 @@ void EditorNode::_menu_option_confirm(int p_option, bool p_confirmed) {
 			OS::get_singleton()->shell_open(GODOT_VERSION_DOCS_URL "/");
 		} break;
 		case HELP_FORUM: {
-			OS::get_singleton()->shell_open("https://forum.godotengine.org/");
+			OS::get_singleton()->shell_open("https://getnodalia.com/orbe");
 		} break;
 		case HELP_REPORT_A_BUG: {
-			OS::get_singleton()->shell_open("https://github.com/godotengine/godot/issues");
+			OS::get_singleton()->shell_open("https://github.com/getnodalia/orbe/issues");
 		} break;
 		case HELP_COPY_SYSTEM_INFO: {
 			String info = _get_system_info();
 			DisplayServer::get_singleton()->clipboard_set(info);
 		} break;
 		case HELP_SUGGEST_A_FEATURE: {
-			OS::get_singleton()->shell_open("https://github.com/godotengine/godot-proposals#readme");
+			OS::get_singleton()->shell_open("https://github.com/getnodalia/orbe/issues");
 		} break;
 		case HELP_SEND_DOCS_FEEDBACK: {
-			OS::get_singleton()->shell_open("https://github.com/godotengine/godot-docs/issues");
+			OS::get_singleton()->shell_open("https://github.com/getnodalia/orbe/issues");
 		} break;
 		case HELP_COMMUNITY: {
-			OS::get_singleton()->shell_open("https://godotengine.org/community");
+			OS::get_singleton()->shell_open("https://getnodalia.com/orbe");
 		} break;
 		case HELP_ABOUT: {
 			about->popup_centered(Size2(780, 500) * EDSCALE);
 		} break;
 		case HELP_SUPPORT_GODOT_DEVELOPMENT: {
-			OS::get_singleton()->shell_open("https://fund.godotengine.org/?ref=help_menu");
+			OS::get_singleton()->shell_open("https://buymeacoffee.com/danielmigueltejedor");
 		} break;
 	}
 }
@@ -6004,7 +6018,7 @@ String EditorNode::_get_system_info() const {
 	}
 	const String distribution_version = OS::get_singleton()->get_version_alias();
 
-	String godot_version = "Godot v" + String(GODOT_VERSION_FULL_CONFIG);
+	String godot_version = "Orbe v" + String(GODOT_VERSION_FULL_CONFIG);
 	if (String(GODOT_VERSION_BUILD) != "official") {
 		String hash = String(GODOT_VERSION_HASH);
 		hash = hash.is_empty() ? String("unknown") : vformat("(%s)", hash.left(9));
@@ -8282,11 +8296,149 @@ void EditorNode::_update_main_menu_type() {
 		title_bar->move_child(main_menu_bar, left_menu_spacer ? left_menu_spacer->get_index() + 1 : 0);
 	}
 
+	// The hamburger is where the menu bar is not: with the bar, a compact menu or the system's menu
+	// (macOS has the same items in the application menu) it would repeat them.
+	if (app_menu_button) {
+		app_menu_button->set_visible(menu_type == MENU_TYPE_FULL);
+	}
+
 	// Show/hide project title.
 	if (project_title) {
 		project_title->set_visible(can_expand && menu_type == MENU_TYPE_GLOBAL);
 	}
+
+#if defined(LINUXBSD_ENABLED) && defined(DBUS_ENABLED)
+	_start_global_menu();
+	_queue_global_menu_refresh();
+	if (main_menu_bar) {
+		main_menu_bar->set_visible(!global_menu_registered);
+	}
+#endif
 }
+
+#if defined(LINUXBSD_ENABLED) && defined(DBUS_ENABLED)
+void EditorNode::_start_global_menu() {
+	if (global_menu || menu_type == MENU_TYPE_GLOBAL || !FreeDesktopGlobalMenu::is_supported()) {
+		return;
+	}
+	global_menu = memnew(FreeDesktopGlobalMenu);
+	global_menu->start(callable_mp(this, &EditorNode::_global_menu_activate), callable_mp(this, &EditorNode::_queue_global_menu_refresh), callable_mp(this, &EditorNode::_global_menu_registered));
+}
+
+void EditorNode::_global_menu_registered(bool p_registered) {
+	// The top bar shows the menus, so the window does not repeat them.
+	global_menu_registered = p_registered;
+	if (main_menu_bar && menu_type == MENU_TYPE_FULL) {
+		main_menu_bar->set_visible(!p_registered);
+	}
+}
+
+void EditorNode::_queue_global_menu_refresh() {
+	if (!global_menu || global_menu_refresh_queued) {
+		return;
+	}
+	global_menu_refresh_queued = true;
+	callable_mp(this, &EditorNode::_refresh_global_menu).call_deferred();
+}
+
+void EditorNode::_global_menu_activate(int p_id) {
+	if (p_id < 1 || p_id > global_menu_targets.size()) {
+		return;
+	}
+	const GlobalMenuTarget &target = global_menu_targets[p_id - 1];
+	if (target.popup && target.index >= 0 && target.index < target.popup->get_item_count() && !target.popup->is_item_disabled(target.index) && !target.popup->is_item_separator(target.index)) {
+		target.popup->activate_item(target.index);
+	}
+}
+
+void EditorNode::_refresh_global_menu() {
+	global_menu_refresh_queued = false;
+	if (!global_menu) {
+		return;
+	}
+
+	Vector<FreeDesktopGlobalMenu::Row> rows;
+	Vector<GlobalMenuTarget> targets;
+	Vector<int> root;
+
+	// Rows are numbered from 1 in the order they are added, so `rows[id - 1]` is the row `id`.
+	struct Walker {
+		Vector<FreeDesktopGlobalMenu::Row> &rows;
+		Vector<GlobalMenuTarget> &targets;
+
+		int add(PopupMenu *p_popup, int p_index, const String &p_label, bool p_submenu) {
+			FreeDesktopGlobalMenu::Row row;
+			row.id = rows.size() + 1;
+			row.label = p_label;
+			row.submenu = p_submenu;
+			rows.push_back(row);
+			GlobalMenuTarget t;
+			t.popup = p_popup;
+			t.index = p_index;
+			targets.push_back(t);
+			return row.id;
+		}
+
+		void fill(PopupMenu *p_popup, int p_parent, int p_depth) {
+			if (p_depth > 8) {
+				return;
+			}
+			for (int i = 0; i < p_popup->get_item_count(); i++) {
+				PopupMenu *sub = p_popup->get_item_submenu_node(i);
+				const int id = add(p_popup, i, p_popup->atr(p_popup->get_item_text(i)), sub != nullptr);
+				FreeDesktopGlobalMenu::Row &row = rows.write[id - 1];
+				row.separator = p_popup->is_item_separator(i);
+				row.enabled = !p_popup->is_item_disabled(i);
+				if (p_popup->is_item_checkable(i)) {
+					row.toggle = p_popup->is_item_radio_checkable(i) ? 2 : 1;
+					row.checked = p_popup->is_item_checked(i);
+				}
+				Ref<Shortcut> sc = p_popup->get_item_shortcut(i);
+				if (sc.is_valid() && sc->get_events().size() > 0) {
+					Ref<InputEventKey> key = sc->get_events()[0];
+					if (key.is_valid()) {
+						const Key code = key->get_keycode() != Key::NONE ? key->get_keycode() : key->get_physical_keycode();
+						if (code != Key::NONE) {
+							row.shortcut_key = keycode_get_string(code);
+							const BitField<KeyModifierMask> mods = key->get_modifiers_mask();
+							if (mods.has_flag(KeyModifierMask::CTRL)) {
+								row.shortcut_modifiers.push_back("Control");
+							}
+							if (mods.has_flag(KeyModifierMask::SHIFT)) {
+								row.shortcut_modifiers.push_back("Shift");
+							}
+							if (mods.has_flag(KeyModifierMask::ALT)) {
+								row.shortcut_modifiers.push_back("Alt");
+							}
+							if (mods.has_flag(KeyModifierMask::META)) {
+								row.shortcut_modifiers.push_back("Super");
+							}
+						}
+					}
+				}
+				if (p_parent > 0) {
+					rows.write[p_parent - 1].children.push_back(id);
+				}
+				if (sub) {
+					fill(sub, id, p_depth + 1);
+				}
+			}
+		}
+	} walker{ rows, targets };
+
+	for (PopupMenu *menu : main_menu_items) {
+		if (menu == apple_menu) {
+			continue;
+		}
+		const int id = walker.add(nullptr, -1, menu->atr(menu->get_name()), true);
+		root.push_back(id);
+		walker.fill(menu, id, 0);
+	}
+
+	global_menu_targets = targets;
+	global_menu->set_rows(rows, root);
+}
+#endif
 
 void EditorNode::_bottom_panel_resized() {
 	bottom_panel->set_bottom_panel_offset(center_split->get_split_offset());
@@ -8992,8 +9144,8 @@ EditorNode::EditorNode() {
 	ED_SHORTCUT_AND_COMMAND("editor/report_a_bug", TTRC("Report a Bug"));
 	ED_SHORTCUT_AND_COMMAND("editor/suggest_a_feature", TTRC("Suggest a Feature"));
 	ED_SHORTCUT_AND_COMMAND("editor/send_docs_feedback", TTRC("Send Docs Feedback"));
-	ED_SHORTCUT_AND_COMMAND("editor/about", TTRC("About Godot..."));
-	ED_SHORTCUT_AND_COMMAND("editor/support_development", TTRC("Support Godot Development"));
+	ED_SHORTCUT_AND_COMMAND("editor/about", TTRC("About Orbe..."));
+	ED_SHORTCUT_AND_COMMAND("editor/support_development", TTRC("Support Orbe Development"));
 
 	// Use the Ctrl modifier so F2 can be used to rename nodes in the scene tree dock.
 	ED_SHORTCUT_AND_COMMAND("editor/editor_2d", TTRC("Open 2D Workspace"), KeyModifierMask::CTRL | Key::F1);
@@ -9106,6 +9258,23 @@ EditorNode::EditorNode() {
 	renderer->set_accessibility_name(TTRC("Renderer"));
 
 	right_menu_hb->add_child(renderer);
+
+	app_menu_button = memnew(MenuButton);
+	app_menu_button->set_flat(true);
+	app_menu_button->set_theme_type_variation("TopBarOptionButton");
+	app_menu_button->set_focus_mode(Control::FOCUS_ACCESSIBILITY);
+	app_menu_button->set_accessibility_name(TTRC("Main Menu"));
+	app_menu_button->set_tooltip_text(TTRC("Main Menu"));
+	{
+		PopupMenu *app_popup = app_menu_button->get_popup();
+		app_popup->add_item(TTRC("Editor Settings..."), EDITOR_OPEN_SETTINGS);
+		app_popup->add_item(TTRC("Keyboard Shortcuts..."), EDITOR_OPEN_SHORTCUTS);
+		app_popup->add_separator();
+		app_popup->add_item(TTRC("About Orbe..."), HELP_ABOUT);
+		app_popup->connect("id_pressed", callable_mp(this, &EditorNode::_menu_option));
+	}
+	app_menu_button->set_visible(menu_type == MENU_TYPE_FULL);
+	right_menu_hb->add_child(app_menu_button);
 
 	if (can_expand) {
 		// Add spacer to avoid other controls under the window minimize/maximize/close buttons (right side).
@@ -9353,7 +9522,7 @@ EditorNode::EditorNode() {
 
 	disk_changed = memnew(ConfirmationDialog);
 	{
-		disk_changed->set_title(TTR("Files have been modified outside Godot"));
+		disk_changed->set_title(TTR("Files have been modified outside Orbe"));
 
 		VBoxContainer *vbc = memnew(VBoxContainer);
 		disk_changed->add_child(vbc);
@@ -9617,6 +9786,9 @@ EditorNode::EditorNode() {
 		title_bar->set_can_move_window(true);
 	}
 
+	// On Linux the window is drawn without a frame, with NDL's round controls.
+	EditorWindowControls::install(title_bar, gui_base);
+
 	{
 		const String exec = OS::get_singleton()->get_executable_path();
 		const String old_exec = EditorSettings::get_singleton()->get_project_metadata("editor_metadata", "executable_path", "");
@@ -9631,6 +9803,12 @@ EditorNode::EditorNode() {
 }
 
 EditorNode::~EditorNode() {
+#if defined(LINUXBSD_ENABLED) && defined(DBUS_ENABLED)
+	if (global_menu) {
+		memdelete(global_menu);
+		global_menu = nullptr;
+	}
+#endif
 	EditorInspector::cleanup_plugins();
 	EditorTranslationParser::get_singleton()->clean_parsers();
 	ResourceImporterScene::clean_up_importer_plugins();

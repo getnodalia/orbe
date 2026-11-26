@@ -332,7 +332,7 @@ bool RenderingShaderContainerMetal::_set_code_from_spirv(const ReflectShader &p_
 
 		// When baking shaders for export, check if the SPIR-V requires capabilities
 		// that the target profile can't support natively. SPIRV-Cross would emulate
-		// image atomics with auxiliary buffer bindings incompatible with Godot's binding
+		// image atomics with auxiliary buffer bindings incompatible with Orbe's binding
 		// layout. Return an empty baked shader so the runtime recompiles for the actual device.
 		MetalDeviceProfile::MinimumRequirements reqs = inspect_spirv(p_shader);
 		MetalDeviceProfile::MinimumRequirements target = device_profile->get_minimum_requirements();
@@ -622,7 +622,7 @@ bool RenderingShaderContainerMetal::_set_code_from_spirv(const ReflectShader &p_
 							// 	}
 						} break;
 						case SpvDimTileImageDataEXT: {
-							// Godot does not use this extension.
+							// Orbe does not use this extension.
 							// See: https://registry.khronos.org/vulkan/specs/latest/man/html/VK_EXT_shader_tile_image.html
 						} break;
 						case SpvDimMax: {

@@ -1,7 +1,7 @@
 # Chinese (Simplified Han script) translation of the Orbe properties.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # 360119124 <360119124@qq.com>, 2018.
 # 柠檬杀手 <lemonkiller@gmail.com>, 2018, 2020.
 # 纯洁的坏蛋 <tqj.zyy@gmail.com>, 2016.
@@ -4438,11 +4438,11 @@ msgstr "灯光"
 msgid "Visible"
 msgstr "可见"
 
-msgid "glTF to Godot Expression"
-msgstr "glTF 至 Godot 表达式"
+msgid "glTF to Orbe Expression"
+msgstr "glTF 至 Orbe 表达式"
 
-msgid "Godot to glTF Expression"
-msgstr "Godot 至 glTF 表达式"
+msgid "Orbe to glTF Expression"
+msgstr "Orbe 至 glTF 表达式"
 
 msgid "Node Paths"
 msgstr "节点路径"
@@ -4462,8 +4462,8 @@ msgstr "关节"
 msgid "Roots"
 msgstr "根"
 
-msgid "Godot Bone Node"
-msgstr "Godot 骨骼节点"
+msgid "Orbe Bone Node"
+msgstr "Orbe 骨骼节点"
 
 msgid "Skin Root"
 msgstr "蒙皮根"
@@ -4474,8 +4474,8 @@ msgstr "原关节"
 msgid "Non Joints"
 msgstr "非关节"
 
-msgid "Godot Skin"
-msgstr "Godot 蒙皮"
+msgid "Orbe Skin"
+msgstr "Orbe 蒙皮"
 
 msgid "Src Image"
 msgstr "来源图像"
@@ -5314,8 +5314,8 @@ msgstr "Wi-Fi 远程调试主机"
 msgid "Splash Screen"
 msgstr "启动画面"
 
-msgid "Disable Godot Boot Splash"
-msgstr "禁用 Godot 启动画面"
+msgid "Disable Orbe Boot Splash"
+msgstr "禁用 Orbe 启动画面"
 
 msgid "Background Color"
 msgstr "背景色"
@@ -5851,8 +5851,8 @@ msgstr "图标 512×512"
 msgid "Emscripten Pool Size"
 msgstr "Emscripten 池大小"
 
-msgid "Godot Pool Size"
-msgstr "Godot 池大小"
+msgid "Orbe Pool Size"
+msgstr "Orbe 池大小"
 
 msgid "Windows"
 msgstr "Windows"

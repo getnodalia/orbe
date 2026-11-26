@@ -249,7 +249,7 @@ public:
 	_FORCE_INLINE_ uint32_t get_capacity() const { return hash_table_size_primes[_capacity_idx]; }
 	_FORCE_INLINE_ uint32_t size() const { return _size; }
 
-	/* Standard Godot Container API */
+	/* Standard Orbe Container API */
 
 	bool is_empty() const {
 		return _size == 0;

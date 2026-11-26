@@ -105,7 +105,7 @@ struct Breakpoint {
 	const Source *source = nullptr;
 	int line = 0;
 
-	Breakpoint() = default; // Empty constructor is invalid, but is necessary because Godot's collections don't support rvalues.
+	Breakpoint() = default; // Empty constructor is invalid, but is necessary because Orbe's collections don't support rvalues.
 	Breakpoint(const Source &p_source) :
 			source(&p_source) {}
 
@@ -223,7 +223,7 @@ struct StackFrame {
 	int line = 0;
 	int column = 0;
 
-	StackFrame() = default; // Empty constructor is invalid, but is necessary because Godot's collections don't support rvalues.
+	StackFrame() = default; // Empty constructor is invalid, but is necessary because Orbe's collections don't support rvalues.
 	StackFrame(const Source &p_source) :
 			source(&p_source) {}
 

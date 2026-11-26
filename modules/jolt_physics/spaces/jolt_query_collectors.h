@@ -270,7 +270,7 @@ public:
 
 		// Ignore hits that don't oppose the motion direction.
 		//
-		// This is a deliberate divergence from the Godot Physics reference implementation (which
+		// This is a deliberate divergence from the Orbe Physics reference implementation (which
 		// does not do this type of filtering) and is known to cause issues. However, not having
 		// this results in a problematic amount of ghost collisions with `move_and_slide`, for
 		// reasons that are still unclear as of writing this.

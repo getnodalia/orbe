@@ -1,7 +1,7 @@
 # Korean translation of the Orbe properties.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # Ch <ccwpc@hanmail.net>, 2017.
 # paijai 송 (fivejobi) <xotjq237@gmail.com>, 2018.
 # pgyage3263 <pgyage3263@naver.com>, 2018.
@@ -4395,10 +4395,10 @@ msgstr "라이트"
 msgid "Visible"
 msgstr "보이기"
 
-msgid "glTF to Godot Expression"
+msgid "glTF to Orbe Expression"
 msgstr "glTF을 Godot로 표현식"
 
-msgid "Godot to glTF Expression"
+msgid "Orbe to glTF Expression"
 msgstr "Godot를 glTF으로 표현식"
 
 msgid "Node Paths"
@@ -4419,8 +4419,8 @@ msgstr "조인트"
 msgid "Roots"
 msgstr "루트"
 
-msgid "Godot Bone Node"
-msgstr "Godot 본 노드"
+msgid "Orbe Bone Node"
+msgstr "Orbe 본 노드"
 
 msgid "Skin Root"
 msgstr "스킨 루트"
@@ -4431,8 +4431,8 @@ msgstr "조인트 원본"
 msgid "Non Joints"
 msgstr "비 조인트"
 
-msgid "Godot Skin"
-msgstr "Godot 스킨"
+msgid "Orbe Skin"
+msgstr "Orbe 스킨"
 
 msgid "Src Image"
 msgstr "소스 이미지"
@@ -5271,8 +5271,8 @@ msgstr "Wi-Fi 원격 디버깅 호스트"
 msgid "Splash Screen"
 msgstr "스플래시 화면"
 
-msgid "Disable Godot Boot Splash"
-msgstr "Godot 부트 스플래시 비활성화"
+msgid "Disable Orbe Boot Splash"
+msgstr "Orbe 부트 스플래시 비활성화"
 
 msgid "Background Color"
 msgstr "배경 색상"
@@ -5808,8 +5808,8 @@ msgstr "아이콘 512 X 512"
 msgid "Emscripten Pool Size"
 msgstr "Emscripten 풀 크기"
 
-msgid "Godot Pool Size"
-msgstr "Godot 풀 크기"
+msgid "Orbe Pool Size"
+msgstr "Orbe 풀 크기"
 
 msgid "Windows"
 msgstr "Windows"

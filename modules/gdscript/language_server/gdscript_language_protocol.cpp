@@ -215,7 +215,7 @@ Variant GDScriptLanguageProtocol::initialize(const Dictionary &p_params) {
 	LSP::InitializeResult ret;
 
 	{
-		// Warn if the workspace root does not match with the project that is currently open in Godot,
+		// Warn if the workspace root does not match with the project that is currently open in Orbe,
 		// since it might lead to unexpected behavior, like wrong warnings about duplicate class names.
 
 		String root;
@@ -230,7 +230,7 @@ Variant GDScriptLanguageProtocol::initialize(const Dictionary &p_params) {
 		if (ProjectSettings::get_singleton()->localize_path(root) != "res://") {
 			LSP::ShowMessageParams params{
 				LSP::MessageType::Warning,
-				"The GDScript Language Server might not work correctly with other projects than the one opened in Godot."
+				"The GDScript Language Server might not work correctly with other projects than the one opened in Orbe."
 			};
 			notify_client("window/showMessage", params.to_json());
 		}

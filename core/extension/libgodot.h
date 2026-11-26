@@ -49,7 +49,7 @@ extern "C" {
  * @name libgodot_create_godot_instance
  * @since 4.6
  *
- * Creates a new Godot instance.
+ * Creates a new Orbe instance.
  *
  * @param p_argc The number of command line arguments.
  * @param p_argv The C-style array of command line arguments.
@@ -63,7 +63,7 @@ LIBGODOT_API GDExtensionObjectPtr libgodot_create_godot_instance(int p_argc, cha
  * @name libgodot_destroy_godot_instance
  * @since 4.6
  *
- * Destroys an existing Godot instance.
+ * Destroys an existing Orbe instance.
  *
  * @param p_godot_instance The reference to the GodotInstance object to destroy.
  *

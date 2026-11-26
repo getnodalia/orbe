@@ -1988,7 +1988,7 @@ void EditorAssetLibrary::_http_request_completed(int p_status, int p_code, const
 						}
 					}
 					if (!is_compat) {
-						continue; // This release is for a newer version of Godot.
+						continue; // This release is for a newer version of Orbe.
 					}
 				}
 
@@ -2007,7 +2007,7 @@ void EditorAssetLibrary::_http_request_completed(int p_status, int p_code, const
 						}
 					}
 					if (!is_compat) {
-						continue; // This release is for an older version of Godot.
+						continue; // This release is for an older version of Orbe.
 					}
 				}
 

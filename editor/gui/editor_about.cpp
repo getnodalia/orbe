@@ -57,7 +57,8 @@ void EditorAbout::_notification(int p_what) {
 	switch (p_what) {
 		case NOTIFICATION_TRANSLATION_CHANGED: {
 			_about_text_label->set_text(
-					String(U"© 2014-present ") + TTR("Godot Engine contributors") + ".\n" +
+					// The name of the copyright holders is theirs and is not translated.
+					String(U"© 2014-present Godot Engine contributors.\n") +
 					String(U"© 2007-2014 Juan Linietsky, Ariel Manzur.\n"));
 
 			_project_manager_label->set_text(TTR("Project Manager", "Job Title"));
@@ -211,7 +212,7 @@ Label *EditorAbout::_create_section(Control *p_parent, const String &p_name, con
 }
 
 EditorAbout::EditorAbout() {
-	set_title(TTRC("Thanks from the Godot community!"));
+	set_title(TTRC("Thanks from the Orbe community!"));
 	set_hide_on_ok(true);
 
 	VBoxContainer *vbc = memnew(VBoxContainer);

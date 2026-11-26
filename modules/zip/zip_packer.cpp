@@ -84,7 +84,7 @@ Error ZIPPacker::start_file(const String &p_path, BitField<FileAccess::UnixPermi
 
 	zip_fileinfo zipfi;
 	zipfi.tmz_date.tm_year = dt["year"];
-	zipfi.tmz_date.tm_mon = dt["month"].operator int() - 1; // Note: "tm" month range - 0..11, Godot month range - 1..12, https://www.cplusplus.com/reference/ctime/tm/
+	zipfi.tmz_date.tm_mon = dt["month"].operator int() - 1; // Note: "tm" month range - 0..11, Orbe month range - 1..12, https://www.cplusplus.com/reference/ctime/tm/
 	zipfi.tmz_date.tm_mday = dt["day"];
 	zipfi.tmz_date.tm_hour = dt["hour"];
 	zipfi.tmz_date.tm_min = dt["minute"];
@@ -150,7 +150,7 @@ Error ZIPPacker::add_directory(const String &p_path, BitField<FileAccess::UnixPe
 
 	zip_fileinfo zipfi;
 	zipfi.tmz_date.tm_year = dt["year"];
-	zipfi.tmz_date.tm_mon = dt["month"].operator int() - 1; // Note: "tm" month range - 0..11, Godot month range - 1..12, https://www.cplusplus.com/reference/ctime/tm/
+	zipfi.tmz_date.tm_mon = dt["month"].operator int() - 1; // Note: "tm" month range - 0..11, Orbe month range - 1..12, https://www.cplusplus.com/reference/ctime/tm/
 	zipfi.tmz_date.tm_mday = dt["day"];
 	zipfi.tmz_date.tm_hour = dt["hour"];
 	zipfi.tmz_date.tm_min = dt["minute"];

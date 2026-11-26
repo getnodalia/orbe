@@ -105,7 +105,7 @@ void SkinTool::_capture_nodes_for_multirooted_skin(Vector<Ref<GLTFNode>> &r_node
 	}
 
 	// Go up the tree till all of the multiple roots of the skin are at the same hierarchy level.
-	// This sucks, but 99% of all game engines (not just Godot) would have this same issue.
+	// This sucks, but 99% of all game engines (not just Orbe) would have this same issue.
 	for (int i = 0; i < roots.size(); ++i) {
 		SkinNodeIndex current_node = roots[i];
 		while (r_nodes[current_node]->height > maxHeight) {
@@ -567,7 +567,7 @@ Error SkinTool::_create_skeletons(
 		Vector<Ref<GLTFSkeleton>> &skeletons,
 		HashMap<GLTFNodeIndex, Node *> &scene_nodes,
 		int p_naming_version) {
-	// This is the syntax to duplicate a Godot HashSet.
+	// This is the syntax to duplicate a Orbe HashSet.
 	HashSet<String> unique_node_names(unique_names);
 	for (SkinSkeletonIndex skel_i = 0; skel_i < skeletons.size(); ++skel_i) {
 		Ref<GLTFSkeleton> gltf_skeleton = skeletons.write[skel_i];

@@ -1024,7 +1024,7 @@ Error EditorExportPlatformMacOS::_export_liquid_glass_icon(const Ref<EditorExpor
 }
 
 /**
- * If we're running the macOS version of the Godot editor we'll:
+ * If we're running the macOS version of the Orbe editor we'll:
  * - export our application bundle to a temporary folder
  * - attempt to code sign it
  * - and then wrap it up in a DMG

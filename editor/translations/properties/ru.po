@@ -1,7 +1,7 @@
 # Russian translation of the Orbe properties.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # Аркадий Авас <savvot@gmail.com>, 2018.
 # Artem Varaksa <aymfst@gmail.com>, 2018.
 # B10nicMachine <shumik1337@gmail.com>, 2017.
@@ -4557,11 +4557,11 @@ msgstr "Свет"
 msgid "Visible"
 msgstr "Видимый"
 
-msgid "glTF to Godot Expression"
-msgstr "glTF к выражению Godot"
+msgid "glTF to Orbe Expression"
+msgstr "glTF к выражению Orbe"
 
-msgid "Godot to glTF Expression"
-msgstr "Godot к выражению glTF"
+msgid "Orbe to glTF Expression"
+msgstr "Orbe к выражению glTF"
 
 msgid "Node Paths"
 msgstr "Пути к узлам"
@@ -4581,8 +4581,8 @@ msgstr "Суставы"
 msgid "Roots"
 msgstr "Корни"
 
-msgid "Godot Bone Node"
-msgstr "Узел кости Godot"
+msgid "Orbe Bone Node"
+msgstr "Узел кости Orbe"
 
 msgid "Skin Root"
 msgstr "Корень скина"
@@ -4593,8 +4593,8 @@ msgstr "Суставы (оригинал)"
 msgid "Non Joints"
 msgstr "Не суставы"
 
-msgid "Godot Skin"
-msgstr "Скин Godot"
+msgid "Orbe Skin"
+msgstr "Скин Orbe"
 
 msgid "Src Image"
 msgstr "Исходное изображение"
@@ -5434,8 +5434,8 @@ msgstr "Хост удалённой отладки по Wi-Fi"
 msgid "Splash Screen"
 msgstr "Экран заставки"
 
-msgid "Disable Godot Boot Splash"
-msgstr "Отключить загрузочную заставку Godot"
+msgid "Disable Orbe Boot Splash"
+msgstr "Отключить загрузочную заставку Orbe"
 
 msgid "Background Color"
 msgstr "Цвет фона"
@@ -5971,8 +5971,8 @@ msgstr "Значок 512 X 512"
 msgid "Emscripten Pool Size"
 msgstr "Размер пула памяти Emscripten"
 
-msgid "Godot Pool Size"
-msgstr "Размера пула памяти Godot"
+msgid "Orbe Pool Size"
+msgstr "Размера пула памяти Orbe"
 
 msgid "Windows"
 msgstr "Windows"

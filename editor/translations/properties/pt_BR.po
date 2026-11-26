@@ -1,7 +1,7 @@
 # Portuguese (Brazil) translation of the Orbe properties.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # Allyson Souza <allyson_as@outlook.com>, 2017.
 # Anderson Araujo <anderson.araujoprog@gmail.com>, 2018.
 # António Sarmento <antonio.luis.sarmento@gmail.com>, 2016.
@@ -4513,11 +4513,11 @@ msgstr "Luz"
 msgid "Visible"
 msgstr "Visível"
 
-msgid "glTF to Godot Expression"
-msgstr "glTF para Expressão do Godot"
+msgid "glTF to Orbe Expression"
+msgstr "glTF para Expressão do Orbe"
 
-msgid "Godot to glTF Expression"
-msgstr "Godot para Expressão glTF"
+msgid "Orbe to glTF Expression"
+msgstr "Orbe para Expressão glTF"
 
 msgid "Node Paths"
 msgstr "Caminhos de Nó"
@@ -4537,8 +4537,8 @@ msgstr "Articulações"
 msgid "Roots"
 msgstr "Raízes"
 
-msgid "Godot Bone Node"
-msgstr "Nó de Osso do Godot"
+msgid "Orbe Bone Node"
+msgstr "Nó de Osso do Orbe"
 
 msgid "Skin Root"
 msgstr "Raiz da Skin"
@@ -4549,8 +4549,8 @@ msgstr "Articulações Originais"
 msgid "Non Joints"
 msgstr "Não-Articulações"
 
-msgid "Godot Skin"
-msgstr "Skin do Godot"
+msgid "Orbe Skin"
+msgstr "Skin do Orbe"
 
 msgid "Src Image"
 msgstr "Imagem Fonte"
@@ -5389,8 +5389,8 @@ msgstr "Hospedeiro de Depuração Remota por Wi-Fi"
 msgid "Splash Screen"
 msgstr "Tela de inicialização"
 
-msgid "Disable Godot Boot Splash"
-msgstr "Desativar tela de inicialização do Godot"
+msgid "Disable Orbe Boot Splash"
+msgstr "Desativar tela de inicialização do Orbe"
 
 msgid "Background Color"
 msgstr "Cor de Fundo"
@@ -5926,8 +5926,8 @@ msgstr "Ícone 512 X 512"
 msgid "Emscripten Pool Size"
 msgstr "Tamanho da piscina Emscripten"
 
-msgid "Godot Pool Size"
-msgstr "Tamanho de Pool do Godot"
+msgid "Orbe Pool Size"
+msgstr "Tamanho de Pool do Orbe"
 
 msgid "Windows"
 msgstr "Windows"

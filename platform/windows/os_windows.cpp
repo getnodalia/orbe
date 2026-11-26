@@ -310,7 +310,7 @@ void OS_Windows::initialize() {
 
 	process_map = memnew((HashMap<ProcessID, ProcessInfo>));
 
-	// Add current Godot PID to the list of known PIDs
+	// Add current Orbe PID to the list of known PIDs
 	ProcessInfo current_pi = {};
 	PROCESS_INFORMATION current_pi_pi = {};
 	current_pi.pi = current_pi_pi;
@@ -650,7 +650,7 @@ String OS_Windows::get_version_alias() const {
 			} else {
 				windows_string += "Unknown";
 			}
-			// Windows versions older than 10 cannot run Godot.
+			// Windows versions older than 10 cannot run Orbe.
 
 			return vformat("%s (build %d)", windows_string, (int64_t)fow.dwBuildNumber);
 		}

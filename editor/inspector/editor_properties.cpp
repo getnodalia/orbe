@@ -493,6 +493,15 @@ void EditorPropertyTextEnum::_custom_value_canceled() {
 }
 
 void EditorPropertyTextEnum::update_property() {
+	// The colour presets and text editor themes are named by this editor, so their names translate.
+	if (!names_translated && !loose_mode &&
+			(String(get_edited_property()).ends_with("color_preset") || String(get_edited_property()).ends_with("color_theme"))) {
+		for (int i = 0; i < option_button->get_item_count() && i < option_names.size(); i++) {
+			option_button->set_item_text(i, TTR(option_names[i], "Theme Preset"));
+		}
+		names_translated = true;
+	}
+
 	String current_value = get_edited_property_value();
 	int default_option = options.find(current_value);
 

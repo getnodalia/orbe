@@ -5,9 +5,9 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>Godot</string>
+	<string>Orbe</string>
 	<key>CFBundleName</key>
-	<string>Godot</string>
+	<string>Orbe</string>
 	<key>CFBundleIconFile</key>
 	<string>GodotLG.icns</string>
 	<key>CFBundleIconName</key>

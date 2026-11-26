@@ -1,7 +1,7 @@
 # Bulgarian translation of the Orbe editor interface.
 # Copyright (c) 2014-present Godot Engine contributors.
 # Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
-# This file is distributed under the same license as the Godot source code.
+# This file is distributed under the same license as the Orbe source code.
 # Bojidar Marinov <bojidar.marinov.bg@gmail.com>, 2016.
 # Иван Пенев (Адмирал АнимЕ) <aeternus.arcis@gmail.com>, 2016-2017.
 # Любомир Василев <lyubomirv@abv.bg>, 2018, 2020.
@@ -1104,7 +1104,7 @@ msgid ""
 "The file you selected is an imported scene from a 3D model such as glTF or "
 "FBX.\n"
 "\n"
-"In Godot, 3D models can be imported as either scenes or animation libraries, "
+"In Orbe, 3D models can be imported as either scenes or animation libraries, "
 "which is why they show up here.\n"
 "\n"
 "If you want to use animations from this 3D model, open the Advanced Import "
@@ -3276,8 +3276,8 @@ msgstr "Отваряне в уеб браузъра"
 msgid "Select Template File"
 msgstr "Избор на шаблонен файл"
 
-msgid "Godot Export Templates"
-msgstr "Шаблони за изнасяне на Godot"
+msgid "Orbe Export Templates"
+msgstr "Шаблони за изнасяне на Orbe"
 
 msgid "Invalid Encryption Key (must be 64 hexadecimal characters long)"
 msgstr ""
@@ -3335,8 +3335,8 @@ msgstr "Коригиране"
 msgid "Base Packs:"
 msgstr "Базови Пакети:"
 
-msgid "Godot Project Pack"
-msgstr "Проектен пакет на Godot"
+msgid "Orbe Project Pack"
+msgstr "Проектен пакет на Orbe"
 
 msgid "Encryption"
 msgstr "Шифроване"
@@ -3499,8 +3499,8 @@ msgstr "Основатели на проекта"
 msgid "Lead Developer"
 msgstr "Главен разработчик"
 
-msgid "Thanks from the Godot community!"
-msgstr "Благодарности от общността на Godot!"
+msgid "Thanks from the Orbe community!"
+msgstr "Благодарности от общността на Orbe!"
 
 msgid "Authors"
 msgstr "Автори"
@@ -3813,8 +3813,8 @@ msgstr "Име на Проекта"
 msgid "Project Path"
 msgstr "Път на Проекта"
 
-msgid "This project was last edited in a different Godot version: "
-msgstr "Проектът е последно модифициран в друга версия на Godot: "
+msgid "This project was last edited in a different Orbe version: "
+msgstr "Проектът е последно модифициран в друга версия на Orbe: "
 
 msgid "Toggle Favorite"
 msgstr "Превключване на любимите"
@@ -5491,8 +5491,8 @@ msgstr "Внасяне на тема"
 msgid "Save Theme As..."
 msgstr "Запазване на темата като..."
 
-msgid "Open Godot online documentation."
-msgstr "Отваряне на документацията на Godot в Интернет."
+msgid "Open Orbe online documentation."
+msgstr "Отваряне на документацията на Orbe в Интернет."
 
 msgid "Find Next"
 msgstr "Търсене напред"

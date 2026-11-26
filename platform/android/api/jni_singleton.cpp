@@ -46,7 +46,7 @@ bool JNISingleton::_get(const StringName &p_name, Variant &r_property) const {
 }
 
 Variant JNISingleton::callp(const StringName &p_method, const Variant **p_args, int p_argcount, Callable::CallError &r_error) {
-	// Godot methods take precedence.
+	// Orbe methods take precedence.
 	Variant ret = Object::callp(p_method, p_args, p_argcount, r_error);
 	if (r_error.error == Callable::CallError::CALL_OK) {
 		return ret;

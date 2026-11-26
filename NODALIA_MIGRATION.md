@@ -17,18 +17,32 @@ What is done and what is left to make Orbe a Nodalia app like the others.
    `ATTRIBUTION.md`). Orbe's app icon is a portrait of a historical figure like every Nodalia
    app (see `docs/iconography.md` in nodalia-design); the macOS, Android and Apple embedded icons
    are still upstream's and must be replaced before the first release.
-2. **CI** (own pull request): rebrand check, a Linux editor build with the unit tests, release
-   notes check, weekly upstream sync.
-3. **Releases**: `release-auto.yml` with Linux (AppImage, `.deb`, `.rpm`, `.tar.gz`), macOS
-   (unsigned DMG with Orbe's own install window) and Windows (MSI and portable) packages, then the
-   Launcher catalog entry and the page `getnodalia.com/orbe`.
-4. **NDL window.** Round NDL window controls on Linux only (native on macOS and Windows), the
-   hamburger menu (Editor settings, Keyboard shortcuts, About), the menu exported over D-Bus to the
-   shell's global menu on Linux, NDL islands for the docks, NDL icons for the editor chrome.
+2. **CI**: done (rebrand check, a Linux editor build with the unit tests, release notes check,
+   weekly upstream sync).
+3. **Releases**: `release-auto.yml` has Linux (AppImage, `.deb`, `.rpm`, `.tar.gz`) and macOS
+   (unsigned DMG with Orbe's own install window; Metal on Apple silicon, the Compatibility
+   renderer on Intel) and Windows (a per-user MSI and a portable zip for x64, x86 and arm64, built
+   with MSVC and no Direct3D 12 SDK or ANGLE: Vulkan and OpenGL only; verified by CI alone, no
+   Windows machine here). Still to come: the Launcher catalog entry and the page
+   `getnodalia.com/orbe`.
+4. **NDL window.** Done: the hamburger menu (Editor Settings, Keyboard Shortcuts, About) and, on
+   Linux only, the frameless window with NDL's round minimize, maximize and close controls and
+   resizing edges (`editor/gui/editor_window_controls.*`; the setting "Use System Window Controls"
+   brings the desktop's own back; macOS and Windows always keep native controls). The editor's menus are exported over D-Bus
+   (`com.canonical.dbusmenu`, registered with the AppMenu registrar of Nodalix's shell, on Wayland;
+   `platform/linuxbsd/freedesktop_global_menu.*`) and the in-window menu bar hides when the top bar
+   shows them. Still to do: NDL islands for the docks and NDL icons for the editor chrome. The Help menu links point to Orbe's repository and page; the
+   engine documentation and the asset library still point to upstream's, since Orbe opens the same
+   projects.
 5. **About.** The credits keep upstream's authors and the third-party licences, as the licence
    requires; no Contributors or Models tabs.
-6. **Names left.** Prose that still says "Godot" in the class reference, the translations and the
-   editor's strings (only the engine's full product name is renamed so far) moves over with rules in
-   `.github/rebrand.toml`, checked with `scripts/rebrand.py check`. The names kept for
-   compatibility are in `AGENTS.md`.
+6. **Names.** Done: every mention of upstream's name in the interface, the class reference, the
+   translations and the code comments is Orbe's (the rule `Godot` to `Orbe` in
+   `.github/rebrand.toml`, checked by `scripts/rebrand.py check`). What keeps upstream's name on
+   purpose, for compatibility or because the licence requires it: the copyright lines and
+   notices (`LICENSE.txt`, `COPYRIGHT.txt`, `AUTHORS.md`, `DONORS.md`, `NOTICE`, the About window),
+   `project.godot`, `.godot/`, `.tscn`/`.tres`/`.res`, the GDExtension interface, the C# API
+   namespace (`modules/mono`), the Android and web export templates, class and file names inside
+   the code, upstream's version history ("Godot 3 to 4" project converter) and the editor icon
+   file names until the art is replaced.
 7. **Language.** Spanish is complete upstream; audit Orbe's own strings.
