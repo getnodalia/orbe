@@ -59,8 +59,13 @@ install -Dm644 "$HERE/$APP_ID.mime.xml" "$STAGE/usr/share/mime/packages/$APP_ID.
 mkdir -p "$STAGE/usr/share/metainfo"
 sed -e "s/@VERSION@/$VERSION/g" -e "s/@DATE@/$ORBE_BUILD_DATE/g" \
   "$HERE/$APP_ID.metainfo.xml.in" >"$STAGE/usr/share/metainfo/$APP_ID.metainfo.xml"
-install -Dm644 "$ROOT/misc/logo/icon.svg" "$STAGE/usr/share/icons/hicolor/scalable/apps/$APP_ID.svg"
-install -Dm644 "$ROOT/misc/logo/icon.png" "$STAGE/usr/share/icons/hicolor/256x256/apps/$APP_ID.png"
+# The Linux icon set (Colloid grid): misc/logo/hicolor, made by nodalia-design's icon-set.py.
+for dir in "$ROOT"/misc/logo/hicolor/*/apps; do
+  size="$(basename "$(dirname "$dir")")"
+  for file in "$dir"/"$APP_ID".*; do
+    install -Dm644 "$file" "$STAGE/usr/share/icons/hicolor/$size/apps/$(basename "$file")"
+  done
+done
 # Licences and notices: the MIT licence and every third-party notice travel with the package.
 install -Dm644 "$ROOT/LICENSE.txt" "$STAGE/usr/share/doc/orbe/LICENSE.txt"
 install -Dm644 "$ROOT/COPYRIGHT.txt" "$STAGE/usr/share/doc/orbe/COPYRIGHT.txt"

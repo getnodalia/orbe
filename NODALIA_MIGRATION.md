@@ -13,10 +13,11 @@ What is done and what is left to make Orbe a Nodalia app like the others.
 
 ## Next
 
-1. **Icon and art.** A placeholder mark, wordmark and splash are in (`misc/orbe-art`, rows in
-   `ATTRIBUTION.md`). Orbe's app icon is a portrait of a historical figure like every Nodalia
-   app (see `docs/iconography.md` in nodalia-design); the macOS, Android and Apple embedded icons
-   are still upstream's and must be replaced before the first release.
+1. **Icon and art.** Orbe's app icon is a portrait of Johannes Kepler (`misc/logo/icon*`, the
+   hicolor set, the Windows `.ico` and `Orbe.icns`), made with nodalia-design's `tools/app-portrait`
+   (see `docs/iconography.md` there). A placeholder mark, wordmark and splash are still in
+   (`misc/orbe-art`, rows in `ATTRIBUTION.md`), and the macOS document icons, the Android and
+   Apple embedded icons are still upstream's and must be replaced before the first release.
 2. **CI**: done (rebrand check, a Linux editor build with the unit tests, release notes check,
    weekly upstream sync).
 3. **Releases**: `release-auto.yml` has Linux (AppImage, `.deb`, `.rpm`, `.tar.gz`) and macOS
