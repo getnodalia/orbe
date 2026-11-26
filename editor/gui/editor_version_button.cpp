@@ -32,19 +32,23 @@
 
 #include "core/os/time.h"
 #include "core/version.h"
+#include "editor/orbe_version.gen.h"
 #include "servers/display/display_server.h"
 
 String _get_version_string(EditorVersionButton::VersionFormat p_format) {
 	String main;
 	switch (p_format) {
 		case EditorVersionButton::FORMAT_BASIC: {
-			return GODOT_VERSION_FULL_CONFIG;
+			return "Orbe " ORBE_VERSION;
 		} break;
 		case EditorVersionButton::FORMAT_WITH_BUILD: {
-			main = "v" GODOT_VERSION_FULL_BUILD;
+			return "v" ORBE_VERSION;
 		} break;
 		case EditorVersionButton::FORMAT_WITH_NAME_AND_BUILD: {
-			main = GODOT_VERSION_FULL_NAME;
+			return "Orbe " ORBE_VERSION;
+		} break;
+		case EditorVersionButton::FORMAT_FULL: {
+			main = "engine " GODOT_VERSION_FULL_BUILD;
 		} break;
 		default: {
 			ERR_FAIL_V_MSG(GODOT_VERSION_FULL_NAME, "Unexpected format: " + itos(p_format));
@@ -79,7 +83,8 @@ void EditorVersionButton::_notification(int p_what) {
 }
 
 void EditorVersionButton::pressed() {
-	DisplayServer::get_singleton()->clipboard_set(_get_version_string(FORMAT_WITH_BUILD));
+	// What is copied for a bug report names the engine version Orbe is built on, too.
+	DisplayServer::get_singleton()->clipboard_set(String("Orbe " ORBE_VERSION " (") + _get_version_string(FORMAT_FULL) + ")");
 }
 
 EditorVersionButton::EditorVersionButton(VersionFormat p_format) {

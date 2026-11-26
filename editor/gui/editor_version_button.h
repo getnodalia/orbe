@@ -37,12 +37,13 @@ class EditorVersionButton : public LinkButton {
 
 public:
 	enum VersionFormat {
-		// 4.3.2.stable
+		// Orbe 0.2.0
 		FORMAT_BASIC,
-		// v4.3.2.stable.mono [HASH]
+		// v0.2.0
 		FORMAT_WITH_BUILD,
-		// Orbe v4.3.2.stable.mono.official [HASH]
+		// Orbe 0.2.0
 		FORMAT_WITH_NAME_AND_BUILD,
+		FORMAT_FULL, // The engine's version, for what is copied.
 	};
 
 private:

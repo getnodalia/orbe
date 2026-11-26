@@ -288,7 +288,7 @@ protected:
 	virtual void _set_read_only(bool p_read_only) override;
 
 public:
-	void setup(const Vector<String> &p_options);
+	void setup(const Vector<String> &p_options, bool p_translate = false);
 	virtual void update_property() override;
 	void set_option_button_clip(bool p_enable);
 	OptionButton *get_option_button(); // Hack to allow setting icons.

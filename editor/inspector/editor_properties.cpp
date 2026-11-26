@@ -978,7 +978,18 @@ void EditorPropertyEnum::update_property() {
 	options->set_text(itos(which));
 }
 
-void EditorPropertyEnum::setup(const Vector<String> &p_options) {
+// The names of the options of this editor's own classes are translated with the property catalog and
+// then the editor one. Options of a user's script stay as written.
+static String _translate_enum_option(const String &p_name) {
+	TranslationServer *ts = TranslationServer::get_singleton();
+	String translated = ts->get_property_domain()->translate(p_name, StringName());
+	if (translated == p_name) {
+		translated = ts->get_editor_domain()->translate(p_name, StringName());
+	}
+	return translated;
+}
+
+void EditorPropertyEnum::setup(const Vector<String> &p_options, bool p_translate) {
 	options->clear();
 	HashMap<int64_t, Vector<String>> items;
 	int64_t current_val = 0;
@@ -986,7 +997,7 @@ void EditorPropertyEnum::setup(const Vector<String> &p_options) {
 		if (option.get_slice_count(":") != 1) {
 			current_val = option.get_slicec(':', 1).to_int();
 		}
-		items[current_val].push_back(option.get_slicec(':', 0));
+		items[current_val].push_back(p_translate ? _translate_enum_option(option.get_slicec(':', 0)) : option.get_slicec(':', 0));
 		current_val += 1;
 	}
 
@@ -3961,7 +3972,8 @@ EditorProperty *EditorInspectorDefaultPlugin::get_editor_for_property(Object *p_
 			if (p_hint == PROPERTY_HINT_ENUM) {
 				EditorPropertyEnum *editor = memnew(EditorPropertyEnum);
 				Vector<String> options = p_hint_text.split(",");
-				editor->setup(options);
+				const bool own_property = p_object && ClassDB::has_property(p_object->get_class_name(), StringName(p_path));
+				editor->setup(options, own_property);
 				return editor;
 
 			} else if (p_hint == PROPERTY_HINT_FLAGS) {

@@ -23811,3 +23811,9 @@ msgstr "Negro (OLED)"
 msgctxt "Theme Preset"
 msgid "Custom"
 msgstr "Personalizado"
+
+msgid "Search Commands"
+msgstr "Buscar comandos"
+
+msgid "Home: back to the project list"
+msgstr "Inicio: volver a la lista de proyectos"

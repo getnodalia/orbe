@@ -13779,3 +13779,1257 @@ msgstr "Escribir R"
 
 msgid "Z As Relative"
 msgstr "Z como Relativa"
+
+msgid "1 Shadow"
+msgstr "1 sombra"
+
+msgid "100% (Sparse)"
+msgstr "100 % (Disperso)"
+
+msgid "1024 (Average)"
+msgstr "1024 (Medio)"
+
+msgid "1024 Shadows"
+msgstr "1024 sombras"
+
+msgid "16 Shadows"
+msgstr "16 sombras"
+
+msgid "16-Bit"
+msgstr "16 bits"
+
+msgid "16x (Slow)"
+msgstr "16× (Lento)"
+
+msgid "2048 (Slow)"
+msgstr "2048 (Lento)"
+
+msgid "256 (Fastest)"
+msgstr "256 (El más rápido)"
+
+msgid "256 Shadows"
+msgstr "256 sombras"
+
+msgid "2× (Average)"
+msgstr "2× (Medio)"
+
+msgid "2× (Faster)"
+msgstr "2× (Más rápido)"
+
+msgid "4 Shadows"
+msgstr "4 sombras"
+
+msgid "4× (Fast)"
+msgstr "4× (Rápido)"
+
+msgid "4× (Slow)"
+msgstr "4× (Lento)"
+
+msgid "4096 (Slower)"
+msgstr "4096 (Más lento)"
+
+msgid "50% (Compact)"
+msgstr "50 % (Compacto)"
+
+msgid "512 (Fast)"
+msgstr "512 (Rápido)"
+
+msgid "64 Shadows"
+msgstr "64 sombras"
+
+msgid "75% (Balanced)"
+msgstr "75 % (Equilibrado)"
+
+msgid "8-Bit"
+msgstr "8 bits"
+
+msgid "8192 (Slowest)"
+msgstr "8192 (El más lento)"
+
+msgid "8× (Average)"
+msgstr "8× (Medio)"
+
+msgid "8× (Slowest)"
+msgstr "8× (El más lento)"
+
+msgid "Abs"
+msgstr "Valor absoluto"
+
+msgid "Absolute"
+msgstr "Absoluto"
+
+msgid "Add Upward Velocity"
+msgstr "Añadir velocidad ascendente"
+
+msgid "Add Velocity"
+msgstr "Añadir velocidad"
+
+msgid "Additive"
+msgstr "Aditivo"
+
+msgid "Align to Velocity"
+msgstr "Alinear con la velocidad"
+
+msgid "Alpha Edge Blend"
+msgstr "Mezcla del borde alfa"
+
+msgid "Alpha Edge Clip"
+msgstr "Recorte del borde alfa"
+
+msgid "Alpha Hash"
+msgstr "Hash alfa"
+
+msgid "Alpha Scissor"
+msgstr "Corte alfa"
+
+msgid "Always (Slow)"
+msgstr "Siempre (Lento)"
+
+msgid "Always Show"
+msgstr "Mostrar siempre"
+
+msgid "Anchors"
+msgstr "Anclajes"
+
+msgid "Anisotropic"
+msgstr "Anisotrópico"
+
+msgid "Any"
+msgstr "Cualquiera"
+
+msgid "Application Menu"
+msgstr "Menú de la aplicación"
+
+msgid "Arbitrary"
+msgstr "Arbitrario"
+
+msgid "Assertive"
+msgstr "Asertivo"
+
+msgid "At Collision"
+msgstr "En la colisión"
+
+msgid "At Least One Walkable"
+msgstr "Al menos uno transitable"
+
+msgid "At Start"
+msgstr "Al inicio"
+
+msgid "Auto"
+msgstr "Automático"
+
+msgid "Backward"
+msgstr "Hacia atrás"
+
+msgid "Based on Application Locale"
+msgstr "Según el idioma de la aplicación"
+
+msgid "Based on System Locale"
+msgstr "Según el idioma del sistema"
+
+msgid "Basic Grid"
+msgstr "Cuadrícula básica"
+
+msgid "Begin to End"
+msgstr "De inicio a fin"
+
+msgid "Bevel"
+msgstr "Bisel"
+
+msgid "Bilinear (Fastest)"
+msgstr "Bilineal (El más rápido)"
+
+msgid "Bilinear (Left and Right)"
+msgstr "Bilineal (Izquierda y derecha)"
+
+msgid "Bilinear (Top and Bottom)"
+msgstr "Bilineal (Arriba y abajo)"
+
+msgid "Bitwise AND"
+msgstr "AND bit a bit"
+
+msgid "Bitwise Left Shift"
+msgstr "Desplazamiento a la izquierda"
+
+msgid "Bitwise NOT"
+msgstr "NOT bit a bit"
+
+msgid "Bitwise OR"
+msgstr "OR bit a bit"
+
+msgid "Bitwise Right Shift"
+msgstr "Desplazamiento a la derecha"
+
+msgid "Bitwise XOR"
+msgstr "XOR bit a bit"
+
+msgid "Black"
+msgstr "Negro"
+
+msgid "Block"
+msgstr "Bloque"
+
+msgid "Both"
+msgstr "Ambos"
+
+msgid "Bottom and Right"
+msgstr "Abajo y derecha"
+
+msgid "Bottom to Top"
+msgstr "De abajo arriba"
+
+msgid "Boundary"
+msgstr "Límite"
+
+msgid "Box (Local)"
+msgstr "Caja (local)"
+
+msgid "Burn"
+msgstr "Quemar"
+
+msgid "Button Press"
+msgstr "Al pulsar el botón"
+
+msgid "Button Release"
+msgstr "Al soltar el botón"
+
+msgid "Camera Feed"
+msgstr "Imagen de la cámara"
+
+msgid "Can Drop"
+msgstr "Se puede soltar"
+
+msgid "Canvas"
+msgstr "Lienzo"
+
+msgid "Carry"
+msgstr "Acarrear"
+
+msgid "Cast Ray"
+msgstr "Lanzar rayo"
+
+msgid "Cast Shape"
+msgstr "Lanzar forma"
+
+msgid "Ceil"
+msgstr "Redondear hacia arriba"
+
+msgid "Cell Value"
+msgstr "Valor de la celda"
+
+msgid "Center of Main Window Screen"
+msgstr "Centro de la pantalla de la ventana principal"
+
+msgid "Center of Other Screen"
+msgstr "Centro de otra pantalla"
+
+msgid "Center of Primary Screen"
+msgstr "Centro de la pantalla principal"
+
+msgid "Center of Screen With Keyboard Focus"
+msgstr "Centro de la pantalla con el foco del teclado"
+
+msgid "Center of Screen With Mouse Pointer"
+msgstr "Centro de la pantalla con el puntero"
+
+msgid "Characters After Shaping"
+msgstr "Caracteres tras el modelado"
+
+msgid "Characters Before Shaping"
+msgstr "Caracteres antes del modelado"
+
+msgid "Clamp to Border"
+msgstr "Limitar al borde"
+
+msgid "Clamp to Edge"
+msgstr "Limitar al extremo"
+
+msgid "Clear Color"
+msgstr "Color de fondo"
+
+msgid "Click"
+msgstr "Clic"
+
+msgid "Clip"
+msgstr "Recortar"
+
+msgid "Clip + Draw"
+msgstr "Recortar y dibujar"
+
+msgid "Clip Only"
+msgstr "Solo recortar"
+
+msgid "ClockWise"
+msgstr "Sentido horario"
+
+msgid "Clockwise"
+msgstr "Sentido horario"
+
+msgid "Clockwise and Counter Clockwise"
+msgstr "Horario y antihorario"
+
+msgid "Coarse"
+msgstr "Grueso"
+
+msgid "Combine"
+msgstr "Combinar"
+
+msgid "Combine-Replace"
+msgstr "Combinar y reemplazar"
+
+msgid "Cone (Local)"
+msgstr "Cono (local)"
+
+msgid "Conform to controller"
+msgstr "Ajustar al mando"
+
+msgid "Conic"
+msgstr "Cónico"
+
+msgid "Constant Color"
+msgstr "Color constante"
+
+msgid "Container"
+msgstr "Contenedor"
+
+msgid "Controller"
+msgstr "Mando"
+
+msgid "Convex Partition"
+msgstr "Partición convexa"
+
+msgid "Counter Clockwise"
+msgstr "Sentido antihorario"
+
+msgid "CounterClockWise"
+msgstr "Sentido antihorario"
+
+msgid "Cross"
+msgstr "Cruz"
+
+msgid "Cube"
+msgstr "Cubo"
+
+msgid "Custom Rate"
+msgstr "Frecuencia personalizada"
+
+msgid "Cylinder (Local)"
+msgstr "Cilindro (local)"
+
+msgid "Darken"
+msgstr "Oscurecer"
+
+msgid "Dependencies"
+msgstr "Dependencias"
+
+msgid "Depth Pre-Pass"
+msgstr "Prepaso de profundidad"
+
+msgid "Diamond Down"
+msgstr "Rombo hacia abajo"
+
+msgid "Diamond Right"
+msgstr "Rombo hacia la derecha"
+
+msgid "Difference"
+msgstr "Diferencia"
+
+msgid "Directed Points"
+msgstr "Puntos dirigidos"
+
+msgid "Disabled (Fastest)"
+msgstr "Desactivado (El más rápido)"
+
+msgid "Discard All Textures"
+msgstr "Descartar todas las texturas"
+
+msgid "Divide"
+msgstr "Dividir"
+
+msgid "Do Nothing"
+msgstr "No hacer nada"
+
+msgid "Dock"
+msgstr "Panel"
+
+msgid "Dodge"
+msgstr "Sobreexponer"
+
+msgid "Dominant"
+msgstr "Dominante"
+
+msgid "Dots"
+msgstr "Puntos"
+
+msgid "Double-Sided"
+msgstr "Doble cara"
+
+msgid "Drag Center"
+msgstr "Arrastrar desde el centro"
+
+msgid "Dual Paraboloid"
+msgstr "Paraboloide doble"
+
+msgid "Dynamic"
+msgstr "Dinámico"
+
+msgid "Ellipsis"
+msgstr "Puntos suspensivos"
+
+msgid "Ellipsis (6+ Characters)"
+msgstr "Puntos suspensivos (6 o más caracteres)"
+
+msgid "Ellipsis (Always)"
+msgstr "Puntos suspensivos (siempre)"
+
+msgid "Ellipsoid (Local)"
+msgstr "Elipsoide (local)"
+
+msgid "Email"
+msgstr "Correo electrónico"
+
+msgid "Embed as Basis Universal"
+msgstr "Incrustar como Basis Universal"
+
+msgid "Embed as Uncompressed"
+msgstr "Incrustar sin comprimir"
+
+msgid "End to Begin"
+msgstr "De fin a inicio"
+
+msgid "Enum"
+msgstr "Enumeración"
+
+msgid "Equal"
+msgstr "Igual"
+
+msgid "Euclidean"
+msgstr "Euclidiana"
+
+msgid "Euclidean Squared"
+msgstr "Euclidiana al cuadrado"
+
+msgid "Exclusive Fullscreen"
+msgstr "Pantalla completa exclusiva"
+
+msgid "Exponential"
+msgstr "Exponencial"
+
+msgid "Extract Textures"
+msgstr "Extraer texturas"
+
+msgid "Face X"
+msgstr "Cara X"
+
+msgid "Face Y"
+msgstr "Cara Y"
+
+msgid "Face Z"
+msgstr "Cara Z"
+
+msgid "Fast"
+msgstr "Rápido"
+
+msgid "File System"
+msgstr "Sistema de archivos"
+
+msgid "Filmic"
+msgstr "Fílmico"
+
+msgid "Fine"
+msgstr "Fino"
+
+msgid "Fit"
+msgstr "Ajustar"
+
+msgid "Fit Height"
+msgstr "Ajustar a la altura"
+
+msgid "Fit Height Proportional"
+msgstr "Ajustar a la altura (proporcional)"
+
+msgid "Fit Width"
+msgstr "Ajustar al ancho"
+
+msgid "Fit Width Proportional"
+msgstr "Ajustar al ancho (proporcional)"
+
+msgid "Fit to LineEdit"
+msgstr "Ajustar al campo de texto"
+
+msgid "Fit to Text"
+msgstr "Ajustar al texto"
+
+msgid "Fixed"
+msgstr "Fijo"
+
+msgid "Fixed Top Left"
+msgstr "Fijo arriba a la izquierda"
+
+msgid "Floating"
+msgstr "Flotante"
+
+msgid "Following"
+msgstr "Siguiente"
+
+msgid "Force Continuous"
+msgstr "Forzar continuo"
+
+msgid "Force Hide"
+msgstr "Forzar ocultar"
+
+msgid "Force Show"
+msgstr "Forzar mostrar"
+
+msgid "Forward"
+msgstr "Hacia delante"
+
+msgid "Fract"
+msgstr "Parte fraccionaria"
+
+msgid "Fractional"
+msgstr "Fraccionario"
+
+msgid "Front"
+msgstr "Frente"
+
+msgid "Full"
+msgstr "Completo"
+
+msgid "Fullscreen"
+msgstr "Pantalla completa"
+
+msgid "Glyphs (Layout Direction)"
+msgstr "Glifos (dirección del diseño)"
+
+msgid "Glyphs (Left-to-Right)"
+msgstr "Glifos (de izquierda a derecha)"
+
+msgid "Glyphs (Right-to-Left)"
+msgstr "Glifos (de derecha a izquierda)"
+
+msgid "Grayscale"
+msgstr "Escala de grises"
+
+msgid "Greater"
+msgstr "Mayor"
+
+msgid "Greater Or Equal"
+msgstr "Mayor o igual"
+
+msgid "Grounded"
+msgstr "En el suelo"
+
+msgid "Group Explicit"
+msgstr "Grupo explícito"
+
+msgid "Group With Children"
+msgstr "Grupo con hijos"
+
+msgid "Half-Offset Square"
+msgstr "Cuadrado con medio desplazamiento"
+
+msgid "Hard Light"
+msgstr "Luz fuerte"
+
+msgid "Height Controls Width"
+msgstr "La altura controla el ancho"
+
+msgid "Help Menu"
+msgstr "Menú de ayuda"
+
+msgid "Hexagon"
+msgstr "Hexágono"
+
+msgid "Hidden"
+msgstr "Oculto"
+
+msgid "Hidden and Collapsed"
+msgstr "Oculto y contraído"
+
+msgid "Hide On Contact"
+msgstr "Ocultar al contacto"
+
+msgid "High-Quality"
+msgstr "Alta calidad"
+
+msgid "High-Quality Incremental"
+msgstr "Alta calidad incremental"
+
+msgid "Horizontal Resize"
+msgstr "Redimensión horizontal"
+
+msgid "Horizontal Split"
+msgstr "División horizontal"
+
+msgid "Humanoid"
+msgstr "Humanoide"
+
+msgid "Hybrid"
+msgstr "Híbrido"
+
+msgid "I-Beam"
+msgstr "Cursor de texto"
+
+msgid "Ignore"
+msgstr "Ignorar"
+
+msgid "Ignore Size"
+msgstr "Ignorar el tamaño"
+
+msgid "Inherited"
+msgstr "Heredado"
+
+msgid "Instance"
+msgstr "Instancia"
+
+msgid "Instance + Index"
+msgstr "Instancia e índice"
+
+msgid "Integer"
+msgstr "Entero"
+
+msgid "Interpolated"
+msgstr "Interpolado"
+
+msgid "Inverse"
+msgstr "Inverso"
+
+msgid "Inverse Square"
+msgstr "Cuadrado inverso"
+
+msgid "Inverted"
+msgstr "Invertido"
+
+msgid "Isometric"
+msgstr "Isométrico"
+
+msgid "Keep Active"
+msgstr "Mantener activo"
+
+msgid "Keep Aspect Centered"
+msgstr "Mantener proporción y centrar"
+
+msgid "Keep Aspect Covered"
+msgstr "Mantener proporción y cubrir"
+
+msgid "Keep Centered"
+msgstr "Mantener centrado"
+
+msgid "Keep Height"
+msgstr "Mantener altura"
+
+msgid "Keep Size"
+msgstr "Mantener tamaño"
+
+msgid "Keep Width"
+msgstr "Mantener ancho"
+
+msgid "Kinematic"
+msgstr "Cinemático"
+
+msgid "LCD Subpixel"
+msgstr "Subpíxel LCD"
+
+msgid "Lambert Wrap"
+msgstr "Lambert envolvente"
+
+msgid "Left Hand"
+msgstr "Mano izquierda"
+
+msgid "Left Side Bottom-Left"
+msgstr "Lado izquierdo, abajo a la izquierda"
+
+msgid "Left Side Bottom-Right"
+msgstr "Lado izquierdo, abajo a la derecha"
+
+msgid "Left Side Upper-Left"
+msgstr "Lado izquierdo, arriba a la izquierda"
+
+msgid "Left Side Upper-Right"
+msgstr "Lado izquierdo, arriba a la derecha"
+
+msgid "Left-to-Right"
+msgstr "De izquierda a derecha"
+
+msgid "Left-to-right"
+msgstr "De izquierda a derecha"
+
+msgid "Less"
+msgstr "Menor"
+
+msgid "Less Or Equal"
+msgstr "Menor o igual"
+
+msgid "Light and Sky"
+msgstr "Luz y cielo"
+
+msgid "Lighten"
+msgstr "Aclarar"
+
+msgid "Lighting"
+msgstr "Iluminación"
+
+msgid "Linear Mipmap"
+msgstr "Mipmap lineal"
+
+msgid "Linear Mipmap Anisotropic"
+msgstr "Mipmap lineal anisotrópico"
+
+msgid "Linear sRGB"
+msgstr "sRGB lineal"
+
+msgid "List"
+msgstr "Lista"
+
+msgid "Local Billboard"
+msgstr "Cartel local"
+
+msgid "Logarithmic"
+msgstr "Logarítmico"
+
+msgid "Main Diagonal Resize"
+msgstr "Redimensión por la diagonal principal"
+
+msgid "Make Static"
+msgstr "Hacer estático"
+
+msgid "Maximize First"
+msgstr "Maximizar primero"
+
+msgid "Maximized"
+msgstr "Maximizada"
+
+msgid "Medium"
+msgstr "Medio"
+
+msgid "Mesh Instances"
+msgstr "Instancias de malla"
+
+msgid "Meshes and Static Colliders"
+msgstr "Mallas y colisionadores estáticos"
+
+msgid "MetalFX (Spatial - Fast)"
+msgstr "MetalFX (espacial, rápido)"
+
+msgid "MetalFX (Temporal - Slow)"
+msgstr "MetalFX (temporal, lento)"
+
+msgid "Minimized"
+msgstr "Minimizada"
+
+msgid "Mirror Clamp to Edge"
+msgstr "Reflejar y limitar al extremo"
+
+msgid "Mirror Repeat"
+msgstr "Repetir reflejado"
+
+msgid "Mirrored Repeat"
+msgstr "Repetición reflejada"
+
+msgid "Multi"
+msgstr "Múltiple"
+
+msgid "Multiline"
+msgstr "Multilínea"
+
+msgid "Multiply"
+msgstr "Multiplicar"
+
+msgid "Nearest (Fastest)"
+msgstr "Más cercano (El más rápido)"
+
+msgid "Nearest Mipmap"
+msgstr "Mipmap más cercano"
+
+msgid "Nearest Mipmap Anisotropic"
+msgstr "Mipmap más cercano anisotrópico"
+
+msgid "Negate"
+msgstr "Negar"
+
+msgid "Nested"
+msgstr "Anidado"
+
+msgid "Never Show"
+msgstr "No mostrar nunca"
+
+msgid "No Repeat"
+msgstr "Sin repetición"
+
+msgid "None (Fast)"
+msgstr "Ninguno (Rápido)"
+
+msgid "None set"
+msgstr "Ninguno definido"
+
+msgid "Normal3D"
+msgstr "Normal 3D"
+
+msgid "NormalMap2D"
+msgstr "Mapa de normales 2D"
+
+msgid "NormalRoughness"
+msgstr "Normal y rugosidad"
+
+msgid "Not Equal"
+msgstr "Distinto"
+
+msgid "Number"
+msgstr "Número"
+
+msgid "Off"
+msgstr "Desactivado"
+
+msgid "On Hover"
+msgstr "Al pasar el ratón"
+
+msgid "Once"
+msgstr "Una vez"
+
+msgid "Once (Fast)"
+msgstr "Una vez (Rápido)"
+
+msgid "One"
+msgstr "Uno"
+
+msgid "One Half of a Pixel"
+msgstr "Medio píxel"
+
+msgid "One Quarter of a Pixel"
+msgstr "Un cuarto de píxel"
+
+msgid "OneMinus"
+msgstr "Uno menos"
+
+msgid "Only If No Obstacles"
+msgstr "Solo si no hay obstáculos"
+
+msgid "Opaque Only"
+msgstr "Solo opacos"
+
+msgid "Opaque Pre-Pass"
+msgstr "Prepaso opaco"
+
+msgid "Open Any"
+msgstr "Abrir cualquiera"
+
+msgid "Open Files"
+msgstr "Abrir archivos"
+
+msgid "Open Folder"
+msgstr "Abrir carpeta"
+
+msgid "Oriented"
+msgstr "Orientado"
+
+msgid "Orthogonal (Fast)"
+msgstr "Ortogonal (Rápido)"
+
+msgid "Overdraw"
+msgstr "Sobredibujo"
+
+msgid "Overdrive"
+msgstr "Sobrecarga"
+
+msgid "Overlay"
+msgstr "Superponer"
+
+msgid "PCF13 (Slow)"
+msgstr "PCF13 (Lento)"
+
+msgid "PCF5 (Average)"
+msgstr "PCF5 (Medio)"
+
+msgid "PSSM 2 Splits (Average)"
+msgstr "PSSM de 2 divisiones (Medio)"
+
+msgid "PSSM 4 Splits (Slow)"
+msgstr "PSSM de 4 divisiones (Lento)"
+
+msgid "Particle Billboard"
+msgstr "Cartel de partículas"
+
+msgid "Pass (Propagate Up)"
+msgstr "Pasar (propagar hacia arriba)"
+
+msgid "Pausable"
+msgstr "Se puede pausar"
+
+msgid "Per-Pixel"
+msgstr "Por píxel"
+
+msgid "Per-Vertex"
+msgstr "Por vértice"
+
+msgid "Phone"
+msgstr "Teléfono"
+
+msgid "Ping-Pong"
+msgstr "Ida y vuelta"
+
+msgid "Pointing Hand"
+msgstr "Mano que señala"
+
+msgid "Polite"
+msgstr "Cortés"
+
+msgid "Post Opaque"
+msgstr "Tras los opacos"
+
+msgid "Post Sky"
+msgstr "Tras el cielo"
+
+msgid "Post Transparent"
+msgstr "Tras los transparentes"
+
+msgid "Pre Opaque"
+msgstr "Antes de los opacos"
+
+msgid "Pre Transparent"
+msgstr "Antes de los transparentes"
+
+msgid "Premultiplied Alpha"
+msgstr "Alfa premultiplicado"
+
+msgid "Progressive"
+msgstr "Progresivo"
+
+msgid "Radians"
+msgstr "Radianes"
+
+msgid "Random"
+msgstr "Aleatorio"
+
+msgid "Random (Avoid Repeats)"
+msgstr "Aleatorio (sin repetir)"
+
+msgid "Range + Step"
+msgstr "Rango y paso"
+
+msgid "Range+Step"
+msgstr "Rango y paso"
+
+msgid "Real-Time"
+msgstr "Tiempo real"
+
+msgid "Recessive"
+msgstr "Recesivo"
+
+msgid "Reciprocal"
+msgstr "Recíproco"
+
+msgid "Rectangle"
+msgstr "Rectángulo"
+
+msgid "Reflect"
+msgstr "Reflejar"
+
+msgid "Reliable"
+msgstr "Fiable"
+
+msgid "Remainder"
+msgstr "Resto"
+
+msgid "Replace-Combine"
+msgstr "Reemplazar y combinar"
+
+msgid "Reserve"
+msgstr "Reservar"
+
+msgid "Reverse Lifetime"
+msgstr "Vida útil invertida"
+
+msgid "Ridged"
+msgstr "Con crestas"
+
+msgid "Right Hand"
+msgstr "Mano derecha"
+
+msgid "Right Side Bottom-Left"
+msgstr "Lado derecho, abajo a la izquierda"
+
+msgid "Right Side Bottom-Right"
+msgstr "Lado derecho, abajo a la derecha"
+
+msgid "Right Side Upper-Left"
+msgstr "Lado derecho, arriba a la izquierda"
+
+msgid "Right Side Upper-Right"
+msgstr "Lado derecho, arriba a la derecha"
+
+msgid "Right to Left"
+msgstr "De derecha a izquierda"
+
+msgid "Right-to-Left"
+msgstr "De derecha a izquierda"
+
+msgid "Right-to-left"
+msgstr "De derecha a izquierda"
+
+msgid "Rigid"
+msgstr "Rígido"
+
+msgid "Ring"
+msgstr "Anillo"
+
+msgid "Roomscale"
+msgstr "A escala de habitación"
+
+msgid "Root Node Children"
+msgstr "Hijos del nodo raíz"
+
+msgid "Rotation Only"
+msgstr "Solo rotación"
+
+msgid "Round"
+msgstr "Redondear"
+
+msgid "RoundEven"
+msgstr "Redondear al par"
+
+msgid "Row"
+msgstr "Fila"
+
+msgid "Sample"
+msgstr "Muestra"
+
+msgid "Saturate"
+msgstr "Saturar"
+
+msgid "Scalar"
+msgstr "Escalar"
+
+msgid "Scaling"
+msgstr "Escalado"
+
+msgid "Scroll Pans"
+msgstr "La rueda desplaza"
+
+msgid "Scroll Zooms"
+msgstr "La rueda hace zoom"
+
+msgid "Secondary Diagonal Resize"
+msgstr "Redimensión por la diagonal secundaria"
+
+msgid "Sequential"
+msgstr "Secuencial"
+
+msgid "Shadows Only"
+msgstr "Solo sombras"
+
+msgid "Sharp"
+msgstr "Nítido"
+
+msgid "Show Active Only"
+msgstr "Mostrar solo lo activo"
+
+msgid "Show Always"
+msgstr "Mostrar siempre"
+
+msgid "Show Never"
+msgstr "No mostrar nunca"
+
+msgid "Sign"
+msgstr "Signo"
+
+msgid "Single"
+msgstr "Único"
+
+msgid "Sitting"
+msgstr "Sentado"
+
+msgid "Sky Only"
+msgstr "Solo cielo"
+
+msgid "Soft Light"
+msgstr "Luz suave"
+
+msgid "Solids"
+msgstr "Sólidos"
+
+msgid "Sphere Surface"
+msgstr "Superficie de esfera"
+
+msgid "Spin"
+msgstr "Girar"
+
+msgid "Square"
+msgstr "Cuadrado"
+
+msgid "Stacked"
+msgstr "Apilado"
+
+msgid "Stacked Offset"
+msgstr "Apilado desplazado"
+
+msgid "Stage"
+msgstr "Etapa"
+
+msgid "Stairs Down"
+msgstr "Escalones hacia abajo"
+
+msgid "Stairs Right"
+msgstr "Escalones hacia la derecha"
+
+msgid "Static Colliders"
+msgstr "Colisionadores estáticos"
+
+msgid "Sub Thread"
+msgstr "Subhilo"
+
+msgid "Subdivide"
+msgstr "Subdividir"
+
+msgid "Subtract"
+msgstr "Restar"
+
+msgid "Subtraction"
+msgstr "Resta"
+
+msgid "Sum"
+msgstr "Suma"
+
+msgid "System Input Rate"
+msgstr "Frecuencia de entrada del sistema"
+
+msgid "System Output Rate"
+msgstr "Frecuencia de salida del sistema"
+
+msgid "Tangential"
+msgstr "Tangencial"
+
+msgid "Tetrahedron"
+msgstr "Tetraedro"
+
+msgid "Thumbnails"
+msgstr "Miniaturas"
+
+msgid "Tile"
+msgstr "Mosaico"
+
+msgid "Tile Fit"
+msgstr "Ajustar al mosaico"
+
+msgid "Toggle"
+msgstr "Alternar"
+
+msgid "Toon"
+msgstr "Dibujo animado"
+
+msgid "Top and Left"
+msgstr "Arriba e izquierda"
+
+msgid "Top to Bottom"
+msgstr "De arriba abajo"
+
+msgid "TouchScreen Only"
+msgstr "Solo pantalla táctil"
+
+msgid "Triangulate"
+msgstr "Triangular"
+
+msgid "Trim Characters"
+msgstr "Recortar caracteres"
+
+msgid "Trim Nothing"
+msgstr "No recortar"
+
+msgid "Trim Words"
+msgstr "Recortar palabras"
+
+msgid "Trunc"
+msgstr "Truncar"
+
+msgid "Uncontrolled"
+msgstr "Sin controlar"
+
+msgid "Union"
+msgstr "Unión"
+
+msgid "Unobstructed"
+msgstr "Sin obstáculos"
+
+msgid "Unreliable"
+msgstr "No fiable"
+
+msgid "Unreliable Ordered"
+msgstr "No fiable y ordenado"
+
+msgid "Value Cubic"
+msgstr "Valor cúbico"
+
+msgid "Vertical Resize"
+msgstr "Redimensión vertical"
+
+msgid "Vertical Split"
+msgstr "División vertical"
+
+msgid "View Depth"
+msgstr "Profundidad de la vista"
+
+msgid "Wait"
+msgstr "Espera"
+
+msgid "Watershed"
+msgstr "Cuenca"
+
+msgid "Wave Shape"
+msgstr "Forma de onda"
+
+msgid "When Moved (Fast)"
+msgstr "Al moverse (Rápido)"
+
+msgid "When Parent Visible"
+msgstr "Cuando el padre es visible"
+
+msgid "When Paused"
+msgstr "Cuando está en pausa"
+
+msgid "When Touched"
+msgstr "Al tocar"
+
+msgid "When Visible"
+msgstr "Cuando es visible"
+
+msgid "Width Controls Height"
+msgstr "El ancho controla la altura"
+
+msgid "Window Menu"
+msgstr "Menú de ventana"
+
+msgid "Windowed"
+msgstr "En ventana"
+
+msgid "Word"
+msgstr "Palabra"
+
+msgid "Word (Smart)"
+msgstr "Palabra (inteligente)"
+
+msgid "Word Ellipsis"
+msgstr "Puntos suspensivos por palabra"
+
+msgid "Word Ellipsis (6+ Characters)"
+msgstr "Puntos suspensivos por palabra (6 o más caracteres)"
+
+msgid "Word Ellipsis (Always)"
+msgstr "Puntos suspensivos por palabra (siempre)"
+
+msgid "World (Global)"
+msgstr "Mundo (global)"
+
+msgid "X-Ray"
+msgstr "Rayos X"
+
+msgid "Y-Billboard"
+msgstr "Cartel en Y"
+
+msgid "pose"
+msgstr "Pose"
+
+msgid "process"
+msgstr "Proceso"
+
+msgid "physics_process"
+msgstr "Proceso de física"
