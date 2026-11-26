@@ -1,0 +1,84 @@
+# What `scripts/rebrand.py` renames: upstream's Godot Engine becomes Orbe, in file contents and in
+# paths. The weekly upstream sync applies the same rules to upstream's tree before merging it, so
+# a rule added here applies to everything upstream sends from then on.
+#
+# Replacements are literal and case-sensitive, applied in order: put the longer, more specific
+# ones first.
+#
+# What stays upstream's on purpose, because projects, add-ons and extensions made for Godot keep
+# working in Orbe: the project file `project.godot` and the `.godot/` folder, scene and resource
+# formats, the GDExtension interface (`godot_*` symbols, `.gdextension`), the `godot` script class
+# names and the Android and web export templates' package names. Orbe renames what a person sees
+# and what identifies the application: its name, its binary, its application id.
+
+# Left as they are wherever they appear.
+keep = [
+    # Links: upstream's website, documentation, issues and pull requests, other people's forks.
+    "https?://[^\\s)\\]\"'<>`]+",
+    # Bare domains and the addresses at them.
+    "[\\w.+-]*@?(docs\\.)?godotengine\\.org[\\w./-]*",
+    # Upstream's repository, named without a link.
+    "godotengine/godot[\\w.-]*",
+    # The copyright holders of the code, which the licence requires in every source file and in the
+    # notices.
+    "Godot Engine contributors",
+    # The Android and web export templates keep upstream's package names.
+    "org\\.godotengine\\.[a-z][\\w.]*",
+]
+
+# Files left alone entirely.
+skip = [
+    ".github/rebrand.toml",
+    "scripts/rebrand.py",
+    # Third-party code and its notices.
+    "thirdparty/*",
+    # The licence notices keep upstream's copyright lines, which the licences require.
+    "LICENSE.txt",
+    "COPYRIGHT.txt",
+    "AUTHORS.md",
+    "DONORS.md",
+    "NOTICE",
+    # The record of what came from upstream, and upstream's own README kept for reference.
+    "docs/upstream.md",
+    "docs/upstream-readme.md",
+]
+
+# Lines that keep this app's value when upstream's tree is rebranded (the sync passes --pin-from).
+[[pin]]
+file = "version.py"
+pattern = '^website = "[^"]*"'
+
+[[pin]]
+file = "version.py"
+pattern = '^docs = "[^"]*"'
+
+# Identity: application id, binary, desktop entry.
+[[replace]]
+from = "org.godotengine.Godot"
+to = "dev.danielmiguelt.Orbe"
+
+[[replace]]
+from = 'short_name = "godot"'
+to = 'short_name = "orbe"'
+
+# The binary: orbe.<platform>.<target>.<arch>. The quotes keep the web runtime's file names, which
+# the page templates name, as they are.
+[[replace]]
+from = '"#bin/godot"'
+to = '"#bin/orbe"'
+
+[[replace]]
+from = "#bin/godot{"
+to = "#bin/orbe{"
+
+[[replace]]
+from = "Exec=godot "
+to = "Exec=orbe "
+
+[[replace]]
+from = "StartupWMClass=Godot"
+to = "StartupWMClass=Orbe"
+
+[[replace]]
+from = "Godot Engine"
+to = "Orbe"
