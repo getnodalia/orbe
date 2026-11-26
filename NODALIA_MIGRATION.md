@@ -13,11 +13,14 @@ What is done and what is left to make Orbe a Nodalia app like the others.
 
 ## Next
 
-1. **Icon and art.** Orbe's app icon is a portrait of Johannes Kepler (`misc/logo/icon*`, the
-   hicolor set, the Windows `.ico` and `Orbe.icns`), made with nodalia-design's `tools/app-portrait`
-   (see `docs/iconography.md` there). A placeholder mark, wordmark and splash are still in
-   (`misc/orbe-art`, rows in `ATTRIBUTION.md`), and the macOS document icons, the Android and
-   Apple embedded icons are still upstream's and must be replaced before the first release.
+1. **Icon and art.** Orbe's app icon is a portrait of Johannes Kepler, made with nodalia-design's
+   `tools/app-portrait` (see `docs/iconography.md` there): `misc/logo/icon*` and the hicolor set,
+   the Windows `.ico`, `Orbe.icns` and the macOS export templates' icons, and the Android launcher
+   icons. iOS and visionOS exports take the project's own icon, so the engine ships none. Still
+   to do: a Liquid Glass icon for macOS 26 (the editor bundle's `Assets.car` still holds
+   upstream's and is not referenced: `CFBundleIconName` is gone, so the `.icns` shows), the
+   macOS document icons in `misc/dist/macos*`, a placeholder mark, wordmark and splash
+   (`misc/orbe-art`, rows in `ATTRIBUTION.md`), and the Apple embedded splash images.
 2. **CI**: done (rebrand check, a Linux editor build with the unit tests, release notes check,
    weekly upstream sync).
 3. **Releases**: `release-auto.yml` has Linux (AppImage, `.deb`, `.rpm`, `.tar.gz`) and macOS
