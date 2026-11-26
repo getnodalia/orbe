@@ -16,17 +16,31 @@ constexpr int BUTTON_SIZE = 28;
 constexpr int EDGE_SIZE = 5;
 } // namespace
 
-// The three colours are NDL's: close red, maximize cyan, minimize amber.
-Color EditorWindowButton::_get_color() const {
+// NDL's window buttons are neutral at rest (the control background, secondary ink) and only take
+// their colour while hovered: amber for minimize, the app's accent for maximize, red for close.
+EditorWindowButton::Palette EditorWindowButton::_get_palette() const {
+	Palette p;
+	const Color base = EditorSettings::get_singleton() ? Color(EDITOR_GET("interface/theme/base_color")) : Color(0.11, 0.12, 0.16);
+	const bool dark = base.get_luminance() < 0.5;
+	p.rest_fill = dark ? Color::from_rgba8(29, 32, 41) : Color::from_rgba8(236, 238, 242);
+	p.rest_ink = dark ? Color::from_rgba8(180, 184, 198) : Color::from_rgba8(68, 74, 92);
+	p.pressed_fill = dark ? Color::from_rgba8(42, 46, 58) : Color::from_rgba8(218, 221, 228);
 	switch (kind) {
-		case KIND_MINIMIZE:
-			return Color::hex(0xF5A524FF);
-		case KIND_MAXIMIZE:
-			return Color::hex(0x22B8CFFF);
-		case KIND_CLOSE:
-			return Color::hex(0xE5484DFF);
+		case KIND_MINIMIZE: {
+			p.hover_fill = dark ? Color::from_rgba8(51, 36, 10) : Color::from_rgba8(251, 239, 208);
+			p.hover_ink = dark ? Color::from_rgba8(242, 193, 78) : Color::from_rgba8(122, 79, 0);
+		} break;
+		case KIND_MAXIMIZE: {
+			const Color accent = EditorSettings::get_singleton() ? Color(EDITOR_GET("interface/theme/accent_color")) : Color::hex(0xDDA10AFF);
+			p.hover_fill = p.rest_fill.lerp(accent, dark ? 0.22 : 0.18);
+			p.hover_ink = dark ? accent.lightened(0.15) : accent.darkened(0.5);
+		} break;
+		case KIND_CLOSE: {
+			p.hover_fill = Color::from_rgba8(255, 92, 77);
+			p.hover_ink = Color::from_rgba8(11, 12, 16);
+		} break;
 	}
-	return Color(1, 1, 1);
+	return p;
 }
 
 void EditorWindowButton::_bind_methods() {
@@ -66,31 +80,36 @@ void EditorWindowButton::_notification(int p_what) {
 			queue_redraw();
 		} break;
 		case NOTIFICATION_DRAW: {
-			const Color c = _get_color();
+			const Palette pal = _get_palette();
+			const Color fill = pressed ? pal.pressed_fill : (hovered ? pal.hover_fill : pal.rest_fill);
+			const Color c = (hovered || pressed) ? pal.hover_ink : pal.rest_ink;
 			const Size2 s = get_size();
 			const Point2 mid = s / 2;
 			const float radius = MIN(s.x, s.y) / 2;
-			Color fill = c;
-			fill.a = pressed ? 0.45 : (hovered ? 0.34 : 0.18);
 			draw_circle(mid, radius, fill);
 
-			const float g = 5.0; // Half the glyph's size.
-			const float w = 1.6 * MAX(1.0, EDSCALE);
+			const float g = 5.0 * MAX(1.0, EDSCALE); // Half the glyph's size.
+			const float t = 4.0 * MAX(1.0, EDSCALE); // Length of a corner's arms.
+			const float w = 1.8 * MAX(1.0, EDSCALE);
 			switch (kind) {
 				case KIND_MINIMIZE: {
 					draw_line(mid + Vector2(-g, 0), mid + Vector2(g, 0), c, w, true);
 				} break;
 				case KIND_MAXIMIZE: {
 					Window *win = get_window();
-					if (win && win->get_mode() == Window::MODE_MAXIMIZED) {
-						// Restore: two squares, one behind the other.
-						draw_rect(Rect2(mid + Vector2(-g, -g + 2), Size2(2 * g - 2, 2 * g - 2)), c, false, w);
-						draw_line(mid + Vector2(-g + 2, -g + 2), mid + Vector2(-g + 2, -g), c, w, true);
-						draw_line(mid + Vector2(-g + 2, -g), mid + Vector2(g, -g), c, w, true);
-						draw_line(mid + Vector2(g, -g), mid + Vector2(g, g - 2), c, w, true);
-						draw_line(mid + Vector2(g, g - 2), mid + Vector2(g - 2, g - 2), c, w, true);
+					const bool maximized = win && win->get_mode() == Window::MODE_MAXIMIZED;
+					// Two diagonal corners, pointing out to maximize and in to restore.
+					if (maximized) {
+						const float o = 1.5 * MAX(1.0, EDSCALE);
+						const Vector2 a = mid + Vector2(o, -o); // Top right corner, its point turned to the centre.
+						draw_polyline(Vector<Vector2>({ a + Vector2(t, 0), a, a + Vector2(0, -t) }), c, w, true);
+						const Vector2 b = mid + Vector2(-o, o);
+						draw_polyline(Vector<Vector2>({ b + Vector2(-t, 0), b, b + Vector2(0, t) }), c, w, true);
 					} else {
-						draw_rect(Rect2(mid + Vector2(-g, -g), Size2(2 * g, 2 * g)), c, false, w);
+						const Vector2 a = mid + Vector2(g, -g);
+						draw_polyline(Vector<Vector2>({ a + Vector2(-t, 0), a, a + Vector2(0, t) }), c, w, true);
+						const Vector2 b = mid + Vector2(-g, g);
+						draw_polyline(Vector<Vector2>({ b + Vector2(t, 0), b, b + Vector2(0, -t) }), c, w, true);
 					}
 				} break;
 				case KIND_CLOSE: {
