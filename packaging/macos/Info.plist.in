@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Template: packaging/macos/package.sh substitutes @VERSION@ (full, e.g. 0.1.0-rc.1),
+     @SHORT_VERSION@ (numeric X.Y.Z) and @BUILD_SHA@. -->
+<plist version="1.0">
+<dict>
+  <key>CFBundleDevelopmentRegion</key>
+  <string>en</string>
+  <key>CFBundleDisplayName</key>
+  <string>Orbe</string>
+  <key>CFBundleName</key>
+  <string>Orbe</string>
+  <key>CFBundleExecutable</key>
+  <string>Orbe</string>
+  <key>CFBundleIdentifier</key>
+  <string>dev.danielmiguelt.Orbe</string>
+  <key>CFBundleInfoDictionaryVersion</key>
+  <string>6.0</string>
+  <key>CFBundlePackageType</key>
+  <string>APPL</string>
+  <key>CFBundleSignature</key>
+  <string>????</string>
+  <key>CFBundleShortVersionString</key>
+  <string>@SHORT_VERSION@</string>
+  <key>CFBundleVersion</key>
+  <string>@SHORT_VERSION@</string>
+  <key>OrbeVersion</key>
+  <string>@VERSION@</string>
+  <key>OrbeBuildCommit</key>
+  <string>@BUILD_SHA@</string>
+  <key>CFBundleIconFile</key>
+  <string>Orbe</string>
+  <key>CFBundleSupportedPlatforms</key>
+  <array>
+    <string>MacOSX</string>
+  </array>
+  <key>NSPrincipalClass</key>
+  <string>NSApplication</string>
+  <key>LSApplicationCategoryType</key>
+  <string>public.app-category.developer-tools</string>
+  <!-- Keep in sync with -mmacosx-version-min in platform/macos/detect.py. The Metal renderer
+       needs macOS 13 on Apple silicon; Intel Macs run the Compatibility renderer. -->
+  <key>LSArchitecturePriority</key>
+  <array>
+    <string>arm64</string>
+    <string>x86_64</string>
+  </array>
+  <key>LSMinimumSystemVersionByArchitecture</key>
+  <dict>
+    <key>arm64</key>
+    <string>13.0</string>
+    <key>x86_64</key>
+    <string>11.0</string>
+  </dict>
+  <key>NSHighResolutionCapable</key>
+  <true/>
+  <key>NSRequiresAquaSystemAppearance</key>
+  <false/>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>Microphone access is required to capture audio.</string>
+  <key>NSCameraUsageDescription</key>
+  <string>Camera access is required to capture video.</string>
+  <key>NSCameraUseContinuityCameraDeviceType</key>
+  <true/>
+  <key>NSHumanReadableCopyright</key>
+  <string>Copyright © the Orbe authors. MIT. Portions © 2007-present Juan Linietsky, Ariel Manzur &amp; Godot Engine contributors.</string>
+
+  <!-- The files Orbe opens. The extensions are the ones projects, scenes and scripts already
+       use, so existing projects open from Finder. -->
+  <key>CFBundleDocumentTypes</key>
+  <array>
+    <dict>
+      <key>CFBundleTypeName</key>
+      <string>Orbe project</string>
+      <key>CFBundleTypeRole</key>
+      <string>Editor</string>
+      <key>LSItemContentTypes</key>
+      <array><string>dev.danielmiguelt.Orbe.project</string></array>
+    </dict>
+    <dict>
+      <key>CFBundleTypeName</key>
+      <string>Orbe scene</string>
+      <key>CFBundleTypeRole</key>
+      <string>Editor</string>
+      <key>LSItemContentTypes</key>
+      <array><string>dev.danielmiguelt.Orbe.scene</string></array>
+    </dict>
+  </array>
+  <key>UTExportedTypeDeclarations</key>
+  <array>
+    <dict>
+      <key>UTTypeIdentifier</key>
+      <string>dev.danielmiguelt.Orbe.project</string>
+      <key>UTTypeDescription</key>
+      <string>Orbe project</string>
+      <key>UTTypeConformsTo</key>
+      <array><string>public.data</string></array>
+      <key>UTTypeTagSpecification</key>
+      <dict>
+        <key>public.filename-extension</key>
+        <array><string>godot</string></array>
+        <key>public.mime-type</key>
+        <string>application/x-godot-project</string>
+      </dict>
+    </dict>
+    <dict>
+      <key>UTTypeIdentifier</key>
+      <string>dev.danielmiguelt.Orbe.scene</string>
+      <key>UTTypeDescription</key>
+      <string>Orbe scene</string>
+      <key>UTTypeConformsTo</key>
+      <array><string>public.data</string></array>
+      <key>UTTypeTagSpecification</key>
+      <dict>
+        <key>public.filename-extension</key>
+        <array>
+          <string>scn</string>
+          <string>tscn</string>
+          <string>escn</string>
+        </array>
+        <key>public.mime-type</key>
+        <string>application/x-godot-scene</string>
+      </dict>
+    </dict>
+    <dict>
+      <key>UTTypeIdentifier</key>
+      <string>dev.danielmiguelt.Orbe.resource</string>
+      <key>UTTypeDescription</key>
+      <string>Orbe resource</string>
+      <key>UTTypeConformsTo</key>
+      <array><string>public.data</string></array>
+      <key>UTTypeTagSpecification</key>
+      <dict>
+        <key>public.filename-extension</key>
+        <array>
+          <string>res</string>
+          <string>tres</string>
+        </array>
+        <key>public.mime-type</key>
+        <string>application/x-godot-resource</string>
+      </dict>
+    </dict>
+    <dict>
+      <key>UTTypeIdentifier</key>
+      <string>dev.danielmiguelt.Orbe.shader</string>
+      <key>UTTypeDescription</key>
+      <string>Orbe shader</string>
+      <key>UTTypeConformsTo</key>
+      <array><string>public.script</string></array>
+      <key>UTTypeTagSpecification</key>
+      <dict>
+        <key>public.filename-extension</key>
+        <array><string>gdshader</string></array>
+        <key>public.mime-type</key>
+        <string>application/x-godot-shader</string>
+      </dict>
+    </dict>
+    <dict>
+      <key>UTTypeIdentifier</key>
+      <string>dev.danielmiguelt.Orbe.gdscript</string>
+      <key>UTTypeDescription</key>
+      <string>GDScript script</string>
+      <key>UTTypeConformsTo</key>
+      <array><string>public.script</string></array>
+      <key>UTTypeTagSpecification</key>
+      <dict>
+        <key>public.filename-extension</key>
+        <array><string>gd</string></array>
+        <key>public.mime-type</key>
+        <string>application/x-gdscript</string>
+      </dict>
+    </dict>
+  </array>
+</dict>
+</plist>
