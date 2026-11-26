@@ -21,8 +21,10 @@ What is done and what is left to make Orbe a Nodalia app like the others.
    weekly upstream sync).
 3. **Releases**: `release-auto.yml` has Linux (AppImage, `.deb`, `.rpm`, `.tar.gz`) and macOS
    (unsigned DMG with Orbe's own install window; Metal on Apple silicon, the Compatibility
-   renderer on Intel). Still to come: Windows (MSI and portable) packages, then the Launcher
-   catalog entry and the page `getnodalia.com/orbe`.
+   renderer on Intel) and Windows (a per-user MSI and a portable zip for x64, x86 and arm64, built
+   with MSVC and no Direct3D 12 SDK or ANGLE: Vulkan and OpenGL only; verified by CI alone, no
+   Windows machine here). Still to come: the Launcher catalog entry and the page
+   `getnodalia.com/orbe`.
 4. **NDL window.** Done: the hamburger menu (Editor Settings, Keyboard Shortcuts, About) and, on
    Linux only, the frameless window with NDL's round minimize, maximize and close controls and
    resizing edges (`editor/gui/editor_window_controls.*`; the setting "Use System Window Controls"
