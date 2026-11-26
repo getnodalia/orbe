@@ -351,6 +351,8 @@ private:
 	PopupMenu *tool_menu = nullptr;
 	PopupMenu *export_as_menu = nullptr;
 	Button *export_button = nullptr;
+	Button *home_button = nullptr; // Orbe's mark: back to the project list.
+	Button *command_search_button = nullptr; // Opens the command palette.
 
 	Timer *screenshot_timer = nullptr;
 

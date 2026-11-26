@@ -1719,15 +1719,29 @@ void ThemeModern::populate_editor_styles(const Ref<EditorTheme> &p_theme, Editor
 		game_panel->set_corner_radius_all(0);
 		p_theme->set_stylebox(SceneStringName(panel), "GamePanel", game_panel);
 
-		// Main menu.
+		// Main menu: the workspaces are NDL pills, tinted with the accent when selected.
+		const int pill_radius = 100 * EDSCALE;
+		const Ref<StyleBoxEmpty> &wide = p_config.base_empty_wide_style;
+		auto make_workspace_pill = [&](const Color &p_color) {
+			Ref<StyleBoxFlat> pill;
+			pill.instantiate();
+			pill->set_bg_color(p_color);
+			pill->set_corner_radius_all(pill_radius);
+			pill->set_content_margin_individual(wide->get_margin(SIDE_LEFT), wide->get_margin(SIDE_TOP), wide->get_margin(SIDE_RIGHT), wide->get_margin(SIDE_BOTTOM));
+			return pill;
+		};
+		Ref<StyleBoxFlat> workspace_hover = make_workspace_pill(p_config.mono_color * Color(1, 1, 1, 0.08));
+		Ref<StyleBoxFlat> workspace_pressed = make_workspace_pill(p_config.accent_color * Color(1, 1, 1, 0.18));
+		Ref<StyleBoxFlat> workspace_hover_pressed = make_workspace_pill(p_config.accent_color * Color(1, 1, 1, 0.26));
+
 		p_theme->set_stylebox(CoreStringName(normal), "MainScreenButton", p_config.base_empty_wide_style);
 		p_theme->set_stylebox("normal_mirrored", "MainScreenButton", p_config.base_empty_wide_style);
-		p_theme->set_stylebox(SceneStringName(pressed), "MainScreenButton", p_config.base_empty_wide_style);
-		p_theme->set_stylebox("pressed_mirrored", "MainScreenButton", p_config.base_empty_wide_style);
-		p_theme->set_stylebox(SceneStringName(hover), "MainScreenButton", p_config.base_empty_wide_style);
-		p_theme->set_stylebox("hover_mirrored", "MainScreenButton", p_config.base_empty_wide_style);
-		p_theme->set_stylebox("hover_pressed", "MainScreenButton", p_config.base_empty_wide_style);
-		p_theme->set_stylebox("hover_pressed_mirrored", "MainScreenButton", p_config.base_empty_wide_style);
+		p_theme->set_stylebox(SceneStringName(pressed), "MainScreenButton", workspace_pressed);
+		p_theme->set_stylebox("pressed_mirrored", "MainScreenButton", workspace_pressed);
+		p_theme->set_stylebox(SceneStringName(hover), "MainScreenButton", workspace_hover);
+		p_theme->set_stylebox("hover_mirrored", "MainScreenButton", workspace_hover);
+		p_theme->set_stylebox("hover_pressed", "MainScreenButton", workspace_hover_pressed);
+		p_theme->set_stylebox("hover_pressed_mirrored", "MainScreenButton", workspace_hover_pressed);
 
 		// Main screen buttons.
 		const Color mb_font_color = p_config.font_color * Color(1, 1, 1, 0.95);

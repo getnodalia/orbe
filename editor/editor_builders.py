@@ -29,6 +29,12 @@ inline constexpr _DocDataClassPath _doc_data_class_paths[{len(paths) + 1}] = {{
         )
 
 
+def orbe_version_builder(target, source, env):
+    version = source[0].read()
+    with methods.generated_wrapper(str(target[0])) as file:
+        file.write(f'#define ORBE_VERSION "{version}"\n')
+
+
 def register_exporters_builder(target, source, env):
     platforms = source[0].read()
     exp_inc = "\n".join([f'#include "platform/{p}/export/export.h"' for p in platforms])

@@ -747,6 +747,12 @@ void EditorNode::_update_theme(bool p_skip_creation) {
 		if (app_menu_button != nullptr) {
 			app_menu_button->set_button_icon(theme->get_icon(SNAME("TripleBar"), EditorStringName(EditorIcons)));
 		}
+		if (home_button != nullptr) {
+			home_button->set_button_icon(theme->get_icon(SNAME("TitleBarLogo"), EditorStringName(EditorIcons)));
+		}
+		if (command_search_button != nullptr) {
+			command_search_button->set_button_icon(theme->get_icon(SNAME("Search"), EditorStringName(EditorIcons)));
+		}
 
 		editor_main_screen->add_theme_style_override(SceneStringName(panel), theme->get_stylebox(SNAME("Content"), EditorStringName(EditorStyles)));
 		bottom_panel->_theme_changed();
@@ -8269,11 +8275,11 @@ void EditorNode::_update_main_menu_type() {
 		menu_btn_spacer = memnew(Control);
 		menu_btn_spacer->set_custom_minimum_size(Vector2(8, 0) * EDSCALE);
 		title_bar->add_child(menu_btn_spacer);
-		title_bar->move_child(menu_btn_spacer, left_menu_spacer ? left_menu_spacer->get_index() + 1 : 0);
+		title_bar->move_child(menu_btn_spacer, (home_button ? home_button->get_index() + 1 : (left_menu_spacer ? left_menu_spacer->get_index() + 1 : 0)));
 #endif
 		title_bar->add_child(main_menu_button);
 		if (menu_btn_spacer == nullptr) {
-			title_bar->move_child(main_menu_button, left_menu_spacer ? left_menu_spacer->get_index() + 1 : 0);
+			title_bar->move_child(main_menu_button, (home_button ? home_button->get_index() + 1 : (left_menu_spacer ? left_menu_spacer->get_index() + 1 : 0)));
 		} else {
 			title_bar->move_child(main_menu_button, menu_btn_spacer->get_index() + 1);
 		}
@@ -8293,7 +8299,7 @@ void EditorNode::_update_main_menu_type() {
 		}
 
 		title_bar->add_child(main_menu_bar);
-		title_bar->move_child(main_menu_bar, left_menu_spacer ? left_menu_spacer->get_index() + 1 : 0);
+		title_bar->move_child(main_menu_bar, (home_button ? home_button->get_index() + 1 : (left_menu_spacer ? left_menu_spacer->get_index() + 1 : 0)));
 	}
 
 	// The hamburger is where the menu bar is not: with the bar, a compact menu or the system's menu
@@ -9185,6 +9191,15 @@ EditorNode::EditorNode() {
 		title_bar->add_child(left_menu_spacer);
 	}
 
+	home_button = memnew(Button);
+	home_button->set_flat(true);
+	home_button->set_theme_type_variation("TopBarOptionButton");
+	home_button->set_focus_mode(Control::FOCUS_ACCESSIBILITY);
+	home_button->set_accessibility_name(TTRC("Home"));
+	home_button->set_tooltip_text(TTRC("Home: back to the project list"));
+	home_button->connect(SceneStringName(pressed), callable_mp(this, &EditorNode::_menu_option).bind((int)PROJECT_QUIT_TO_PROJECT_MANAGER));
+	title_bar->add_child(home_button);
+
 	file_menu = memnew(PopupMenu);
 	file_menu->connect(SceneStringName(id_pressed), callable_mp(this, &EditorNode::_menu_option));
 	file_menu->connect("about_to_popup", callable_mp(this, &EditorNode::_update_file_menu_opened));
@@ -9256,6 +9271,15 @@ EditorNode::EditorNode() {
 	renderer->set_tooltip_auto_translate_mode(AUTO_TRANSLATE_MODE_ALWAYS);
 	renderer->set_tooltip_text(TTRC("Choose a renderer.\n\nNotes:\n- On mobile platforms, the Mobile renderer is used if Forward+ is selected here.\n- On the web platform, the Compatibility renderer is always used."));
 	renderer->set_accessibility_name(TTRC("Renderer"));
+
+	command_search_button = memnew(Button);
+	command_search_button->set_flat(true);
+	command_search_button->set_theme_type_variation("TopBarOptionButton");
+	command_search_button->set_focus_mode(Control::FOCUS_ACCESSIBILITY);
+	command_search_button->set_accessibility_name(TTRC("Search Commands"));
+	command_search_button->set_tooltip_text(TTRC("Search Commands"));
+	command_search_button->connect(SceneStringName(pressed), callable_mp(this, &EditorNode::_open_command_palette));
+	right_menu_hb->add_child(command_search_button);
 
 	right_menu_hb->add_child(renderer);
 
