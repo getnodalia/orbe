@@ -1,0 +1,52 @@
+name: CI
+
+# Quality gates for every push to main and every pull request: that no upstream name has come back
+# by hand, and that the editor builds on Linux and passes its unit tests. Standard GitHub-hosted
+# runners only.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# A newer push to a PR branch cancels its older run; every push to main runs to the end.
+concurrency:
+  group: ci-${{ github.event_name == 'pull_request' && github.ref || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  names:
+    name: Upstream names
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: No upstream name has come back
+        run: python3 scripts/rebrand.py check
+
+  linux:
+    name: Linux editor builds and tests
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential pkg-config scons libx11-dev libxcursor-dev libxinerama-dev libxi-dev \
+            libxrandr-dev libwayland-dev libdecor-0-dev libxkbcommon-dev libgl1-mesa-dev \
+            libglu1-mesa-dev libasound2-dev libpulse-dev libudev-dev libdbus-1-dev libspeechd-dev
+      - name: Build the editor with the unit tests
+        run: >-
+          scons platform=linuxbsd target=editor tests=yes accesskit=no module_mono_enabled=no
+          debug_symbols=no scu_build=yes optimize=speed_trace -j"$(nproc)"
+      - name: Run the unit tests
+        run: bin/orbe.linuxbsd.editor.x86_64 --headless --test

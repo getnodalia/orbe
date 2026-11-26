@@ -32,6 +32,9 @@ skip = [
     "scripts/rebrand.py",
     # Third-party code and its notices.
     "thirdparty/*",
+    # The unit tests: some use the engine's name as test data (a string to match against).
+    "tests/*",
+    "modules/*/tests/*",
     # The licence notices keep upstream's copyright lines, which the licences require.
     "LICENSE.txt",
     "COPYRIGHT.txt",

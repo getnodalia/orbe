@@ -490,8 +490,8 @@ TEST_SUITE("[Modules][GDScript][LSP][Editor]") {
 		CHECK_EQ(LSP::marked_documentation("[param delta]"), "`delta`");
 
 		// Markdown links
-		CHECK_EQ(LSP::marked_documentation("[url=https://godotengine.org]link to Orbe[/url]"),
-				"[link to Orbe](https://godotengine.org)");
+		CHECK_EQ(LSP::marked_documentation("[url=https://godotengine.org]link to Godot Engine[/url]"),
+				"[link to Godot Engine](https://godotengine.org)");
 		CHECK_EQ(LSP::marked_documentation("[url]https://godotengine.org/[/url]"),
 				"[https://godotengine.org/](https://godotengine.org/)");
 

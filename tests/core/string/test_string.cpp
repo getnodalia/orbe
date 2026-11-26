@@ -1865,7 +1865,7 @@ TEST_CASE("[String] hash") {
 }
 
 TEST_CASE("[String] uri_encode/unescape") {
-	String s = "Orbe:'docs'";
+	String s = "Godot Engine:'docs'";
 	String t = "Godot%20Engine%3A%27docs%27";
 
 	String x1 = "T%C4%93%C5%A1t";
