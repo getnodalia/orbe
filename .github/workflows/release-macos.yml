@@ -61,8 +61,14 @@ jobs:
             done | awk -F/ '{version=$NF; sub(/^Xcode_/, "", version); if (version+0 >= 26) print}' | sort -V | tail -n 1
           )
           test -n "$xcode" || { echo "no Xcode 26 on this runner" >&2; exit 1; }
+          # SCons hands the compiler a bare environment without DEVELOPER_DIR, so the compiler
+          # and the SDK must agree through xcode-select (a 26 SDK with an older Xcode's clang
+          # fails to build the SDK's modules).
+          sudo xcode-select -s "$xcode/Contents/Developer"
           echo "DEVELOPER_DIR=$xcode/Contents/Developer" >> "$GITHUB_ENV"
-          DEVELOPER_DIR="$xcode/Contents/Developer" xcrun --sdk macosx --show-sdk-version
+          xcode-select -p
+          clang --version
+          xcrun --sdk macosx --show-sdk-version
 
       - name: SCons
         # The engine needs SCons 4.4 or newer.
