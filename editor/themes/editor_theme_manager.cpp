@@ -344,8 +344,10 @@ EditorThemeManager::ThemeConfiguration EditorThemeManager::_create_theme_config(
 				preset_accent_color = Color(0.44, 0.73, 0.98);
 				preset_base_color = Color(0.24, 0.24, 0.24);
 			} else if (config.preset == "Light") {
-				preset_accent_color = Color(0.18, 0.50, 1.00);
-				preset_base_color = Color(0.9, 0.9, 0.9);
+				// Nodalia Design Language: the light window frame (#E4E6EB) and Orbe's accent, darkened
+				// so that it reads on a light surface.
+				preset_accent_color = Color(0.69, 0.50, 0.0);
+				preset_base_color = Color(0.894, 0.902, 0.922);
 				preset_contrast = light_contrast;
 				preset_icon_saturation = 1;
 			} else if (config.preset == "Solarized (Dark)") {
@@ -357,8 +359,9 @@ EditorThemeManager::ThemeConfiguration EditorThemeManager::_create_theme_config(
 				preset_base_color = Color(0.89, 0.86, 0.79);
 				preset_contrast = light_contrast;
 			} else { // Default
-				preset_accent_color = Color(0.337, 0.62, 1.0);
-				preset_base_color = Color(0.161, 0.161, 0.161);
+				// Nodalia Design Language: a dark island (#1D2029) and Orbe's accent (#DDA10A, lifted).
+				preset_accent_color = Color(0.94, 0.71, 0.16);
+				preset_base_color = Color(0.114, 0.125, 0.161);
 			}
 
 			config.accent_color = preset_accent_color;
