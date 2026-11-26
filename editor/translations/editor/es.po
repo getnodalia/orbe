@@ -5971,6 +5971,9 @@ msgstr "Sugerir una característica"
 msgid "Send Docs Feedback"
 msgstr "Enviar feedback de la documentación"
 
+msgid "Keyboard Shortcuts..."
+msgstr "Atajos de Teclado..."
+
 msgid "About Orbe..."
 msgstr "Sobre Orbe..."
 

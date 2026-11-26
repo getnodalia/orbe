@@ -739,6 +739,9 @@ void EditorNode::_update_theme(bool p_skip_creation) {
 		if (main_menu_button != nullptr) {
 			main_menu_button->set_button_icon(theme->get_icon(SNAME("TripleBar"), EditorStringName(EditorIcons)));
 		}
+		if (app_menu_button != nullptr) {
+			app_menu_button->set_button_icon(theme->get_icon(SNAME("TripleBar"), EditorStringName(EditorIcons)));
+		}
 
 		editor_main_screen->add_theme_style_override(SceneStringName(panel), theme->get_stylebox(SNAME("Content"), EditorStringName(EditorStyles)));
 		bottom_panel->_theme_changed();
@@ -3860,6 +3863,9 @@ void EditorNode::_menu_option_confirm(int p_option, bool p_confirmed) {
 		} break;
 		case EDITOR_OPEN_SETTINGS: {
 			editor_settings_dialog->popup_edit_settings();
+		} break;
+		case EDITOR_OPEN_SHORTCUTS: {
+			editor_settings_dialog->popup_edit_shortcuts();
 		} break;
 		case EDITOR_OPEN_DATA_FOLDER: {
 			OS::get_singleton()->shell_show_in_file_manager(EditorPaths::get_singleton()->get_data_dir(), true);
@@ -8282,6 +8288,12 @@ void EditorNode::_update_main_menu_type() {
 		title_bar->move_child(main_menu_bar, left_menu_spacer ? left_menu_spacer->get_index() + 1 : 0);
 	}
 
+	// The hamburger is where the menu bar is not: with the bar, a compact menu or the system's menu
+	// (macOS has the same items in the application menu) it would repeat them.
+	if (app_menu_button) {
+		app_menu_button->set_visible(menu_type == MENU_TYPE_FULL);
+	}
+
 	// Show/hide project title.
 	if (project_title) {
 		project_title->set_visible(can_expand && menu_type == MENU_TYPE_GLOBAL);
@@ -9106,6 +9118,23 @@ EditorNode::EditorNode() {
 	renderer->set_accessibility_name(TTRC("Renderer"));
 
 	right_menu_hb->add_child(renderer);
+
+	app_menu_button = memnew(MenuButton);
+	app_menu_button->set_flat(true);
+	app_menu_button->set_theme_type_variation("TopBarOptionButton");
+	app_menu_button->set_focus_mode(Control::FOCUS_ACCESSIBILITY);
+	app_menu_button->set_accessibility_name(TTRC("Main Menu"));
+	app_menu_button->set_tooltip_text(TTRC("Main Menu"));
+	{
+		PopupMenu *app_popup = app_menu_button->get_popup();
+		app_popup->add_item(TTRC("Editor Settings..."), EDITOR_OPEN_SETTINGS);
+		app_popup->add_item(TTRC("Keyboard Shortcuts..."), EDITOR_OPEN_SHORTCUTS);
+		app_popup->add_separator();
+		app_popup->add_item(TTRC("About Orbe..."), HELP_ABOUT);
+		app_popup->connect("id_pressed", callable_mp(this, &EditorNode::_menu_option));
+	}
+	app_menu_button->set_visible(menu_type == MENU_TYPE_FULL);
+	right_menu_hb->add_child(app_menu_button);
 
 	if (can_expand) {
 		// Add spacer to avoid other controls under the window minimize/maximize/close buttons (right side).

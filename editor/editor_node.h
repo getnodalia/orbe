@@ -185,6 +185,7 @@ public:
 
 		// Editor menu.
 		EDITOR_OPEN_SETTINGS,
+		EDITOR_OPEN_SHORTCUTS,
 		EDITOR_COMMAND_PALETTE,
 		EDITOR_TAKE_SCREENSHOT,
 		EDITOR_TOGGLE_FULLSCREEN,
@@ -337,6 +338,7 @@ private:
 
 	Control *menu_btn_spacer = nullptr;
 	MenuButton *main_menu_button = nullptr;
+	MenuButton *app_menu_button = nullptr; // The hamburger: Editor Settings, Keyboard Shortcuts, About.
 	MenuBar *main_menu_bar = nullptr;
 
 	PopupMenu *apple_menu = nullptr;
