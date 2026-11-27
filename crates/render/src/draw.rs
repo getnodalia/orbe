@@ -1,9 +1,11 @@
 // SPDX-License-Identifier: MIT
 //! Turns a scene tree into a painting-ordered list of shapes.
 
+use crate::texture::{Filter, Texture, Textures};
 use orbe_core::{Handle, Variant};
 use orbe_math::{Color, Transform2D, Vec2};
 use orbe_scene::{Node, SceneTree};
+use std::sync::Arc;
 
 /// Most points a polygon may have; longer ones are skipped.
 pub const MAX_POLYGON_POINTS: usize = 65_536;
@@ -15,6 +17,16 @@ pub enum Shape {
     Rect(Vec2),
     /// A filled polygon in local coordinates.
     Polygon(Vec<Vec2>),
+    /// A rectangle from the local origin to `size`, painted with a texture (multiplied by the
+    /// item's colour).
+    Sprite {
+        /// Size in local units.
+        size: Vec2,
+        /// The image.
+        texture: Arc<Texture>,
+        /// How texels are sampled.
+        filter: Filter,
+    },
 }
 
 /// One shape with everything needed to paint it.
@@ -139,6 +151,12 @@ struct Frame {
 /// Builds the draw list for a scene: shapes in painting order (by `z`, ties in tree order) and the
 /// first enabled camera.
 pub fn build_draw_list(tree: &SceneTree) -> DrawList {
+    build_draw_list_with(tree, &Textures::new())
+}
+
+/// Like [`build_draw_list`], and `Sprite2D` nodes whose `texture` property names an entry of
+/// `textures` are drawn too.
+pub fn build_draw_list_with(tree: &SceneTree, textures: &Textures) -> DrawList {
     let mut list = DrawList::default();
     let mut stack = vec![Frame {
         node: tree.root(),
@@ -181,6 +199,47 @@ pub fn build_draw_list(tree: &SceneTree) -> DrawList {
                             world,
                             z,
                             shape: Shape::Polygon(points),
+                            color: multiply(c, modulate),
+                        });
+                    }
+                }
+                "Sprite2D" => {
+                    let texture = match tree.property(f.node, "texture") {
+                        Some(Variant::Str(path)) => textures.get(path),
+                        _ => None,
+                    };
+                    if let Some(texture) = texture {
+                        let natural = Vec2::new(texture.width() as f32, texture.height() as f32);
+                        let size = vec2(tree, f.node, "size")
+                            .filter(|s| s.x > 0.0 && s.y > 0.0)
+                            .unwrap_or(natural);
+                        let centered = !matches!(
+                            tree.property(f.node, "centered"),
+                            Some(Variant::Bool(false))
+                        );
+                        let world = if centered {
+                            world.then(Transform2D::from_rotation_scale_origin(
+                                0.0,
+                                Vec2::ONE,
+                                Vec2::new(-size.x / 2.0, -size.y / 2.0),
+                            ))
+                        } else {
+                            world
+                        };
+                        let filter = match tree.property(f.node, "texture_filter") {
+                            Some(Variant::Str(s)) if s == "linear" => Filter::Linear,
+                            _ => Filter::Nearest,
+                        };
+                        let c =
+                            color(tree, f.node, "color").unwrap_or(Color::new(1.0, 1.0, 1.0, 1.0));
+                        list.items.push(DrawItem {
+                            world,
+                            z,
+                            shape: Shape::Sprite {
+                                size,
+                                texture,
+                                filter,
+                            },
                             color: multiply(c, modulate),
                         });
                     }
@@ -319,5 +378,26 @@ mod tests {
         assert_eq!(list.items.len(), 1);
         assert_eq!(list.items[0].z, 4096);
         assert_eq!(list.items[0].world, Transform2D::IDENTITY);
+    }
+
+    #[test]
+    fn sprites_need_a_known_texture_and_centre_by_default() {
+        let mut t = SceneTree::new("Root", "Node2D").unwrap();
+        let root = t.root();
+        let s = t.add_child(root, "S", "Sprite2D").unwrap();
+        t.set_property(s, "texture", Variant::Str("res://a.png".into()))
+            .unwrap();
+        assert!(build_draw_list(&t).items.is_empty());
+        let mut store = Textures::new();
+        store.insert(
+            "res://a.png",
+            Texture::from_rgba8(2, 2, &[255; 16]).unwrap(),
+        );
+        let list = build_draw_list_with(&t, &store);
+        assert_eq!(list.items.len(), 1);
+        assert_eq!(list.items[0].world.apply(Vec2::new(1.0, 1.0)), Vec2::ZERO);
+        t.set_property(s, "centered", Variant::Bool(false)).unwrap();
+        let list = build_draw_list_with(&t, &store);
+        assert_eq!(list.items[0].world.apply(Vec2::ZERO), Vec2::ZERO);
     }
 }

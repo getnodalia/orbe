@@ -185,7 +185,9 @@ pub(crate) fn screen_polygon(
         None => (half, Vec2::ONE),
     };
     let local: Vec<Vec2> = match &item.shape {
-        Shape::Rect(s) => vec![Vec2::ZERO, Vec2::new(s.x, 0.0), *s, Vec2::new(0.0, s.y)],
+        Shape::Rect(s) | Shape::Sprite { size: s, .. } => {
+            vec![Vec2::ZERO, Vec2::new(s.x, 0.0), *s, Vec2::new(0.0, s.y)]
+        }
         Shape::Polygon(p) => p.clone(),
     };
     let pts: Vec<Vec2> = local
@@ -203,6 +205,37 @@ pub(crate) fn screen_polygon(
         })
         .collect();
     (pts.len() >= 3 && pts.iter().all(|p| p.is_finite())).then_some(pts)
+}
+
+/// Maps a point in a quad's plane to texture coordinates: `(u, v)` with `p = p0 + u*e1 + v*e2`.
+#[derive(Clone, Copy)]
+struct QuadBasis {
+    p0: Vec2,
+    e1: Vec2,
+    e2: Vec2,
+    inv_det: f32,
+}
+
+impl QuadBasis {
+    fn new(pts: &[Vec2]) -> Option<QuadBasis> {
+        let (p0, p1, p3) = (*pts.first()?, *pts.get(1)?, *pts.get(3)?);
+        let (e1, e2) = (p1 - p0, p3 - p0);
+        let det = e1.x * e2.y - e1.y * e2.x;
+        (det.is_finite() && det.abs() > f32::EPSILON).then_some(QuadBasis {
+            p0,
+            e1,
+            e2,
+            inv_det: 1.0 / det,
+        })
+    }
+
+    fn uv(&self, p: Vec2) -> (f32, f32) {
+        let d = p - self.p0;
+        (
+            (d.x * self.e2.y - d.y * self.e2.x) * self.inv_det,
+            (self.e1.x * d.y - self.e1.y * d.x) * self.inv_det,
+        )
+    }
 }
 
 /// Draws `list` into a new `width` x `height` image on a background of `clear`.
@@ -285,6 +318,7 @@ pub fn render(
             }
         });
         let a = a.min(1.0);
+        let basis = QuadBasis::new(&pts);
         for y in y0..y1 {
             for x in x0..x1 {
                 let mut hits = 0u32;
@@ -300,6 +334,39 @@ pub fn render(
                     }
                 }
                 if hits == 0 {
+                    continue;
+                }
+                if let Shape::Sprite {
+                    texture, filter, ..
+                } = &item.shape
+                {
+                    let Some(basis) = basis else { continue };
+                    let mut acc = [0.0f32; 4];
+                    for sy in 0..SAMPLES {
+                        for sx in 0..SAMPLES {
+                            let p = Vec2::new(
+                                x as f32 + (sx as f32 + 0.5) / SAMPLES as f32,
+                                y as f32 + (sy as f32 + 0.5) / SAMPLES as f32,
+                            );
+                            if !inside(&pts, p) {
+                                continue;
+                            }
+                            let (u, v) = basis.uv(p);
+                            let t = texture.sample(u, v, *filter);
+                            let sa = t[3] * a;
+                            acc[0] += t[0] * src[0].min(1.0) * sa;
+                            acc[1] += t[1] * src[1].min(1.0) * sa;
+                            acc[2] += t[2] * src[2].min(1.0) * sa;
+                            acc[3] += sa;
+                        }
+                    }
+                    let n = (SAMPLES * SAMPLES) as f32;
+                    if let Some(px) = buf.get_mut(y * w + x) {
+                        let cov = acc[3] / n;
+                        for (d, s) in px.iter_mut().zip(acc.iter()) {
+                            *d = s / n + *d * (1.0 - cov);
+                        }
+                    }
                     continue;
                 }
                 let cov = a * hits as f32 / (SAMPLES * SAMPLES) as f32;
@@ -475,5 +542,53 @@ mod tests {
                 let _ = render(&l, 4, 4, Color::new(a, b, a, b));
             }
         }
+    }
+
+    #[test]
+    fn sprite_paints_its_texture_and_honours_alpha() {
+        use crate::texture::{Filter, Texture};
+        use std::sync::Arc;
+        // Left texel red, right texel fully transparent.
+        let tex = Texture::from_rgba8(2, 1, &[255, 0, 0, 255, 0, 255, 0, 0]).unwrap();
+        let item = DrawItem {
+            world: Transform2D::IDENTITY,
+            z: 0,
+            shape: Shape::Sprite {
+                size: Vec2::new(4.0, 2.0),
+                texture: Arc::new(tex),
+                filter: Filter::Nearest,
+            },
+            color: WHITE,
+        };
+        let list = DrawList {
+            items: vec![item],
+            camera: None,
+        };
+        let img = render(&list, 6, 4, BLACK).unwrap();
+        assert_eq!(img.pixel(1, 1), Some([255, 0, 0, 255]));
+        assert_eq!(img.pixel(3, 1), Some([0, 0, 0, 255]));
+        assert_eq!(img.pixel(5, 3), Some([0, 0, 0, 255]));
+    }
+
+    #[test]
+    fn degenerate_sprite_is_skipped_without_panicking() {
+        use crate::texture::{Filter, Texture};
+        use std::sync::Arc;
+        let tex = Texture::from_rgba8(1, 1, &[255, 255, 255, 255]).unwrap();
+        let item = DrawItem {
+            world: Transform2D::IDENTITY,
+            z: 0,
+            shape: Shape::Sprite {
+                size: Vec2::new(4.0, 0.0),
+                texture: Arc::new(tex),
+                filter: Filter::Linear,
+            },
+            color: WHITE,
+        };
+        let list = DrawList {
+            items: vec![item],
+            camera: None,
+        };
+        assert!(render(&list, 4, 4, BLACK).is_ok());
     }
 }
