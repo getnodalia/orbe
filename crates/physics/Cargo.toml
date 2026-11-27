@@ -1,0 +1,15 @@
+[package]
+name = "orbe-physics"
+description = "Orbe's 2D rigid body physics: shapes, collision detection and an impulse solver"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+orbe-core = { path = "../core" }
+orbe-math = { path = "../math" }
+
+[lints]
+workspace = true
