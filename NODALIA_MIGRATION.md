@@ -17,7 +17,8 @@ What is done and what is left to make Orbe a Nodalia app like the others.
   for text scenes and resources (binary `.scn`/`.res` are not read yet).
   `orbe-render` (scene → draw list, triangle mesh and a CPU reference rasteriser: rectangles, polygons, camera, z-order, modulate) and
   `orbe-gpu` (wgpu backend, tested against the CPU rasteriser) make up R3 for 2D without textures; sprites/textures and 3D PBR are still to do.
-  Next phases: textures and 3D (R3), physics (R4), audio/input/animation (R5), scripting (R6),
+  `orbe-physics` (R4, 2D rigid bodies: circles and boxes, SAT collision with edge clipping, impulse solver with friction and restitution, deterministic) is the first part of physics; 3D physics, joints and queries are still to do.
+  Next phases: textures and 3D (R3), the rest of physics (R4), audio/input/animation (R5), scripting (R6),
   egui editor (R7), exporters (R8), then retiring the C++ tree (R9).
 
 ## Next
