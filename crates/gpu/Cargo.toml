@@ -1,0 +1,21 @@
+[package]
+name = "orbe-gpu"
+description = "Orbe's wgpu backend: draws a 2D draw list on the GPU, tested against the CPU rasteriser"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+orbe-math = { path = "../math" }
+orbe-render = { path = "../render" }
+wgpu = "30"
+pollster = "0.4"
+
+[dev-dependencies]
+orbe-core = { path = "../core" }
+orbe-scene = { path = "../scene" }
+
+[lints]
+workspace = true

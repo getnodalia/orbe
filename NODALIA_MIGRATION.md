@@ -15,8 +15,9 @@ What is done and what is left to make Orbe a Nodalia app like the others.
 - Rust engine started (2026-11-27, ADR 0001): workspace, `cargo xtask ci`, `orbe-math` and `orbe-core`; `orbe-scene` (node tree and the `.orbe` text scene format) and
   `orbe-import` (reads upstream `.tscn`/`.tres` text files; what it cannot represent is kept as marker values plus warnings), so R2 is done
   for text scenes and resources (binary `.scn`/`.res` are not read yet).
-  `orbe-render` (R3, in progress): scene → draw list and a CPU reference rasteriser (2D: rectangles, polygons, camera, z-order, modulate; no textures yet); the wgpu backend is next.
-  Next phases: wgpu backend (R3), physics (R4), audio/input/animation (R5), scripting (R6),
+  `orbe-render` (scene → draw list, triangle mesh and a CPU reference rasteriser: rectangles, polygons, camera, z-order, modulate) and
+  `orbe-gpu` (wgpu backend, tested against the CPU rasteriser) make up R3 for 2D without textures; sprites/textures and 3D PBR are still to do.
+  Next phases: textures and 3D (R3), physics (R4), audio/input/animation (R5), scripting (R6),
   egui editor (R7), exporters (R8), then retiring the C++ tree (R9).
 
 ## Next

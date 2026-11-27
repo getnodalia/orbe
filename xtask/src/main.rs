@@ -16,6 +16,7 @@ const LAYERS: &[(&str, u8)] = &[
     ("orbe-scene", 2),
     ("orbe-import", 3),
     ("orbe-render", 3),
+    ("orbe-gpu", 4),
 ];
 
 fn main() -> ExitCode {
