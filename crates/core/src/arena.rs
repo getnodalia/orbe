@@ -33,6 +33,7 @@ impl<T> core::fmt::Debug for Handle<T> {
     }
 }
 
+#[derive(Clone, Debug)]
 enum Slot<T> {
     Occupied {
         generation: u32,
@@ -45,6 +46,7 @@ enum Slot<T> {
 }
 
 /// A slot arena with generational handles. Insertion and removal are O(1).
+#[derive(Clone, Debug)]
 pub struct Arena<T> {
     slots: Vec<Slot<T>>,
     free_head: Option<u32>,

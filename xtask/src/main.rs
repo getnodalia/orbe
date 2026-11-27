@@ -10,7 +10,7 @@ use std::process::{Command, ExitCode};
 
 /// The layer of every workspace crate. A crate may depend only on crates in lower layers.
 /// A new crate needs a row here.
-const LAYERS: &[(&str, u8)] = &[("orbe-math", 0), ("orbe-core", 1)];
+const LAYERS: &[(&str, u8)] = &[("orbe-math", 0), ("orbe-core", 1), ("orbe-scene", 2)];
 
 fn main() -> ExitCode {
     let task = std::env::args().nth(1).unwrap_or_default();

@@ -1,0 +1,17 @@
+[package]
+name = "orbe-scene"
+description = "Orbe's scene tree: nodes, properties and Orbe's own scene file format"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+orbe-core = { path = "../core" }
+
+[dev-dependencies]
+orbe-math = { path = "../math" }
+
+[lints]
+workspace = true

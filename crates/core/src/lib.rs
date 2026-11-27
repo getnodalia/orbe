@@ -6,8 +6,10 @@
 
 mod arena;
 mod respath;
+mod text;
 mod variant;
 
 pub use arena::{Arena, Handle};
 pub use respath::{PathError, ResPath, Scheme};
+pub use text::ParseError;
 pub use variant::{Variant, MAX_DEPTH};
