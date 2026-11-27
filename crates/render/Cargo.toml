@@ -1,0 +1,16 @@
+[package]
+name = "orbe-render"
+description = "Orbe's 2D renderer: a draw list built from a scene tree, and a CPU reference rasteriser"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+orbe-core = { path = "../core" }
+orbe-math = { path = "../math" }
+orbe-scene = { path = "../scene" }
+
+[lints]
+workspace = true
