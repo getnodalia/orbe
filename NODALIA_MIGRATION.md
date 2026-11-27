@@ -14,7 +14,7 @@ What is done and what is left to make Orbe a Nodalia app like the others.
 
 ## Next
 
-1. **Icon and art.** Orbe's app icon is a portrait of Johannes Kepler, made with nodalia-design's
+1. **Icon and art.** Orbe's app icon is a portrait of John von Neumann, made with nodalia-design's
    `tools/app-portrait` (see `docs/iconography.md` there): `misc/logo/icon*` and the hicolor set,
    the Windows `.ico`, `Orbe.icns` and the macOS export templates' icons, and the Android launcher
    icons. iOS and visionOS exports take the project's own icon, so the engine ships none. Still
