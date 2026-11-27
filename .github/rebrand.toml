@@ -56,8 +56,6 @@ skip = [
     "AUTHORS.md",
     "DONORS.md",
     "NOTICE",
-    # The original project's own README, kept for reference.
-    "docs/upstream-readme.md",
     # Their own scripts and the Android and web export templates, whose class and global names
     # are what exported projects and plug-ins call.
     "platform/android/java/*",
