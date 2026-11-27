@@ -1,0 +1,32 @@
+name: Rust engine
+
+# The gate for Orbe's Rust engine (crates/, xtask/): fmt, clippy -D warnings, tests and the layer
+# check, all through `cargo xtask ci`. Standard GitHub-hosted runners only.
+on:
+  push:
+    branches: [main]
+    paths: ["Cargo.toml", "Cargo.lock", "clippy.toml", ".cargo/**", "crates/**", "xtask/**", ".github/workflows/rust.yml"]
+  pull_request:
+    paths: ["Cargo.toml", "Cargo.lock", "clippy.toml", ".cargo/**", "crates/**", "xtask/**", ".github/workflows/rust.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rust-${{ github.event_name == 'pull_request' && github.ref || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  gate:
+    name: Rust gate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Stable Rust with rustfmt and clippy
+        run: rustup toolchain install stable --profile minimal --component rustfmt,clippy --no-self-update && rustup default stable
+      - name: fmt, clippy, tests and layers
+        run: cargo xtask ci

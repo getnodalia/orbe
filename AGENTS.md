@@ -80,6 +80,21 @@ screenshot in light and dark.
 - Commits: conventional commits (`feat:`, `fix:`, `docs:`, `chore:`). Keep secrets and personal
   details out of the repository, logs and requests.
 
+## Rust engine
+
+Orbe's future is a Rust engine with its own engines (`docs/adr/0001-rust-engine.md`, decided by the
+project lead): a Cargo workspace (`crates/`, `xtask/`) beside the C++ tree. The C++ editor keeps
+shipping until the Rust one reaches parity.
+
+- Gate: `cargo xtask ci` (fmt, clippy `-D warnings`, tests, layers). `cargo xtask layers` checks that a
+  crate depends only on lower layers; a new crate needs a row in `LAYERS` (`xtask/src/main.rs`).
+- Same rules as every Nodalia Rust app: no `unwrap`/`expect`/`panic!`/`unsafe` outside tests, input is
+  hostile, a crash fix lands with a regression test, new files carry `SPDX-License-Identifier: MIT`.
+- Dependencies are Nodalia's own crates or permissive crates.io ones. The UI is egui with
+  `nodalia-theme`. Never copy code from the C++ tree; behaviour comes from public documentation and
+  tests.
+- Say honestly how mature each phase is; never call something parity before its tests pass.
+
 ## CI and releases
 
 - Workflows run on standard GitHub-hosted runners only, actions pinned to a full commit SHA,
