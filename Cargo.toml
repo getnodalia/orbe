@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: MIT
+# Orbe's Rust engine. The C++ editor (SConstruct) keeps shipping until the Rust one reaches parity;
+# see docs/adr/0001-rust-engine.md.
+[workspace]
+resolver = "2"
+members = ["crates/*", "xtask"]
+
+[workspace.package]
+version = "0.4.0-dev"
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/getnodalia/orbe"
+rust-version = "1.85"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+missing_docs = "warn"
+
+[workspace.lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+unimplemented = "deny"
+todo = "deny"
+unreachable = "deny"
+indexing_slicing = "warn"

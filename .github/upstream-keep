@@ -16,3 +16,11 @@ assets/app-icon/**
 .github/CODEOWNERS
 .github/PULL_REQUEST_TEMPLATE.md
 packaging/**
+Cargo.toml
+Cargo.lock
+clippy.toml
+.cargo/**
+crates/**
+xtask/**
+docs/adr/**
+.gitignore
