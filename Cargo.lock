@@ -10,6 +10,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "orbe-import"
+version = "0.4.0-dev"
+dependencies = [
+ "orbe-core",
+ "orbe-math",
+ "orbe-scene",
+]
+
+[[package]]
 name = "orbe-math"
 version = "0.4.0-dev"
 
