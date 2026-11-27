@@ -1,0 +1,14 @@
+[package]
+name = "orbe-input"
+description = "Orbe's input: physical inputs, named actions bound to them, and per-frame state"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+orbe-math = { path = "../math" }
+
+[lints]
+workspace = true
