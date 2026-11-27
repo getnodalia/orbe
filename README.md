@@ -100,7 +100,7 @@ bin/orbe.linuxbsd.editor.x86_64
 | Area | State |
 |---|---|
 | Engine and editor | Working on Linux, macOS and Windows; Windows verified by CI alone |
-| App icon | Done: portrait of Johannes Kepler |
+| App icon | Done: portrait of John von Neumann |
 | Nodalia interface | Done: NDL themes, islands, pill tabs, bold icons, hamburger menu, Nodalia window controls on Linux |
 | Global menu | Done on Linux (D-Bus), in the top bar of the shell |
 | Installable packages | Linux, macOS (DMG) and Windows, built by CI for every release |
@@ -109,7 +109,7 @@ bin/orbe.linuxbsd.editor.x86_64
 ## App icon
 
 Nodalia app icons are black-and-white portraits of historical figures over the app colour.
-Orbe's is Johannes Kepler, who described the motion of the planets. Provenance and licence are in
+Orbe's is John von Neumann, who gave computers their stored-program architecture and founded game theory. Provenance and licence are in
 [`ATTRIBUTION.md`](ATTRIBUTION.md).
 
 ## The Nodalia suite
