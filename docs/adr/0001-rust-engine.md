@@ -1,6 +1,6 @@
 # ADR 0001: Orbe's engine moves to Rust, with its own engines
 
-Status: accepted (2026-11-27, decided by the project lead). Phase R0 and R1 landed with this record.
+Status: accepted (2026-11-27, decided by the project lead). Phases R0 and R1 landed with this record; R2 (scene tree, `.orbe` format, importer for text `.tscn`/`.tres`) followed.
 
 ## Context
 

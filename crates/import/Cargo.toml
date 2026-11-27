@@ -1,0 +1,16 @@
+[package]
+name = "orbe-import"
+description = "Importers for scenes and resources made for the upstream engine (.tscn and .tres)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+orbe-core = { path = "../core" }
+orbe-scene = { path = "../scene" }
+orbe-math = { path = "../math" }
+
+[lints]
+workspace = true

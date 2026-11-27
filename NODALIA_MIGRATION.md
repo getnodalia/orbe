@@ -12,9 +12,10 @@ What is done and what is left to make Orbe a Nodalia app like the others.
   Orbe accent `#DDA10A`, rounder corners).
 - `AGENTS.md`, `NOTICE`, release notes format, `ORBE_VERSION`.
 
-- Rust engine started (2026-11-27, ADR 0001): workspace, `cargo xtask ci`, `orbe-math` and `orbe-core`; `orbe-scene` (node tree and the `.orbe` text scene format, R2 in progress:
-  the importer for upstream `.tscn`/`.tres` is still to do).
-  Next phases: the rest of scene (R2), wgpu renderer (R3), physics (R4), audio/input/animation (R5), scripting (R6),
+- Rust engine started (2026-11-27, ADR 0001): workspace, `cargo xtask ci`, `orbe-math` and `orbe-core`; `orbe-scene` (node tree and the `.orbe` text scene format) and
+  `orbe-import` (reads upstream `.tscn`/`.tres` text files; what it cannot represent is kept as marker values plus warnings), so R2 is done
+  for text scenes and resources (binary `.scn`/`.res` are not read yet).
+  Next phases: wgpu renderer (R3), physics (R4), audio/input/animation (R5), scripting (R6),
   egui editor (R7), exporters (R8), then retiring the C++ tree (R9).
 
 ## Next
