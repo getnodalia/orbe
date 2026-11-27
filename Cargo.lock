@@ -593,6 +593,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "orbe-runtime"
+version = "0.4.0-dev"
+dependencies = [
+ "orbe-core",
+ "orbe-input",
+ "orbe-math",
+ "orbe-scene",
+ "orbe-script",
+]
+
+[[package]]
 name = "orbe-scene"
 version = "0.4.0-dev"
 dependencies = [

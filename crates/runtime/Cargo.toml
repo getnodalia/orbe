@@ -1,0 +1,18 @@
+[package]
+name = "orbe-runtime"
+description = "Orbe's game runtime: a scene whose nodes run scripts and read input"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+orbe-core = { path = "../core" }
+orbe-math = { path = "../math" }
+orbe-scene = { path = "../scene" }
+orbe-script = { path = "../script" }
+orbe-input = { path = "../input" }
+
+[lints]
+workspace = true
