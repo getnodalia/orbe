@@ -14,5 +14,13 @@ name = "orbe-math"
 version = "0.4.0-dev"
 
 [[package]]
+name = "orbe-scene"
+version = "0.4.0-dev"
+dependencies = [
+ "orbe-core",
+ "orbe-math",
+]
+
+[[package]]
 name = "xtask"
 version = "0.4.0-dev"
