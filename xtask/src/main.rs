@@ -19,6 +19,7 @@ const LAYERS: &[(&str, u8)] = &[
     ("orbe-anim", 3),
     ("orbe-input", 1),
     ("orbe-audio", 0),
+    ("orbe-script", 2),
     ("orbe-render", 3),
     ("orbe-gpu", 4),
 ];

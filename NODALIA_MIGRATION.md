@@ -20,6 +20,7 @@ What is done and what is left to make Orbe a Nodalia app like the others.
   `orbe-physics` (R4, 2D rigid bodies: circles and boxes, SAT collision with edge clipping, impulse solver with friction and restitution, deterministic) is the first part of physics; 3D physics, joints and queries are still to do.
   `orbe-anim` (keyframe tracks with step/linear interpolation, animations and a player that writes values into the scene tree) and `orbe-input` (actions bound to keys, mouse and gamepad, per-frame pressed/just-pressed state, axes with dead zones) are the first part of R5.
   `orbe-audio` (WAV decoding and a deterministic software mixer with volume, pan, pitch and looping; no sound device yet) completes the first cut of R5.
+  `orbe-script` (R6a: Orbe's own scripting language: functions, loops, arrays, dictionaries, vectors, host functions, hard limits on steps, depth and sizes) is the first part of scripting; binding scripts to nodes and the bridge for existing GDScript projects are still to do.
   Next phases: textures and 3D (R3), the rest of physics (R4), a device backend for audio (R5), scripting (R6),
   egui editor (R7), exporters (R8), then retiring the C++ tree (R9).
 

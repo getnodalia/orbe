@@ -1,0 +1,15 @@
+[package]
+name = "orbe-script"
+description = "Orbe's own scripting language: a bounded, sandboxed interpreter"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+orbe-core = { path = "../core" }
+orbe-math = { path = "../math" }
+
+[lints]
+workspace = true
