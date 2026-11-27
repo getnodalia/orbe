@@ -15,13 +15,18 @@
 //!
 //! Scene properties read: `position`, `rotation` (radians), `scale`, `z_index` (relative to the
 //! parent), `visible` and `modulate` on every node (they inherit down the tree); `size` and
-//! `color` on `ColorRect`; `polygon` and `color` on `Polygon2D`; `position` and `zoom` on
-//! `Camera2D`. Textures are not drawn yet.
+//! `color` on `ColorRect`; `polygon` and `color` on `Polygon2D`; `texture` (a path in the [`Textures`] store given to [`build_draw_list_with`]), `size`,
+//! `centered`, `texture_filter` (`"nearest"` or `"linear"`) and `color` on `Sprite2D`; `position`
+//! and `zoom` on `Camera2D`. The CPU rasteriser draws sprites; the GPU backend does not yet.
 
 mod draw;
 mod mesh;
 mod raster;
+mod texture;
 
-pub use draw::{build_draw_list, Camera, DrawItem, DrawList, Shape, MAX_POLYGON_POINTS};
+pub use draw::{
+    build_draw_list, build_draw_list_with, Camera, DrawItem, DrawList, Shape, MAX_POLYGON_POINTS,
+};
 pub use mesh::{build_mesh, triangulate, Vertex, MAX_TRIANGULATED_POINTS};
 pub use raster::{check_size, render, Image, RenderError, MAX_DIMENSION, MAX_PIXELS};
+pub use texture::{Filter, Texture, Textures, MAX_TEXTURES};

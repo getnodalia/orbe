@@ -94,6 +94,10 @@ pub fn triangulate(poly: &[Vec2]) -> Option<Vec<[usize; 3]>> {
 pub fn build_mesh(list: &DrawList, width: u32, height: u32) -> Vec<Vertex> {
     let mut out = Vec::new();
     for item in &list.items {
+        if matches!(item.shape, crate::draw::Shape::Sprite { .. }) {
+            // Textures are not drawn by the GPU backend yet.
+            continue;
+        }
         let c = item.color;
         if ![c.r, c.g, c.b, c.a].iter().all(|v| v.is_finite()) || c.a <= 0.0 {
             continue;
