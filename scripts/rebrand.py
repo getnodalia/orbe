@@ -9,8 +9,7 @@ app that is built on an upstream project: each repository keeps its own rules.
                                     with REF, lines named by [[pin]] rules take REF's value
     rebrand.py check [--root DIR]   list what the rules would still change; exit 1 if anything
 
-`apply` is what the weekly upstream sync runs on upstream's tree before merging it, so upstream's
-changes arrive already speaking this app's names. `check` is the guard that keeps old names from
+`apply` rewrites a tree to this app's names. `check` is the guard that keeps old names from
 coming back by hand.
 
 Rules (see the config file for this repository's):
