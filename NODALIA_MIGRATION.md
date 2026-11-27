@@ -35,7 +35,7 @@ What is done and what is left to make Orbe a Nodalia app like the others.
    brings the desktop's own back; macOS and Windows always keep native controls). The editor's menus are exported over D-Bus
    (`com.canonical.dbusmenu`, registered with the AppMenu registrar of Nodalix's shell, on Wayland;
    `platform/linuxbsd/freedesktop_global_menu.*`) and the in-window menu bar hides when the top bar
-   shows them. Also done in 0.2.0: pill-shaped workspace tabs, a Home button and a command search button in the header, NDL's bold icons for the header, toolbars and docks (`editor/icons`, 40 of them), Orbe's own version in the editor and translated inspector options. Still to do: NDL islands for the docks and the rest of the icons (node types, scene tree, file system). The Help menu links point to Orbe's repository and page; the
+   shows them. Also done in 0.2.0: pill-shaped workspace tabs, a Home button and a command search button in the header, NDL's bold icons for the header, toolbars and docks (`editor/icons`, 40 of them), Orbe's own version in the editor and translated inspector options. Also done in 0.3.0: NDL islands with pill tabs for the docks (`theme_modern.cpp`), 158 node and resource type icons in NDL's bold style with their category colours, Spanish in sentence case and the editor catalog's 255 untranslated texts. Still to do: the remaining icons (cursors, a few in the file tree) and Spanish for the class reference. The Help menu links point to Orbe's repository and page; the
    engine documentation and the asset library still point to upstream's, since Orbe opens the same
    projects.
 5. **About.** The credits keep upstream's authors and the third-party licences, as the licence

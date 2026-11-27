@@ -395,7 +395,7 @@ void ThemeModern::populate_shared_styles(const Ref<EditorTheme> &p_theme, Editor
 
 			p_config.tab_container_style = p_config.base_style->duplicate();
 			p_config.tab_container_style->set_content_margin_all(p_config.increased_margin * 1.5 * EDSCALE);
-			p_config.tab_container_style->set_corner_radius_individual(0, 0, p_config.corner_radius * EDSCALE, p_config.corner_radius * EDSCALE);
+			p_config.tab_container_style->set_corner_radius_individual(0, 0, p_config.corner_radius * 2.5 * EDSCALE, p_config.corner_radius * 2.5 * EDSCALE);
 
 			p_config.foreground_panel = p_config.tab_container_style->duplicate();
 			p_config.foreground_panel->set_corner_radius(CORNER_TOP_LEFT, p_config.tab_container_style->get_corner_radius(CORNER_BOTTOM_LEFT));
@@ -779,28 +779,33 @@ void ThemeModern::populate_standard_styles(const Ref<EditorTheme> &p_theme, Edit
 
 	// TabBar & TabContainer.
 	{
+		// Docks are NDL islands: the tab strip and the panel under it read as one rounded surface, and the
+		// tabs themselves are pills like the workspace switcher.
+		const int island_radius = p_config.corner_radius * 2.5 * EDSCALE;
+		const int pill_radius = 100 * EDSCALE;
+
 		Ref<StyleBoxFlat> style_tab_selected = p_config.base_style->duplicate();
-		style_tab_selected->set_content_margin_individual(p_config.base_margin * 4 * EDSCALE, p_config.base_margin * 2.1 * EDSCALE, p_config.base_margin * 4 * EDSCALE, p_config.base_margin * 2.1 * EDSCALE);
-		style_tab_selected->set_corner_radius_individual(p_config.corner_radius * EDSCALE, p_config.corner_radius * EDSCALE, 0, 0);
+		style_tab_selected->set_bg_color(p_config.accent_color * Color(1, 1, 1, 0.18));
+		style_tab_selected->set_border_width_all(0);
+		style_tab_selected->set_content_margin_individual(p_config.base_margin * 4 * EDSCALE, p_config.base_margin * 1.6 * EDSCALE, p_config.base_margin * 4 * EDSCALE, p_config.base_margin * 1.6 * EDSCALE);
+		style_tab_selected->set_corner_radius_all(pill_radius);
 
 		Ref<StyleBoxFlat> style_tab_focus = style_tab_selected->duplicate();
 		style_tab_focus->set_bg_color(p_config.base_color);
 		style_tab_focus->set_border_color(p_config.accent_color);
 
 		Ref<StyleBoxFlat> style_tab_unselected = style_tab_selected->duplicate();
-		style_tab_unselected->set_bg_color(p_config.surface_lowest_color);
+		style_tab_unselected->set_bg_color(Color(0, 0, 0, 0));
 		style_tab_unselected->set_border_width_all(0);
 
 		Ref<StyleBoxFlat> style_tab_hovered = style_tab_unselected->duplicate();
-		style_tab_hovered->set_bg_color(p_config.surface_base_color * Color(1, 1, 1, 0.6));
+		style_tab_hovered->set_bg_color(p_config.mono_color * Color(1, 1, 1, 0.08));
 
 		Color drop_mark_color = p_config.dark_color_2.lerp(p_config.accent_color, 0.75);
 
 		Ref<StyleBoxFlat> style_tabbar_background = p_config.base_style->duplicate();
-		style_tabbar_background->set_bg_color(p_config.surface_lowest_color);
-		style_tabbar_background->set_corner_radius(CORNER_BOTTOM_LEFT, 0);
-		style_tabbar_background->set_corner_radius(CORNER_BOTTOM_RIGHT, 0);
-		style_tabbar_background->set_content_margin_individual(0, 0, p_config.base_margin * 0.25 * EDSCALE, 0);
+		style_tabbar_background->set_corner_radius_individual(island_radius, island_radius, 0, 0);
+		style_tabbar_background->set_content_margin_individual(p_config.base_margin * 2 * EDSCALE, p_config.base_margin * EDSCALE, p_config.base_margin * 2 * EDSCALE, 0);
 
 		p_theme->set_stylebox("tabbar_background", "TabContainer", style_tabbar_background);
 		p_theme->set_stylebox(SceneStringName(panel), "TabContainer", p_config.tab_container_style);
