@@ -72,6 +72,8 @@ Packages for Linux, macOS and Windows are on the
 [releases page](https://github.com/getnodalia/orbe/releases/latest) and at
 [getnodalia.com/orbe](https://getnodalia.com/orbe).
 
+[Nodalia Launcher](https://getnodalia.com/launcher) installs it and keeps it up to date too.
+
 | Platform | Files |
 |---|---|
 | Linux (x86_64) | `.AppImage`, `.deb`, `.rpm` and `.tar.gz` |
