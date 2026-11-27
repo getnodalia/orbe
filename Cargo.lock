@@ -524,6 +524,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9f7c3e4beb33f85d45ae3e3a1792185706c8e16d043238c593331cc7cd313b50"
 
 [[package]]
+name = "orbe-anim"
+version = "0.4.0-dev"
+dependencies = [
+ "orbe-core",
+ "orbe-math",
+ "orbe-scene",
+]
+
+[[package]]
 name = "orbe-core"
 version = "0.4.0-dev"
 dependencies = [
@@ -549,6 +558,13 @@ dependencies = [
  "orbe-core",
  "orbe-math",
  "orbe-scene",
+]
+
+[[package]]
+name = "orbe-input"
+version = "0.4.0-dev"
+dependencies = [
+ "orbe-math",
 ]
 
 [[package]]

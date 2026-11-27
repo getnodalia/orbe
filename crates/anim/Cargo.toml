@@ -1,0 +1,16 @@
+[package]
+name = "orbe-anim"
+description = "Orbe's animation: keyframe tracks that drive scene properties, and a player"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+orbe-core = { path = "../core" }
+orbe-math = { path = "../math" }
+orbe-scene = { path = "../scene" }
+
+[lints]
+workspace = true
