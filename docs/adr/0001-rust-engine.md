@@ -50,7 +50,7 @@ Rules for the Rust engine:
 
 - Two build systems live side by side for a long time (SCons for the C++ editor, Cargo for the
   engine). CI runs both; the Rust gate is `cargo xtask ci`.
-- The weekly upstream sync keeps touching only the C++ tree. When the Rust editor ships, the sync
-  is retired with the C++.
+- There is no upstream sync any more: Orbe's C++ tree is maintained here, and it is retired with the
+  Rust editor.
 - Licence notices of the upstream authors stay in `LICENSE.txt`, `COPYRIGHT.txt`, `AUTHORS.md`,
   `NOTICE` and the About window for as long as any of their code or compatibility surface remains.

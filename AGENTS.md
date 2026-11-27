@@ -32,13 +32,11 @@ interface (`godot_*` symbols, `.gdextension`), GDScript, the `GODOT_*` build mac
 Android and web export templates' package names. `.github/rebrand.toml` lists what is renamed and
 what is kept. A line that has to keep an upstream name for compatibility says `rebrand: keep`.
 
-## Upstream sync
+## Names
 
-`scripts/rebrand.py` renames upstream's tree to Orbe's names from `.github/rebrand.toml`. The
-weekly sync (`.github/workflows/upstream-sync.yml`, `docs/upstream.md`) records the renamed tree as
-a mirror commit and merges it through a pull request: merge those with a merge commit, never a
-squash. Files in `.github/upstream-keep` are Orbe's own and win a conflict. `python3
-scripts/rebrand.py check` fails when an upstream name comes back by hand. Never edit
+`scripts/rebrand.py check` (the **Upstream names** check) fails when a name from the original
+engine comes back by hand; `.github/rebrand.toml` lists what is renamed and what is kept. Orbe is
+its own project: nothing is merged in from another repository, and there is no sync. Never edit
 `thirdparty/` except through its update scripts.
 
 ## Build and test
