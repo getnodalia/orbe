@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 //! The CPU reference rasteriser.
 
-use crate::draw::{DrawList, Shape};
+use crate::draw::{DrawItem, DrawList, Shape};
 use orbe_math::{Color, Vec2};
 use std::fmt;
 
@@ -9,6 +9,20 @@ use std::fmt;
 pub const MAX_DIMENSION: u32 = 16_384;
 /// Largest image area, in pixels.
 pub const MAX_PIXELS: u64 = 64 * 1024 * 1024;
+
+/// Checks an image size against [`MAX_DIMENSION`] and [`MAX_PIXELS`].
+pub fn check_size(width: u32, height: u32) -> Result<(), RenderError> {
+    if width == 0 || height == 0 {
+        return Err(RenderError::EmptyImage);
+    }
+    if width > MAX_DIMENSION
+        || height > MAX_DIMENSION
+        || u64::from(width) * u64::from(height) > MAX_PIXELS
+    {
+        return Err(RenderError::TooLarge);
+    }
+    Ok(())
+}
 
 /// Subsamples per pixel side used for anti-aliasing.
 const SAMPLES: usize = 4;
@@ -20,6 +34,8 @@ pub enum RenderError {
     EmptyImage,
     /// A side or the area is over [`MAX_DIMENSION`] / [`MAX_PIXELS`].
     TooLarge,
+    /// The pixel buffer does not match the image size.
+    WrongLength,
 }
 
 impl fmt::Display for RenderError {
@@ -27,6 +43,7 @@ impl fmt::Display for RenderError {
         f.write_str(match self {
             RenderError::EmptyImage => "the image has no pixels",
             RenderError::TooLarge => "the image is too large",
+            RenderError::WrongLength => "the pixel buffer does not match the image size",
         })
     }
 }
@@ -55,6 +72,58 @@ impl Image {
     /// The bytes: `width * height * 4`, as R, G, B, A with straight alpha.
     pub fn pixels(&self) -> &[u8] {
         &self.pixels
+    }
+
+    /// Wraps existing pixels: `pixels` must hold exactly `width * height * 4` bytes and the size
+    /// must be within the limits of [`render`].
+    pub fn from_rgba(width: u32, height: u32, pixels: Vec<u8>) -> Result<Image, RenderError> {
+        if width == 0 || height == 0 {
+            return Err(RenderError::EmptyImage);
+        }
+        if width > MAX_DIMENSION
+            || height > MAX_DIMENSION
+            || u64::from(width) * u64::from(height) > MAX_PIXELS
+        {
+            return Err(RenderError::TooLarge);
+        }
+        if pixels.len() as u64 != u64::from(width) * u64::from(height) * 4 {
+            return Err(RenderError::WrongLength);
+        }
+        Ok(Image {
+            width,
+            height,
+            pixels,
+        })
+    }
+
+    /// Encodes linear premultiplied RGBA pixels (rows from the top) as an 8-bit sRGB image. Both
+    /// the CPU rasteriser and GPU backends finish with this, so they encode identically.
+    pub fn from_premultiplied_linear(
+        width: u32,
+        height: u32,
+        pixels: &[[f32; 4]],
+    ) -> Result<Image, RenderError> {
+        let mut bytes = Vec::with_capacity(pixels.len().saturating_mul(4));
+        for px in pixels {
+            let [r, g, b, a] = *px;
+            let (r, g, b) = if a > 0.0 {
+                (r / a, g / a, b / a)
+            } else {
+                (0.0, 0.0, 0.0)
+            };
+            bytes.extend_from_slice(&[
+                srgb_byte(r),
+                srgb_byte(g),
+                srgb_byte(b),
+                (if a.is_finite() {
+                    a.clamp(0.0, 1.0)
+                } else {
+                    0.0
+                } * 255.0
+                    + 0.5) as u8,
+            ]);
+        }
+        Image::from_rgba(width, height, bytes)
     }
 
     /// One pixel, or `None` outside the image.
@@ -102,6 +171,40 @@ fn inside(poly: &[Vec2], p: Vec2) -> bool {
     odd
 }
 
+/// The corners of `item` in image pixels, or `None` when it cannot be drawn (too few points or
+/// a non-finite coordinate).
+pub(crate) fn screen_polygon(
+    list: &DrawList,
+    item: &DrawItem,
+    width: u32,
+    height: u32,
+) -> Option<Vec<Vec2>> {
+    let half = Vec2::new(width as f32 / 2.0, height as f32 / 2.0);
+    let (center, zoom) = match list.camera {
+        Some(c) => (c.center, c.zoom),
+        None => (half, Vec2::ONE),
+    };
+    let local: Vec<Vec2> = match &item.shape {
+        Shape::Rect(s) => vec![Vec2::ZERO, Vec2::new(s.x, 0.0), *s, Vec2::new(0.0, s.y)],
+        Shape::Polygon(p) => p.clone(),
+    };
+    let pts: Vec<Vec2> = local
+        .iter()
+        .map(|&p| {
+            let w = item.world.apply(p);
+            match list.camera {
+                // The camera centre maps to the image centre, scaled by the zoom.
+                Some(_) => Vec2::new(
+                    (w.x - center.x) * zoom.x + half.x,
+                    (w.y - center.y) * zoom.y + half.y,
+                ),
+                None => w,
+            }
+        })
+        .collect();
+    (pts.len() >= 3 && pts.iter().all(|p| p.is_finite())).then_some(pts)
+}
+
 /// Draws `list` into a new `width` x `height` image on a background of `clear`.
 pub fn render(
     list: &DrawList,
@@ -133,34 +236,10 @@ pub fn render(
     };
     let mut buf = vec![[premul(clear.r), premul(clear.g), premul(clear.b), clear_a]; w * h];
 
-    let half = Vec2::new(width as f32 / 2.0, height as f32 / 2.0);
     for item in &list.items {
-        let to_screen = |p: Vec2| {
-            let world = item.world.apply(p);
-            match list.camera {
-                Some(c) => (world - c.center) * 1.0 + half,
-                None => world,
-            }
-        };
-        let zoom = list.camera.map_or(Vec2::ONE, |c| c.zoom);
-        let local: Vec<Vec2> = match &item.shape {
-            Shape::Rect(s) => vec![Vec2::ZERO, Vec2::new(s.x, 0.0), *s, Vec2::new(0.0, s.y)],
-            Shape::Polygon(p) => p.clone(),
-        };
-        let pts: Vec<Vec2> = local
-            .iter()
-            .map(|&p| {
-                let s = to_screen(p);
-                // Zoom is applied around the image centre.
-                Vec2::new(
-                    (s.x - half.x) * zoom.x + half.x,
-                    (s.y - half.y) * zoom.y + half.y,
-                )
-            })
-            .collect();
-        if pts.len() < 3 || !pts.iter().all(|p| p.is_finite()) {
+        let Some(pts) = screen_polygon(list, item, width, height) else {
             continue;
-        }
+        };
         let a = item.color.a;
         if !a.is_finite() || a <= 0.0 {
             continue;
@@ -233,26 +312,7 @@ pub fn render(
         }
     }
 
-    let mut pixels = Vec::with_capacity(w * h * 4);
-    for px in &buf {
-        let [r, g, b, a] = *px;
-        let (r, g, b) = if a > 0.0 {
-            (r / a, g / a, b / a)
-        } else {
-            (0.0, 0.0, 0.0)
-        };
-        pixels.extend_from_slice(&[
-            srgb_byte(r),
-            srgb_byte(g),
-            srgb_byte(b),
-            (a.clamp(0.0, 1.0) * 255.0 + 0.5) as u8,
-        ]);
-    }
-    Ok(Image {
-        width,
-        height,
-        pixels,
-    })
+    Image::from_premultiplied_linear(width, height, &buf)
 }
 
 #[cfg(test)]

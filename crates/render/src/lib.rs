@@ -19,7 +19,9 @@
 //! `Camera2D`. Textures are not drawn yet.
 
 mod draw;
+mod mesh;
 mod raster;
 
 pub use draw::{build_draw_list, Camera, DrawItem, DrawList, Shape, MAX_POLYGON_POINTS};
-pub use raster::{render, Image, RenderError, MAX_DIMENSION, MAX_PIXELS};
+pub use mesh::{build_mesh, triangulate, Vertex, MAX_TRIANGULATED_POINTS};
+pub use raster::{check_size, render, Image, RenderError, MAX_DIMENSION, MAX_PIXELS};
