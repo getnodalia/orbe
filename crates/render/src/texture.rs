@@ -67,6 +67,19 @@ impl Texture {
         })
     }
 
+    /// Decodes a PNG file into a texture.
+    pub fn from_png(bytes: &[u8]) -> Result<Texture, RenderError> {
+        use orbe_image::ImageError;
+        let img = orbe_image::decode_png(bytes).map_err(|e| match e {
+            ImageError::TooLarge => RenderError::TooLarge,
+            ImageError::Truncated => RenderError::Undecodable("the image file is cut short"),
+            ImageError::Corrupt(why) | ImageError::Unsupported(why) => {
+                RenderError::Undecodable(why)
+            }
+        })?;
+        Texture::from_rgba8(img.width, img.height, &img.rgba)
+    }
+
     /// Width in texels.
     pub fn width(&self) -> u32 {
         self.width
@@ -180,6 +193,18 @@ mod tests {
     #[test]
     fn bad_sizes_are_refused() {
         assert_eq!(Texture::from_rgba8(0, 1, &[]), Err(RenderError::EmptyImage));
+        assert!(Texture::from_png(b"nope").is_err());
+        let png = [
+            0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0x00, 0x00, 0x00, 0x0d, 0x49, 0x48,
+            0x44, 0x52, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x01, 0x08, 0x06, 0x00, 0x00,
+            0x00, 0xf4, 0x22, 0x7f, 0x8a, 0x00, 0x00, 0x00, 0x0e, 0x49, 0x44, 0x41, 0x54, 0x78,
+            0x9c, 0x63, 0xf8, 0xcf, 0xc0, 0x00, 0x42, 0xff, 0x01, 0x0f, 0xf9, 0x03, 0xfd, 0x85,
+            0x11, 0x99, 0x76, 0x00, 0x00, 0x00, 0x00, 0x49, 0x45, 0x4e, 0x44, 0xae, 0x42, 0x60,
+            0x82,
+        ];
+        let tex = Texture::from_png(&png).unwrap();
+        assert_eq!((tex.width(), tex.height()), (2, 1));
+        assert_eq!(tex.sample(0.25, 0.5, Filter::Nearest), [1.0, 0.0, 0.0, 1.0]);
         assert_eq!(
             Texture::from_rgba8(1, 1, &[0; 3]),
             Err(RenderError::WrongLength)

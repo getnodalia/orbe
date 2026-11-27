@@ -9,6 +9,7 @@ rust-version.workspace = true
 
 [dependencies]
 orbe-core = { path = "../core" }
+orbe-image = { path = "../image" }
 orbe-math = { path = "../math" }
 orbe-scene = { path = "../scene" }
 

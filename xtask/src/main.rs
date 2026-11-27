@@ -12,6 +12,7 @@ use std::process::{Command, ExitCode};
 /// A new crate needs a row here.
 const LAYERS: &[(&str, u8)] = &[
     ("orbe-math", 0),
+    ("orbe-image", 0),
     ("orbe-core", 1),
     ("orbe-scene", 2),
     ("orbe-import", 3),

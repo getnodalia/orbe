@@ -36,6 +36,8 @@ pub enum RenderError {
     TooLarge,
     /// The pixel buffer does not match the image size.
     WrongLength,
+    /// An image file could not be decoded, with the reason.
+    Undecodable(&'static str),
 }
 
 impl fmt::Display for RenderError {
@@ -44,6 +46,7 @@ impl fmt::Display for RenderError {
             RenderError::EmptyImage => "the image has no pixels",
             RenderError::TooLarge => "the image is too large",
             RenderError::WrongLength => "the pixel buffer does not match the image size",
+            RenderError::Undecodable(why) => why,
         })
     }
 }
