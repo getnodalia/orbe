@@ -556,6 +556,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "orbe-image"
+version = "0.4.0-dev"
+
+[[package]]
 name = "orbe-import"
 version = "0.4.0-dev"
 dependencies = [
@@ -588,6 +592,7 @@ name = "orbe-render"
 version = "0.4.0-dev"
 dependencies = [
  "orbe-core",
+ "orbe-image",
  "orbe-math",
  "orbe-scene",
 ]
